@@ -22,6 +22,8 @@ public class Connect4 {
         myGame.displayHelp();
         Board myBoard = new Board();
         myBoard.displayBoard();
+        Scoreboard myScore = new Scoreboard();
+        myScore.displayScoreboard();
     }
         public void getName() {
             Scanner input = new Scanner(System.in);
