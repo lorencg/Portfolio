@@ -29,6 +29,8 @@ public class Connect4 {
         myScore.displayScoreboard();
         Statistics stats = new Statistics();
         stats.displayStatistics();
+        Tokens red = new Tokens();
+        red.displayToken();
     }
         public void getName() {
             Scanner input = new Scanner(System.in);
