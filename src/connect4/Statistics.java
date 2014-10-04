@@ -7,7 +7,7 @@ package connect4;
 
 /**
  *
- * @author SexyMama
+ * @author Kayla Lindstrom
  */
 public class Statistics {
     int won = 5;

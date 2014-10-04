@@ -7,7 +7,7 @@ package connect4;
     import java.util.Scanner;
 /**
  *
- * @author SexyMama
+ * @author Kayla Lindstrom
  */
 public class Player2 {
     String pTwoName;
