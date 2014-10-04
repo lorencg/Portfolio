@@ -12,9 +12,9 @@ package connect4;
 public class Player2 {
     String pTwoName;
     
-public void secondName() {
+public void displaySecondName() {
             Scanner input = new Scanner(System.in);
-            System.out.println("Enter your name: ");
+            System.out.println("Player 2 enter your name: ");
             this.pTwoName = input.next();
         }
 }

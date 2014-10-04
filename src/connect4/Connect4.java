@@ -19,11 +19,15 @@ public class Connect4 {
     public static void main(String[] args) {
         Connect4 myGame = new Connect4();
         myGame.getName();
+        Player2 pTwo = new Player2();
+        pTwo.displaySecondName();
         myGame.displayHelp();
         Board myBoard = new Board();
         myBoard.displayBoard();
         Scoreboard myScore = new Scoreboard();
         myScore.displayScoreboard();
+        Statistics stats = new Statistics();
+        stats.displayStatistics();
     }
         public void getName() {
             Scanner input = new Scanner(System.in);
