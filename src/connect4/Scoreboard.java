@@ -7,7 +7,7 @@ package connect4;
 
 /**
  *
- * @author Faron
+ * @author  Faron Young
  */
 public class Scoreboard {
     int base = 1000;
