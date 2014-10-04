@@ -21,6 +21,7 @@ public class Connect4 {
         myGame.getName();
         Player2 pTwo = new Player2();
         pTwo.displaySecondName();
+        pTwo.displayWelcome();
         myGame.displayHelp();
         Board myBoard = new Board();
         myBoard.displayBoard();

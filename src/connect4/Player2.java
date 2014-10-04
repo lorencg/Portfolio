@@ -17,4 +17,7 @@ public void displaySecondName() {
             System.out.println("Player 2 enter your name: ");
             this.pTwoName = input.next();
         }
+public void displayWelcome() {
+    System.out.println("\nWelcome " + this.pTwoName + "\n");
+}
 }
