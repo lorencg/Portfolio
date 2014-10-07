@@ -11,7 +11,13 @@ package connect4;
  */
 public class Connect4 {
         String name;
-        String instructions = "Each player is given either red tokens or black to play. The board consists of circular slots for these tokens 7 columns wide and 6 rows high. The players take turns filling in the slots with their tokens with each token placed settling into the lowest row of the column placed. The game is over when one player ‘connects 4’ tokens in an uninterrupted row.";
+        String instructions = "Each player is given either red or black \n"
+                + "tokens to play. The board consists of circular slots for \n"
+                + "these tokens; 7 columns wide and 6 rows high. The players \n"
+                + "take turns filling in the slots with their tokens; with \n"
+                + "each token placed settling into the lowest row of the \n"
+                + "column placed. The game is over when one player \n"
+                + "'connects 4' tokens in an uninterrupted row. Have fun! \n";
                 
     /**
      * @param args the command line arguments
@@ -31,6 +37,11 @@ public class Connect4 {
         stats.displayStatistics();
         Tokens red = new Tokens();
         red.displayToken();
+        StartMenu myStartMenu = new StartMenu();
+        myStartMenu.displayStartMenu();
+        RulesMenu myRulesMenu = new RulesMenu();
+        myRulesMenu.displayRulesMenu();
+        
     }
         public void getName() {
             Scanner input = new Scanner(System.in);
