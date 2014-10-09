@@ -12,11 +12,17 @@ package connect4;
 public class Scoreboard {
     int base = 1000;
     int pointslost = 25;
-    int bonus = 20;
+    double bonus = (int) 20.1;
+    int x = 7;  // number of moves taken to win.
+    int y = 29; // empty spaces left.
+    double score = base - (pointslost * x) + (bonus * y);
         
 
 public void displayScoreboard() {
-    System.out.println("The base score is " + this.base + " points.");
+    
+    System.out.println("\'Your score is " + this.score + " points.\'");
+    
+    System.out.println("\tThe base score is " + this.base + " points.");
     System.out.println("Each turn will lose " + this.pointslost + " points.");
     System.out.println("Each space unused when connect4 is reached will award " + this.bonus + " bonus points.");
     

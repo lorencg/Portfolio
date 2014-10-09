@@ -41,7 +41,7 @@ public class Connect4 {
         myStartMenu.displayStartMenu();
         RulesMenu myRulesMenu = new RulesMenu();
         myRulesMenu.displayRulesMenu();
-        
+   
     }
         public void getName() {
             Scanner input = new Scanner(System.in);
