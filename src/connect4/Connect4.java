@@ -31,6 +31,7 @@ public class Connect4 {
         myGame.displayHelp();
         Board myBoard = new Board();
         myBoard.displayBoard();
+        myBoard.enterNextMove();
         Scoreboard myScore = new Scoreboard();
         myScore.displayScoreboard();
         Statistics stats = new Statistics();
