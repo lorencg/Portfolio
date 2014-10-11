@@ -17,5 +17,5 @@ public class Tokens {
     public void displayToken(){
         System.out.println(this.color + " with the size of: " + this.size);
     }
-            
+
 }

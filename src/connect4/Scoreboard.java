@@ -10,12 +10,15 @@ package connect4;
  * @author  Faron Young
  */
 public class Scoreboard {
+    boolean gameWon = false;
     int base = 1000;
     int pointslost = 25;
     double bonus = (int) 20.1;
-    int x = 15;  // number of moves taken to win.
-    int y = 25; // empty spaces left.
-    double score = base - (pointslost * x) + (bonus * y);
+    double playerOneMoves = (int)21.1;
+    double playerTwoMoves = 21;
+    double totalMoves = playerOneMoves + playerTwoMoves;  // number of moves taken during game
+    double emptySpaces = 42 - totalMoves; // empty spaces left.
+    double score = base - (pointslost * totalMoves) + (bonus * emptySpaces);
         
 
 public void displayScoreboard() {
@@ -26,5 +29,11 @@ public void displayScoreboard() {
     System.out.println("Each turn will lose " + this.pointslost + " points.");
     System.out.println("Each space unused when connect4 is reached will award " + this.bonus + " bonus points.");
     
+}
+
+public void isDraw() {
+    if (this.totalMoves == 42 && gameWon != true){
+        System.out.println("\tIt\'s a draw!");
+    }
 }
 }

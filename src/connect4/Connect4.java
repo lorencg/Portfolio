@@ -34,6 +34,7 @@ public class Connect4 {
         myBoard.enterNextMove();
         Scoreboard myScore = new Scoreboard();
         myScore.displayScoreboard();
+        myScore.isDraw();
         Statistics stats = new Statistics();
         stats.displayStatistics();
         Tokens red = new Tokens();
