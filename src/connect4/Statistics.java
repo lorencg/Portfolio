@@ -17,11 +17,13 @@ public class Statistics {
     double winStats = (won / totalGames) * 100;
     double loseStats = ((totalGames - won) / totalGames) * 100;
     
-    
 public void displayStatistics() {
     System.out.println("You have won " + won + " games.");
     System.out.println("Your winning streak is " + streak + ".");
     System.out.println("\n\tYou have won " + winStats + "% of your games.\n");
     System.out.println("\n\tYou have lost " + loseStats + "% of your games.\n");
+     if (won < 1 && totalGames <= 1) {
+         System.out.println("\tNeed to play a game.");
+     }
 }
 } 
