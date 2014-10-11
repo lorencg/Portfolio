@@ -10,13 +10,18 @@ package connect4;
  * @author Kayla Lindstrom
  */
 public class Statistics {
-    int won = 5;
-    int lose = 0;
-    int streak = 5;
+    int won = 4;
+    double streak = (int) 5;
+    
+    double totalGames = (int) 5;
+    double winStats = (won / totalGames) * 100;
+    double loseStats = ((totalGames - won) / totalGames) * 100;
+    
     
 public void displayStatistics() {
     System.out.println("You have won " + won + " games.");
-    System.out.println("You have lost " + lose + " games.");
     System.out.println("Your winning streak is " + streak + ".");
+    System.out.println("\n\tYou have won " + winStats + "% of your games.\n");
+    System.out.println("\n\tYou have lost " + loseStats + "% of your games.\n");
 }
-}
+} 
