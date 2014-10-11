@@ -13,8 +13,8 @@ public class Scoreboard {
     int base = 1000;
     int pointslost = 25;
     double bonus = (int) 20.1;
-    int x = 7;  // number of moves taken to win.
-    int y = 29; // empty spaces left.
+    int x = 15;  // number of moves taken to win.
+    int y = 25; // empty spaces left.
     double score = base - (pointslost * x) + (bonus * y);
         
 
