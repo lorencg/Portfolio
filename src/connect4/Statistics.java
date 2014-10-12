@@ -16,6 +16,8 @@ public class Statistics {
     double totalGames = (int) 5;
     double winStats = (won / totalGames) * 100;
     double loseStats = ((totalGames - won) / totalGames) * 100;
+    double tokensUsed=(int) 0;
+    double averageTokensToWin= (int)0.00;
     
 public void displayStatistics() {
     System.out.println("You have won " + won + " games.");
@@ -26,4 +28,14 @@ public void displayStatistics() {
          System.out.println("\tNeed to play a game.");
      }
 }
+public void displayAveToken() {
+    if(won>0 &&tokensUsed >0){
+        averageTokensToWin= (won /tokensUsed);
+        System.out.println("Your average tokens to win is" + averageTokensToWin);
+    }
+    else
+        {System.out.println("Error, no game has been won yet.");
+                
+      }
+    }
 } 
