@@ -31,10 +31,10 @@ public void displayStatistics() {
 public void displayAveToken() {
     if(won>0 &&tokensUsed >0){
         averageTokensToWin = (tokensUsed / won);
-        System.out.println("Your average tokens to win is" + averageTokensToWin);
+        System.out.println("Your average tokens to win is\t" + averageTokensToWin);
     }
     else
-        {System.out.println("Error, no game has been won yet.");
+        {System.out.println("Error, no game has been won yet\n.");
                 
       }
     }
