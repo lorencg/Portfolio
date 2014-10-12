@@ -30,7 +30,7 @@ public void displayStatistics() {
 }
 public void displayAveToken() {
     if(won>0 &&tokensUsed >0){
-        averageTokensToWin= (won /tokensUsed);
+        averageTokensToWin= (tokensUsed\won);
         System.out.println("Your average tokens to win is" + averageTokensToWin);
     }
     else
