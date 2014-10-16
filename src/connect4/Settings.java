@@ -9,7 +9,7 @@ package connect4;
  *
  * @author kadosch2
  */
-public class RulesMenu {
+public class Settings {
     String Guide = "1- Only one token per turn. \n\n"
             + "2- The players may not change their move once the token has \n"
             + "been dropped. \n\n"

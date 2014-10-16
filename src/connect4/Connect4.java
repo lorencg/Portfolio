@@ -29,6 +29,12 @@ public class Connect4 {
         pTwo.displaySecondName();
         pTwo.displayWelcome();
         myGame.displayHelp();
+        //MainMenuView m = new MainMenuView();
+        //m.getInput();
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.getInput();
+        
+        
         Board myBoard = new Board();
         myBoard.displayBoard();
         myBoard.enterNextMove();
@@ -41,7 +47,7 @@ public class Connect4 {
         red.displayToken();
         StartMenu myStartMenu = new StartMenu();
         myStartMenu.displayStartMenu();
-        RulesMenu myRulesMenu = new RulesMenu();
+        Settings myRulesMenu = new Settings();
         myRulesMenu.displayRulesMenu();
    
     }
