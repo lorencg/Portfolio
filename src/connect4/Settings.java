@@ -7,7 +7,7 @@ package connect4;
 
 /**
  *
- * @author kadosch2
+ * @author Patti Jones
  */
 public class Settings {
     String Guide = "1- Only one token per turn. \n\n"

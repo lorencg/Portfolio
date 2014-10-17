@@ -8,7 +8,7 @@ package connect4;
 import java.util.Scanner;
 /**
  *
- * @author SexyMama
+ * @author Kayla Lindstrom and Patti Jones
  */
 public class StatsMenuView {
     private final static String[][] menuItems = {
@@ -19,7 +19,7 @@ public class StatsMenuView {
     };
     
     // Create instance of the HelpMenuControl (action) class
-    private StatsMenuController statsMenuController = new StatsMenuController();
+    private StatsMenuControl statsMenuControl = new StatsMenuControl();
     
     // default constructor
     public StatsMenuView() {
@@ -42,18 +42,18 @@ public class StatsMenuView {
             
             switch (command) {
                 case "1":
-                    this.statsMenuController.displayOneStats();
+                    this.statsMenuControl.displayOneStats();
                     break;
                 case "2":
-                    this.statsMenuController.displayTwoStats();
+                    this.statsMenuControl.displayTwoStats();
                     break;
                 case "H":
-                    this.statsMenuController.displayHelp();
+                    this.statsMenuControl.displayHelp();
                     break;                  
                 case "Q":
                     break;
                 default: 
-                    new Connect4Error().displayError("Invalid command. Please enter a valid command.");
+                    new Connect4Error().displayError("Invalid command. Please enter 1, 2, H, or Q");
                     continue;
             }
         } while (!command.equals("Q"));  
