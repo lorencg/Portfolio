@@ -55,6 +55,9 @@ public class MainMenuView {
                 case "H":
                     this.mainMenuControl.displayHelpMenu();            
                     break;
+                case "S":
+                    //this.mainMenuControl.displaySettingsMenu();            
+                    break;
                 case "Q":
                     break;
                 default: 
