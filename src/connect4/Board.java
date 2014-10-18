@@ -59,7 +59,7 @@ public void printColumnValues(){  //Faron Young - Check stored column Values aft
     
 }   
 }//Author Sarah Oesterle
-public void putChipReady()
+/*public void putChipReady()
 {
     if(currentPlayer == 1)
     {
@@ -75,4 +75,4 @@ public void putChipReady()
 
 public void playerTurn(){
     System.out.println"\'It is player" + this.currentChip + "turn.\'"
-}
+}*/

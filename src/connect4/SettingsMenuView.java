@@ -66,7 +66,7 @@ public class SettingsMenuView {
 
         // displays the Settings menu
     public final void display() {
-        System.out.println("\n\t===============================================================");
+        System.out.println("\n\t============================= Settings Menu ==================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
         for (int i = 0; i < SettingsMenuView.menuItems.length; i++) {

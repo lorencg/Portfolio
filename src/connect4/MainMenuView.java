@@ -21,6 +21,7 @@ public class MainMenuView {
         {"2", "Two player game"},
         {"S", "Settings"},
         {"H", "Help"},
+        {"A", "Statistics"},
         {"Q", "Quit Game"}
     }; 
   
@@ -29,10 +30,11 @@ public class MainMenuView {
     public MainMenuView() {
 
     }
- 
+    public void displayWelcome() {
+    System.out.println("\nWelcome to Connect 4!\n");
+    }
     
     public void getInput() {       
-
         String command;
         Scanner inFile = new Scanner(System.in);
         
@@ -51,12 +53,13 @@ public class MainMenuView {
                     //this.mainMenuControl.startGame(2);
                     break;
                 case "S":
+                    this.mainMenuControl.displaySettingsMenu();
                     break;
                 case "H":
-                    this.mainMenuControl.displayHelpMenu();            
+                    this.mainMenuControl.displayHelpMenu();                      
                     break;
-                case "S":
-                    //this.mainMenuControl.displaySettingsMenu();            
+                case "A":
+                    this.mainMenuControl.displayStatsMenu();
                     break;
                 case "Q":
                     break;
@@ -73,7 +76,7 @@ public class MainMenuView {
     
     
    public final void display() {
-        System.out.println("\n\t===============================================================");
+        System.out.println("\n\t============================== Main Menu =================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
         for (String[] menuItem : MainMenuView.menuItems) {

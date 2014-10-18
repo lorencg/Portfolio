@@ -63,7 +63,7 @@ public class StatsMenuView {
 
         // displays the help menu
     public final void display() {
-        System.out.println("\n\t===============================================================");
+        System.out.println("\n\t============================= Statistics Menu ==================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
         for (int i = 0; i < StatsMenuView.menuItems.length; i++) {
