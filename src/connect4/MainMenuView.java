@@ -19,8 +19,9 @@ public class MainMenuView {
     private static final String[][] menuItems = {
         {"1", "One player game"},
         {"2", "Two player game"},
+        {"S", "Settings"},
         {"H", "Help"},
-        {"Q", "Connect "}
+        {"Q", "Quit Game"}
     }; 
   
     MainMenuController mainMenuControl = new MainMenuController();
@@ -49,14 +50,16 @@ public class MainMenuView {
                 case "2":
                     //this.mainMenuControl.startGame(2);
                     break;
+                case "S":
+                    break;
                 case "H":
-                    //this.mainMenuControl.displayHelpMenu();            
+                    this.mainMenuControl.displayHelpMenu();            
                     break;
                 case "Q":
                     break;
                 default: 
-                   // new TicTacToeError().displayError("Invalid command. Please enter a valid command.");
-                   // continue;                    
+                   new Connect4Error().displayError("Invalid command. Please enter either 1, 2, S, H, or Q.");
+                   continue;                    
             }
         } while (!command.equals("Q"));
 
