@@ -14,19 +14,26 @@ import java.util.Scanner;
 
 public class getMoves {
     boolean validInput = false;
-    int column = 0;
-    double length;
+    int column;
     Scanner in = new Scanner(System.in);
+    public int moves(){
+    System.out.println("Please enter a valid input (1-7)");
     while (!validInput) {
-        System.out.println("Please enter a valid input (1-7)");
-        column = in.nextLine();
+        column = in.nextInt();
+        String number = String.valueOf(column);
         if (column < 1 || column > 7) {
             System.out.println("Please enter a valid input (1-7). Try again.");
             continue;
         }
-        if (length < 1 || length > 1) {
-            System.out.println("Please enter one number between 1 and 7");
+        
+        if (number.length() < 1) {
+            System.out.println("Please enter exactly one number!");
+        continue;
         }
     }
+        validInput = true;
+    return column;
+    }
+    
     
 }
