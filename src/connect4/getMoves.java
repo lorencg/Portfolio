@@ -11,10 +11,10 @@ package connect4;
  */
 import java.util.Scanner;
 
-
 public class getMoves {
     boolean validInput = false;
     int column;
+    int columnHeight;
     Scanner in = new Scanner(System.in);
     public int moves(){
     System.out.println("Please enter a valid input (1-7)");
@@ -35,5 +35,12 @@ public class getMoves {
     return column;
     }
     
-    
+    public int height() {
+         for (columnHeight = 1; columnHeight <= 6; columnHeight++){
+    if (columnHeight > 6) {
+        System.out.println("This column is full. Please pick another column.");
+}
+}
+    return columnHeight;
+    }
 }
