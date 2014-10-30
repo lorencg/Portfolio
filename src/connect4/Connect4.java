@@ -16,13 +16,12 @@ public class Connect4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Point location = null;
+        PlayerName name = new PlayerName();
+        name.getNames();
         MainMenuView main = new MainMenuView();
         main.displayWelcome();
         main.getInput();
-        getMoves get = new getMoves();
-        location = new Point(get.getMove());
-        System.out.println(location);
+        
    
     }
     

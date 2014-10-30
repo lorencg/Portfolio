@@ -57,6 +57,7 @@ public class getMoves {
         int column = Integer.parseInt(move[1]);
         
         location = new Point(row -1, column -1);
+        break;
         
         }
     return location;
