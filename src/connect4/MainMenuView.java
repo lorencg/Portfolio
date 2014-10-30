@@ -47,10 +47,10 @@ public class MainMenuView {
             
             switch (command) {
                 case "1":
-                    System.out.println("Hello");
+                    //this.mainMenuControl.startGameOne();
                     break;
                 case "2":
-                    //this.mainMenuControl.startGame(2);
+                    //this.mainMenuControl.startGameTwo();
                     break;
                 case "S":
                     this.mainMenuControl.displaySettingsMenu();

@@ -10,37 +10,55 @@ package connect4;
  * @author Faron
  */
 import java.util.Scanner;
+import java.awt.Point;
 
 public class getMoves {
+    
+    public Point getMove(){
+
     boolean validInput = false;
-    int column;
-    int columnHeight;
     Scanner in = new Scanner(System.in);
-    public int moves(){
-    System.out.println("Please enter a valid input (1-7)");
+    String[] move;
+    Point location = null;
+        
     while (!validInput) {
-        column = in.nextInt();
-        String number = String.valueOf(column);
-        if (column < 1 || column > 7) {
-            System.out.println("Please enter a valid input (1-7). Try again.");
+    
+        System.out.println("Please enter a row and column number to place your token: ");
+        
+        String coordinates = in.nextLine();
+        coordinates = coordinates.trim().replace(',', ' ');
+        //put the coordinates into the array
+        move = coordinates.split("\\s");
+        
+        //check if value was entered
+        if(move.length < 1){
+            new Connect4Error().displayError("Please enter both a row and a column or type Q to quit");
+            continue;
+        }
+        //check if only 1 value was entered, if so was it to quit?
+        else if (move.length == 1) {
+            if (move[0].toUpperCase().equals("Q")){
+                return null;
+        } else {//if not to quit, please enter 2 values not 1
+                new Connect4Error().displayError("Please enter both a row and a column or type Q to quit");
+                continue;
+            }
+        }
+        
+        //check if int was entered for both coordinates
+        String regExpressionPattern = ".*\\d.*";
+        if (!move[0].matches(regExpressionPattern) || !move[1].matches(regExpressionPattern)) {
+            new Connect4Error().displayError("Please use 2 numbers to indicate the coordinates or Q to quit");
             continue;
         }
         
-        if (number.length() < 1) {
-            System.out.println("Please enter exactly one number!");
-        continue;
+        //change the string coordinates back to int
+        int row = Integer.parseInt(move[0]);
+        int column = Integer.parseInt(move[1]);
+        
+        location = new Point(row -1, column -1);
+        
         }
-    }
-        validInput = true;
-    return column;
-    }
-    
-    public int height() {
-         for (columnHeight = 1; columnHeight <= 6; columnHeight++){
-    if (columnHeight > 6) {
-        System.out.println("This column is full. Please pick another column.");
-}
-}
-    return columnHeight;
-    }
+    return location;
+    } 
 }

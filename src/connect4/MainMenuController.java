@@ -24,4 +24,5 @@ public class MainMenuController {
         StatsMenuView stats = new StatsMenuView();
         stats.getInput();
     }
+    
 }
