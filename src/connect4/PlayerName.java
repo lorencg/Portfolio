@@ -20,8 +20,11 @@ public class PlayerName {
         playerTwo = inFile.nextLine();
         String PlayerName[] = {playerOne, playerTwo};
         
+        if(PlayerName[0].length() == 0 && PlayerName[1].length() == 0){
+                System.out.println("Please enter a name");
+        }
         for(int j=1; j<2; j++){
-            if(PlayerName[j-1].length() > PlayerName[j].length()){
+                if(PlayerName[j-1].length() > PlayerName[j].length()){
                 String t = PlayerName[j-1];
                 PlayerName[j-1] = PlayerName[j];
                 PlayerName[j] = t;
