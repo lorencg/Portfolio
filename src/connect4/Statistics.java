@@ -38,4 +38,13 @@ public void displayAveToken() {
                 
       }
     }
+// Faron Young, Josh Siqueiros, Sarah Christian
+public void getScoreSum() {
+    int scoresArray [] = { 1500, 1200, 900, 800, 300, 1600, 400 };
+    int sum = 0;
+    for (int i=0; i < 7; i++ ) sum += scoresArray [i];
+    
+    System.out.println("The sum of " + (scoresArray.length) + " games played is " + sum);
+    
+}
 } 
