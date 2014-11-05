@@ -5,11 +5,14 @@
  */
 package connect4;
 
+import java.util.Scanner;
 /**
  *
  * @author  Faron Young
  */
 public class Scoreboard {
+    private PlayerName PlayerName = new PlayerName();
+    
     boolean gameWon = false;
     int base = 1000;
     int pointslost = 25;
@@ -19,7 +22,10 @@ public class Scoreboard {
     double totalMoves = playerOneMoves + playerTwoMoves;  // number of moves taken during game
     double emptySpaces = 42 - totalMoves; // empty spaces left.
     double score = base - (pointslost * totalMoves) + (bonus * emptySpaces);
-        
+    
+    String red;
+    String black;
+    String tokens[] = {red, black};
 
 public void displayScoreboard() {
     
@@ -35,5 +41,11 @@ public void isDraw() {
     if (this.totalMoves == 42 && gameWon != true){
         System.out.println("\tIt\'s a draw!");
     }
+}
+
+public void winner() {
+    for (String s : tokens) {
+            System.out.println(this.PlayerName + " has won!");
+        }
 }
 }

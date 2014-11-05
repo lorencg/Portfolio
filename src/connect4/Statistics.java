@@ -47,4 +47,16 @@ public void getScoreSum() {
     System.out.println("The sum of " + (scoresArray.length) + " games played is " + sum);
     
 }
+
+public void getAverage() {
+    int sum = 0;
+    int nums[] = {0, 1000, 825};
+    
+    for (int i=0; i < nums.length; i++) {
+        sum = sum + nums[i];
+}
+    double average = sum / nums.length;
+    System.out.println("Score Average: \t" + average);
+}
+
 } 
