@@ -58,21 +58,4 @@ public void printColumnValues(){  //Faron Young - Check stored column Values aft
     System.out.println("\"G\"="+G);
     
 }   
-}//Author Sarah Oesterle
-/*public void putChipReady()
-{
-    if(currentPlayer == 1)
-    {
-        currentChip = new RedChip();
-    }
-    else
-    {
-        currentChip = new BlackChip();
-    }
-    currentChip.y = -50;
-    this.currentChip(currentChip,0);
 }
-
-public void playerTurn(){
-    System.out.println"\'It is player" + this.currentChip + "turn.\'"
-}*/
