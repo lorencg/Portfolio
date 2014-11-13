@@ -71,5 +71,13 @@ public class StatsMenuView {
         }
         System.out.println("\t===============================================================\n");
     }
+
+    public StatsMenuControl getStatsMenuControl() {
+        return statsMenuControl;
+    }
+
+    public void setStatsMenuControl(StatsMenuControl statsMenuControl) {
+        this.statsMenuControl = statsMenuControl;
+    }
   
 }
