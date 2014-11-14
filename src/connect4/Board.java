@@ -14,10 +14,10 @@ import java.util.Scanner;
  */
 public class Board {
     
-    int rows = 6;
-    int columns = 7;
-    String move = "";
-    int A=0,B=0,C=0,D=0,E=0,F=0,G=0; //variables to represent columns on board
+    private int rows = 6;
+    private int columns = 7;
+    private String move = "";
+    private int A=0,B=0,C=0,D=0,E=0,F=0,G=0; //variables to represent columns on board
            
     private class Tokens {
            private String color = "red or black";
@@ -206,4 +206,138 @@ public void printColumnValues(){  //Faron Young - Check stored column Values aft
     System.out.println("\"G\"="+G);
     
 }   
+
+    public int getRows() {
+        return rows;
+    }
+
+    public void setRows(int rows) {
+        this.rows = rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public void setColumns(int columns) {
+        this.columns = columns;
+    }
+
+    public String getMove() {
+        return move;
+    }
+
+    public void setMove(String move) {
+        this.move = move;
+    }
+
+    public int getA() {
+        return A;
+    }
+
+    public void setA(int A) {
+        this.A = A;
+    }
+
+    public int getB() {
+        return B;
+    }
+
+    public void setB(int B) {
+        this.B = B;
+    }
+
+    public int getC() {
+        return C;
+    }
+
+    public void setC(int C) {
+        this.C = C;
+    }
+
+    public int getD() {
+        return D;
+    }
+
+    public void setD(int D) {
+        this.D = D;
+    }
+
+    public int getE() {
+        return E;
+    }
+
+    public void setE(int E) {
+        this.E = E;
+    }
+
+    public int getF() {
+        return F;
+    }
+
+    public void setF(int F) {
+        this.F = F;
+    }
+
+    public int getG() {
+        return G;
+    }
+
+    public void setG(int G) {
+        this.G = G;
+    }
+
+    @Override
+    public String toString() {
+        return "Board{" + "rows=" + rows + ", columns=" + columns + ", move=" + move + ", A=" + A + ", B=" + B + ", C=" + C + ", D=" + D + ", E=" + E + ", F=" + F + ", G=" + G + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Board other = (Board) obj;
+        if (this.rows != other.rows) {
+            return false;
+        }
+        if (this.columns != other.columns) {
+            return false;
+        }
+        if (!Objects.equals(this.move, other.move)) {
+            return false;
+        }
+        if (this.A != other.A) {
+            return false;
+        }
+        if (this.B != other.B) {
+            return false;
+        }
+        if (this.C != other.C) {
+            return false;
+        }
+        if (this.D != other.D) {
+            return false;
+        }
+        if (this.E != other.E) {
+            return false;
+        }
+        if (this.F != other.F) {
+            return false;
+        }
+        if (this.G != other.G) {
+            return false;
+        }
+        return true;
+    }
+
 }
