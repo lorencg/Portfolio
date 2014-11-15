@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package connect4;
+import java.io.Serializable;
 
 /**
  *
  * @author Kayla Lindstrom
  */
-public class Statistics {
+public class Statistics implements Serializable{
     int won = 4;
     double streak = (int) 5;
     
@@ -39,7 +40,7 @@ public void displayAveToken() {
       }
     }
 // Faron Young, Josh Siqueiros, Sarah Christian
-public void getScoreSum() {
+private void getScoreSum() {
     int scoresArray [] = { 1500, 1200, 900, 800, 300, 1600, 400 };
     int sum = 0;
     for (int i=0; i < 7; i++ ) sum += scoresArray [i];
@@ -48,7 +49,7 @@ public void getScoreSum() {
     
 }
 
-public void getAverage() {
+private void getAverage() {
     int sum = 0;
     int nums[] = {0, 1000, 825};
     
