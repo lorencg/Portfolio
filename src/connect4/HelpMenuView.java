@@ -12,9 +12,13 @@ import java.util.Scanner;
  *
  * @author 
  */
-public class HelpMenuView  {
-        
-    private final static String[][] menuItems = {
+public class HelpMenuView implements Serializable  {
+   private static String command;  
+   
+   
+   
+   
+   private final static String[][] menuItems = {
         {"I", "Instructions"},
         {"T", "Tips"}, 
         {"Q", "Quit Help"}     //Goes to Main Menu       
@@ -28,11 +32,11 @@ public class HelpMenuView  {
     public HelpMenuView() {
         
     } 
-    
+   
     // display the help menu and get the end users input selection
     public void getInput() {       
               
-        String command;
+        
         Scanner inFile = new Scanner(System.in);
         
         do {
@@ -59,6 +63,14 @@ public class HelpMenuView  {
         } while (!command.equals("Q"));  
         
          return;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
     }
 
         // displays the help menu

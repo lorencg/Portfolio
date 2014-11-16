@@ -17,7 +17,7 @@ public class Connect4 {
      */
     public static void main(String[] args) {
         PlayerName name = new PlayerName();
-        name.getNames();
+        name.getPlayerName();
         MainMenuView main = new MainMenuView();
         main.displayWelcome();
         main.getInput();

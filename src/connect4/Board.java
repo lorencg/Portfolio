@@ -13,12 +13,27 @@ import java.util.Scanner;
  * @author SexyMama
  */
 public class Board {
-    
+    private int printRow = 0;
+    private int printColumns =0;
     private int rows = 6;
     private int columns = 7;
     private String move = "";
     private int A=0,B=0,C=0,D=0,E=0,F=0,G=0; //variables to represent columns on board
-           
+    
+     private int board [][]= new int [6][7]; 
+        
+    
+    
+public void displayBoard() {
+    System.out.println("A|B|C|D|E|F|G|");
+    for(printRow=0 ;printRow < 6; ++printRow){
+       for(printColumns = 0;printColumns < 7; ++printColumns){
+           board[printRow][printColumns]=0;
+           System.out.print(board[printRow][printColumns] + "|");
+   } 
+        System.out.println();
+    }
+}
     private class Tokens {
            private String color = "red or black";
     private int size = 5;
