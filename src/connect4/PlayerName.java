@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Objects;
 /**
  *
- * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian
+ * @author Kayla Lindstrom, Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian, Patti Jones
  */
 public class PlayerName implements Serializable{
     

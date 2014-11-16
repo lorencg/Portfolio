@@ -10,17 +10,17 @@ package connect4;
  * @author Josh
  */
 public class MainMenuController {
-    private void displayHelpMenu(){
+    void displayHelpMenu(){
         HelpMenuView help = new HelpMenuView();
         help.getInput();
     }
     
-    private void displaySettingsMenu(){
+    void displaySettingsMenu(){
         SettingsMenuView settings = new SettingsMenuView();
         settings.getInput();
     }
     
-    private void displayStatsMenu(){
+    void displayStatsMenu(){
         StatsMenuView stats = new StatsMenuView();
         stats.getInput();
     }

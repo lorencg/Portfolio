@@ -6,17 +6,19 @@
 package connect4;
 
 import java.util.Scanner;
+import java.io.Serializable;
 /**
  *
  * @author Kayla Lindstrom and Patti Jones
  */
-public class StatsMenuView {
+public class StatsMenuView implements Serializable {
     private final static String[][] menuItems = {
         {"1", "Player 1 Statistics"},
         {"2", "Player 2 Statistics"}, 
         {"H", "Help Menu"},       
         {"Q", "Quit Statistics"}        
     };
+    
     
     // Create instance of the HelpMenuControl (action) class
     private StatsMenuControl statsMenuControl = new StatsMenuControl();
