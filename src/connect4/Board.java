@@ -20,7 +20,7 @@ public class Board {
     private String move = "";
     private int A=0,B=0,C=0,D=0,E=0,F=0,G=0; //variables to represent columns on board
     
-     private int board [][]= new int [6][7]; 
+     private final int board [][]= new int [6][7]; 
         
     
     
@@ -172,19 +172,7 @@ public void displayBoard() {
            
            
        } 
-public void displayBoard() {
-    int t, i;
-    int table[][] = new int[6][7];
-    
-    for(t=0; t < 6; ++t) {
-        for(i=0; i < 7; ++i){
-            table[t][i] = (t * 4) + i + 1;
-            System.out.println(table[t][i] + ' ');
-        }
-    }
-    System.out.println("There are " + this.rows + " rows");
-    System.out.println("There are " + this.columns + " columns");
-}
+
 public void enterNextMove() {  //Faron Young - Prompt and Evaluate move for Column Increments
     Scanner input = new Scanner(System.in);
     System.out.println("Enter your move by selecting play column (A-G)");
