@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author 
  */
-public class HelpMenuView implements Serializable  {
+public class HelpMenuView extends Menu  {
    private static String command;  
    
    
@@ -23,15 +23,24 @@ public class HelpMenuView implements Serializable  {
         {"T", "Tips"}, 
         {"Q", "Quit Help"}     //Goes to Main Menu       
     };       
-       
+    
     
     // Create instance of the HelpMenuControl (action) class
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // default constructor
     public HelpMenuView() {
+        super(HelpMenuView.menuItems);
         
     } 
+
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    public HelpMenuControl getHelpMenuControl() {
+        return helpMenuControl;
+    }
    
     // display the help menu and get the end users input selection
     public void getInput() {       
@@ -72,7 +81,7 @@ public class HelpMenuView implements Serializable  {
     public void setCommand(String command) {
         this.command = command;
     }
-
+@Override
         // displays the help menu
     public final void display() {
         System.out.println("\n\t============================ Help Menu ===================================");

@@ -10,21 +10,28 @@ package connect4;
  * @author Josh
  */
 public class MainMenuController {
-    void displayHelpMenu(){
+    public void displayHelpMenu(){
         HelpMenuView help = new HelpMenuView();
         help.getInput();
     }
     
-    void displaySettingsMenu(){
+    public void displaySettingsMenu(){
         SettingsMenuView settings = new SettingsMenuView();
         settings.getInput();
     }
     
-    void displayStatsMenu(){
+    public void displayStatsMenu(){
         StatsMenuView stats = new StatsMenuView();
         stats.getInput();
     }
 
+    public void displayBoard(){
+        Board board = new Board();
+        board.displayBoard();
+    }
+    
+    
+    
     public MainMenuController() {
     }
 

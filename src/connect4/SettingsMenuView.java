@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Faron Young and Sarah Oesterle
  */
-public class SettingsMenuView {
+public class SettingsMenuView extends Menu{
         private final static String[][] menuItems = {
         {"T", "Token Color"},
         {"B", "Background Color"}, 
@@ -25,8 +25,16 @@ public class SettingsMenuView {
     
     // default constructor
     public SettingsMenuView() {
-        
+        super(SettingsMenuView.menuItems);
     } 
+
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    public SettingsMenuControl getSettingsMenuControl() {
+        return SettingsMenuControl;
+    }
     
     // display the Settings menu and get the end users input selection
     public void getInput() {       
@@ -63,9 +71,9 @@ public class SettingsMenuView {
         
          return;
     }
-
+@Override
         // displays the Settings menu
-    private final void display() {
+    public final void display() {
         System.out.println("\n\t============================= Settings Menu ==================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 

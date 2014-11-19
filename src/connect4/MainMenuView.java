@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 
 
-public class MainMenuView {
+public class MainMenuView extends Menu {
     
     
     private static final String[][] menuItems = {
@@ -26,9 +26,21 @@ public class MainMenuView {
     }; 
   
     MainMenuController mainMenuControl = new MainMenuController();
+     
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    public MainMenuController getMainMenuControl() {
+        return mainMenuControl;
+    }
+
+    public void setMainMenuControl(MainMenuController mainMenuControl) {
+        this.mainMenuControl = mainMenuControl;
+    }
     
     public MainMenuView() {
-
+    super(MainMenuView.menuItems);
     }
     public void displayWelcome() {
     System.out.println("\nWelcome to Connect 4!\n");
@@ -47,7 +59,7 @@ public class MainMenuView {
             
             switch (command) {
                 case "1":
-                    //this.mainMenuControl.startGameOne();
+                    this.mainMenuControl.displayBoard();
                     break;
                 case "2":
                     //this.mainMenuControl.startGameTwo();
@@ -74,8 +86,8 @@ public class MainMenuView {
     
 
     
-    
-   private final void display() {
+    @Override
+   public final void display() {
         System.out.println("\n\t============================== Main Menu =================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 

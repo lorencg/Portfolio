@@ -6,26 +6,28 @@
 package connect4;
 
 import java.util.Scanner;
-import java.io.Serializable;
 /**
  *
  * @author Kayla Lindstrom and Patti Jones
  */
-public class StatsMenuView implements Serializable {
+public class StatsMenuView extends Menu{
     private final static String[][] menuItems = {
         {"1", "Player 1 Statistics"},
         {"2", "Player 2 Statistics"}, 
         {"H", "Help Menu"},       
         {"Q", "Quit Statistics"}        
     };
-    
+
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
     
     // Create instance of the HelpMenuControl (action) class
     private StatsMenuControl statsMenuControl = new StatsMenuControl();
     
     // default constructor
     public StatsMenuView() {
-        
+       super(StatsMenuView.menuItems);
     } 
     
     // display the help menu and get the end users input selection
@@ -62,7 +64,7 @@ public class StatsMenuView implements Serializable {
         
          return;
     }
-
+@Override
         // displays the help menu
     public final void display() {
         System.out.println("\n\t============================= Statistics Menu ==================================");

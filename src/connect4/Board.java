@@ -25,16 +25,21 @@ public class Board {
     
     
 public void displayBoard() {
-    System.out.println("A|B|C|D|E|F|G|");
+    System.out.println("A | B | C | D | E | F | G |");
     for(printRow=0 ;printRow < 6; ++printRow){
        for(printColumns = 0;printColumns < 7; ++printColumns){
            board[printRow][printColumns]=0;
-           System.out.print(board[printRow][printColumns] + "|");
+           System.out.print(board[printRow][printColumns] + " | ");
    } 
         System.out.println();
     }
 }
-    private class Tokens {
+    
+
+
+
+
+private class Tokens {
            private String color = "red or black";
     private int size = 5;
     Scanner in = new Scanner(System.in);
@@ -46,7 +51,9 @@ public void displayBoard() {
        public void displayToken(){
         System.out.println(this.color + " with the size of: " + this.size);
     }
-     // Author Faron, Josh, Sarah
+ 
+       
+// Author Faron, Josh, Sarah
     public void tokenColor() {
         // This function when called will take input and will check if R is input then if it is return true to red, Same to black.
         for (x=0  ; x<2 ;  x++ ) {
