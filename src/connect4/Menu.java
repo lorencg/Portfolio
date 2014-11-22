@@ -16,10 +16,10 @@ public abstract class Menu {
     
     public Menu(){}
 
-  public abstract void display ();
+    public abstract void display ();
 
 
-public Menu(String[][] menuItems) {
+    public Menu(String[][] menuItems) {
         this();
         this.menuItems = menuItems;
     }

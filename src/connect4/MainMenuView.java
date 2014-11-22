@@ -42,6 +42,9 @@ public class MainMenuView extends Menu {
     public MainMenuView() {
     super(MainMenuView.menuItems);
     }
+    
+    
+    
     public void displayWelcome() {
     System.out.println("\nWelcome to Connect 4!\n");
     }

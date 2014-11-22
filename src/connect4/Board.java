@@ -19,8 +19,8 @@ public class Board {
     private int columns = 7;
     private String move = "";
     private int A=0,B=0,C=0,D=0,E=0,F=0,G=0; //variables to represent columns on board
-    
-     private final int board [][]= new int [6][7]; 
+    private final String emptyString=" ";
+     private final String board [][]= new String [6][7]; 
         
     
     
@@ -28,7 +28,7 @@ public void displayBoard() {
     System.out.println("A | B | C | D | E | F | G |");
     for(printRow=0 ;printRow < 6; ++printRow){
        for(printColumns = 0;printColumns < 7; ++printColumns){
-           board[printRow][printColumns]=0;
+           board[printRow][printColumns]=emptyString;
            System.out.print(board[printRow][printColumns] + " | ");
    } 
         System.out.println();

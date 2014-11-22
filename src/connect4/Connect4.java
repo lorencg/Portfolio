@@ -20,7 +20,7 @@ public class Connect4 {
         
         
         PlayerName name = new PlayerName();
-        name.getPlayerName();
+        name.getNames();
         MainMenuView main = new MainMenuView();
         main.displayWelcome();
         main.getInput();
