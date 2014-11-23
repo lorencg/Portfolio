@@ -1,0 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+//package connect4;
+
+/**
+ *
+ * @author kadosch2
+ */
+//public abstract class SuperPlayer {
+
+    //private String[] [] playerItems = null;
+
+    //public abstract void display ();
+
+
+//}
