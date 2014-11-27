@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package connect4;
+import citbyu.cit260.connect4.views.MainMenuView;
 import java.awt.Point;
 /*
  *

@@ -1,5 +1,7 @@
-package connect4;
+package citbyu.cit260.connect4.views;
 
+import connect4.Connect4Error;
+import connect4.SettingsMenuControl;
 import java.util.Scanner;
 
 /*

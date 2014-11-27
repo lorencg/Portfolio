@@ -18,7 +18,7 @@ public class PlayerName implements Serializable{
     private String playerTwo; 
     private String PlayerName[] = {playerOne, playerTwo};
         
-    private void getNames(){
+    public void getNames(){
         Scanner inFile = new Scanner(System.in);
         System.out.println("Player one please enter your name: ");
         playerOne = inFile.nextLine();
