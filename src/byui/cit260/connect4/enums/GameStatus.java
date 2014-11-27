@@ -10,13 +10,21 @@ package byui.cit260.connect4.enums;
  * @author SexyMama
  */
 public enum GameStatus {
-    S, //Settings
-    T, // Tips
-    B, // background color
-    G, // game color
-    H, // help
-    I, // instruction
-    Q, // quit
-    A, // stats
-    M // main menu
+    S ("Settings Menu"),
+    T ("Tips"),
+    B ("Background Color"), 
+    G ("Game Color"), 
+    H ("Help Menu"),
+    I ("Instructions"), 
+    Q ("Quit"),
+    A ("Statistics Menu"), 
+    M ("Main Menu");
+
+String value;
+GameStatus(String value) {
+    this.value = value;
+}
+public String getValue() {
+    return value;
+}
 }
