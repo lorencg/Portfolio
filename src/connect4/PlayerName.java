@@ -5,14 +5,14 @@
  */
 package connect4;
 import java.util.Scanner;
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
+import citbyui.cit260.connect4.interfaces.EnterInfo;
 /**
  *
  * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian
  */
-public class PlayerName implements Serializable{
+public class PlayerName implements EnterInfo{
     
     private String playerOne;
     private String playerTwo; 

@@ -10,5 +10,5 @@ package citbyui.cit260.connect4.interfaces;
  * @author SexyMama
  */
 public interface EnterInfo {
-    void getInput();
+    void getNames();
 }

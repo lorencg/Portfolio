@@ -10,5 +10,13 @@ package byui.cit260.connect4.enums;
  * @author SexyMama
  */
 public enum GameStatus {
-    
+    S, //Settings
+    T, // Tips
+    B, // background color
+    G, // game color
+    H, // help
+    I, // instruction
+    Q, // quit
+    A, // stats
+    M // main menu
 }

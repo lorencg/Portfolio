@@ -3,7 +3,7 @@ package citbyu.cit260.connect4.views;
 import connect4.Connect4Error;
 import connect4.SettingsMenuControl;
 import java.util.Scanner;
-
+import byui.cit260.connect4.enums.GameStatus;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -31,7 +31,8 @@ public class SettingsMenuView {
     } 
     
     // display the Settings menu and get the end users input selection
-    public void getInput() {       
+        @SuppressWarnings("static-access")
+    public void getInput(GameStatus status) {       
               
         String command;
         Scanner inFile = new Scanner(System.in);
@@ -44,24 +45,24 @@ public class SettingsMenuView {
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             
-            switch (command) {
-                case "T":
+            switch (status) {
+                case T:
                     this.SettingsMenuControl.displayTokenColor();
                     break;
-                case "B":
+                case B:
                     this.SettingsMenuControl.displayBackgroundColor();
                     break;
-                case "G":
+                case G:
                     this.SettingsMenuControl.displayGameBoardColor();
                     break;
-                case "M":
+                case M:
                     this.SettingsMenuControl.displayMainMenu();
                     break;    
                 default: 
                     new Connect4Error().displayError("Invalid Please type I,T,or Q");
                     continue;
             }
-        } while (!command.equals("M"));  
+        } while (!status.equals(this.SettingsMenuControl));  
         
          return;
     }

@@ -18,12 +18,14 @@ public class Menu implements DisplayInfo {
     
     public Menu(){}
 
-    public void display ();
+    @Override
+    public void display () {
+        
+    }
 
-
+    
     public Menu(String[][] menuItems) {
         this();
         this.menuItems = menuItems;
     }
     }
-}

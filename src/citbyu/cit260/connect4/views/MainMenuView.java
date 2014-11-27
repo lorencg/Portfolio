@@ -8,7 +8,6 @@ package citbyu.cit260.connect4.views;
 import connect4.Connect4Error;
 import connect4.MainMenuController;
 import java.util.Scanner;
-
 /**
  *
  * @author 

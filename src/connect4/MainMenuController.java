@@ -8,6 +8,7 @@ package connect4;
 import citbyu.cit260.connect4.views.StatsMenuView;
 import citbyu.cit260.connect4.views.SettingsMenuView;
 import citbyu.cit260.connect4.views.HelpMenuView;
+import byui.cit260.connect4.enums.GameStatus;
 
 /**
  *
@@ -21,7 +22,7 @@ public class MainMenuController {
     
     public void displaySettingsMenu(){
         SettingsMenuView settings = new SettingsMenuView();
-        settings.getInput();
+        settings.getInput(GameStatus status);
     }
     
     public void displayStatsMenu(){
