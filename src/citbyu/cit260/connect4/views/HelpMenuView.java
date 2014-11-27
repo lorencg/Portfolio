@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author 
  */
-public class HelpMenuView  {
+public class HelpMenuView {
         
     private final static String[][] menuItems = {
         {"I", "Instructions"},
