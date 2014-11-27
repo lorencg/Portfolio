@@ -5,11 +5,13 @@
  */
 package connect4;
 
+import citbyui.cit260.connect4.interfaces.DisplayInfo;
+
 /**
  *
  * @author Josh
  */
-public class Menu implements DisplayInfo{
+public class Menu implements DisplayInfo {
     public String[][] menuItems = null;
 
     
