@@ -5,6 +5,10 @@
  */
 package connect4;
 
+import citbyu.cit260.connect4.views.StatsMenuView;
+import citbyu.cit260.connect4.views.SettingsMenuView;
+import citbyu.cit260.connect4.views.HelpMenuView;
+
 /**
  *
  * @author Josh
