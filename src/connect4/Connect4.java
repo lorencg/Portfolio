@@ -17,6 +17,9 @@ public class Connect4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+          
+        
+        
         PlayerName name = new PlayerName();
         name.getNames();
         MainMenuView main = new MainMenuView();

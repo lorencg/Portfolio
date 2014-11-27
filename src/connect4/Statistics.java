@@ -4,20 +4,124 @@
  * and open the template in the editor.
  */
 package connect4;
+import java.io.Serializable;
 
 /**
  *
- * @author Kayla Lindstrom
+ * @author Kayla Lindstrom, Patti Jones
  */
-public class Statistics {
-    int won = 4;
-    double streak = (int) 5;
+public class Statistics implements Serializable{
+    private int won = 4;
+    private double streak = (int) 5;
     
-    double totalGames = (int) 5;
-    double winStats = (won / totalGames) * 100;
-    double loseStats = ((totalGames - won) / totalGames) * 100;
-    double tokensUsed=(int) 0;
-    double averageTokensToWin= (int)0.00;
+    private double totalGames = (int) 5;
+    private double winStats = (won / totalGames) * 100;
+    private double loseStats = ((totalGames - won) / totalGames) * 100;
+    private double tokensUsed=(int) 0;
+    private double averageTokensToWin= (int)0.00;
+
+    public Statistics() {
+    }
+
+    public int getWon() {
+        return won;
+    }
+
+    public void setWon(int won) {
+        this.won = won;
+    }
+
+    public double getStreak() {
+        return streak;
+    }
+
+    public void setStreak(double streak) {
+        this.streak = streak;
+    }
+
+    public double getTotalGames() {
+        return totalGames;
+    }
+
+    public void setTotalGames(double totalGames) {
+        this.totalGames = totalGames;
+    }
+
+    public double getWinStats() {
+        return winStats;
+    }
+
+    public void setWinStats(double winStats) {
+        this.winStats = winStats;
+    }
+
+    public double getLoseStats() {
+        return loseStats;
+    }
+
+    public void setLoseStats(double loseStats) {
+        this.loseStats = loseStats;
+    }
+
+    public double getTokensUsed() {
+        return tokensUsed;
+    }
+
+    public void setTokensUsed(double tokensUsed) {
+        this.tokensUsed = tokensUsed;
+    }
+
+    public double getAverageTokensToWin() {
+        return averageTokensToWin;
+    }
+
+    public void setAverageTokensToWin(double averageTokensToWin) {
+        this.averageTokensToWin = averageTokensToWin;
+    }
+
+    @Override
+    public String toString() {
+        return "Statistics{" + "won=" + won + ", streak=" + streak + ", totalGames=" + totalGames + ", winStats=" + winStats + ", loseStats=" + loseStats + ", tokensUsed=" + tokensUsed + ", averageTokensToWin=" + averageTokensToWin + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Statistics other = (Statistics) obj;
+        if (this.won != other.won) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.streak) != Double.doubleToLongBits(other.streak)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.totalGames) != Double.doubleToLongBits(other.totalGames)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.winStats) != Double.doubleToLongBits(other.winStats)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.loseStats) != Double.doubleToLongBits(other.loseStats)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.tokensUsed) != Double.doubleToLongBits(other.tokensUsed)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.averageTokensToWin) != Double.doubleToLongBits(other.averageTokensToWin)) {
+            return false;
+        }
+        return true;
+    }
     
 public void displayStatistics() {
     System.out.println("You have won " + won + " games.");
@@ -39,7 +143,7 @@ public void displayAveToken() {
       }
     }
 // Faron Young, Josh Siqueiros, Sarah Christian
-public void getScoreSum() {
+private void getScoreSum() {
     int scoresArray [] = { 1500, 1200, 900, 800, 300, 1600, 400 };
     int sum = 0;
     for (int i=0; i < 7; i++ ) sum += scoresArray [i];
@@ -48,7 +152,7 @@ public void getScoreSum() {
     
 }
 
-public void getAverage() {
+private void getAverage() {
     int sum = 0;
     int nums[] = {0, 1000, 825};
     

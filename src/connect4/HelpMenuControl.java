@@ -4,19 +4,13 @@
  * and open the template in the editor.
  */
 package connect4;
-
 /**
  *
  * @author Josh
  */
 public class HelpMenuControl {
     
-
 // public void display{
-    
-    
-    
-
 
 public void displayInstructionHelp(){
     

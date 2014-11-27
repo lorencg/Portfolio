@@ -28,5 +28,20 @@ public class MainMenuController {
         StatsMenuView stats = new StatsMenuView();
         stats.getInput();
     }
+
+    public void displayBoard(){
+        Board board = new Board();
+        board.displayBoard();
+    }
+    
+    
+    
+    public MainMenuController() {
+    }
+
+    @Override
+    public String toString() {
+        return "MainMenuController{" + '}';
+    }
     
 }

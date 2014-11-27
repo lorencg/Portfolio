@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package connect4;
+import java.io.Serializable;
 
 /**
  *
  * @author Kayla Lindstrom and Patti Jones
  */
-public class StatsMenuControl {
+public class StatsMenuControl implements Serializable {
 
     
     public void displayOneStats(){

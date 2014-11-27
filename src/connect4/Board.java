@@ -13,13 +13,33 @@ import java.util.Scanner;
  * @author SexyMama
  */
 public class Board {
-    
+    private int printRow = 0;
+    private int printColumns =0;
     private int rows = 6;
     private int columns = 7;
     private String move = "";
     private int A=0,B=0,C=0,D=0,E=0,F=0,G=0; //variables to represent columns on board
-           
-    private class Tokens {
+    private final String emptyString=" ";
+     private final String board [][]= new String [6][7]; 
+        
+    
+    
+public void displayBoard() {
+    System.out.println("A | B | C | D | E | F | G |");
+    for(printRow=0 ;printRow < 6; ++printRow){
+       for(printColumns = 0;printColumns < 7; ++printColumns){
+           board[printRow][printColumns]=emptyString;
+           System.out.print(board[printRow][printColumns] + " | ");
+   } 
+        System.out.println();
+    }
+}
+    
+
+
+
+
+private class Tokens {
            private String color = "red or black";
     private int size = 5;
     Scanner in = new Scanner(System.in);
@@ -31,7 +51,9 @@ public class Board {
        public void displayToken(){
         System.out.println(this.color + " with the size of: " + this.size);
     }
-     // Author Faron, Josh, Sarah
+ 
+       
+// Author Faron, Josh, Sarah
     public void tokenColor() {
         // This function when called will take input and will check if R is input then if it is return true to red, Same to black.
         for (x=0  ; x<2 ;  x++ ) {
@@ -157,19 +179,7 @@ public class Board {
            
            
        } 
-public void displayBoard() {
-    int t, i;
-    int table[][] = new int[6][7];
-    
-    for(t=0; t < 6; ++t) {
-        for(i=0; i < 7; ++i){
-            table[t][i] = (t * 4) + i + 1;
-            System.out.println(table[t][i] + ' ');
-        }
-    }
-    System.out.println("There are " + this.rows + " rows");
-    System.out.println("There are " + this.columns + " columns");
-}
+
 public void enterNextMove() {  //Faron Young - Prompt and Evaluate move for Column Increments
     Scanner input = new Scanner(System.in);
     System.out.println("Enter your move by selecting play column (A-G)");
