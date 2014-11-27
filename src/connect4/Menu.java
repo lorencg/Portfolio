@@ -9,18 +9,19 @@ package connect4;
  *
  * @author Josh
  */
-public abstract class Menu {
-    private String[][] menuItems = null;
+public class Menu implements DisplayInfo{
+    public String[][] menuItems = null;
 
     
     
     public Menu(){}
 
-    public abstract void display ();
+    public void display ();
 
 
     public Menu(String[][] menuItems) {
         this();
         this.menuItems = menuItems;
+    }
     }
 }
