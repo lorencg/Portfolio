@@ -10,8 +10,7 @@ package citbyui.cit260.connect4.interfaces;
  * @author SexyMama
  */
 public interface DisplayInfo {
-    void display();
     
-    void displayError ();
+    void display();
     
 }

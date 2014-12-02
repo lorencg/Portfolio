@@ -14,12 +14,13 @@ import citbyui.cit260.connect4.interfaces.EnterInfo;
  */
 public class PlayerName implements EnterInfo{
     
-    private String playerOne;
-    private String playerTwo; 
-    private String PlayerName[] = {playerOne, playerTwo};
-        
     @Override
     public void getNames(){
+        
+        String playerOne = "";
+        String playerTwo = ""; 
+        String PlayerName[] = {playerOne, playerTwo};
+    
         Scanner inFile = new Scanner(System.in);
         System.out.println("Player one please enter your name: ");
         playerOne = inFile.nextLine();
@@ -40,62 +41,6 @@ public class PlayerName implements EnterInfo{
             }
         }
             
-    }   
-
-    public String getPlayerOne() {
-        return playerOne;
-    }
-
-    public void setPlayerOne(String playerOne) {
-        this.playerOne = playerOne;
-    }
-
-    public String getPlayerTwo() {
-        return playerTwo;
-    }
-
-    public void setPlayerTwo(String playerTwo) {
-        this.playerTwo = playerTwo;
-    }
-
-    public String[] getPlayerName() {
-        return PlayerName;
-    }
-
-    public void setPlayerName(String[] PlayerName) {
-        this.PlayerName = PlayerName;
-    }
-
-    @Override
-    public String toString() {
-        return "PlayerName{" + "playerOne=" + playerOne + ", playerTwo=" + playerTwo + ", PlayerName=" + PlayerName + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final PlayerName other = (PlayerName) obj;
-        if (!Objects.equals(this.playerOne, other.playerOne)) {
-            return false;
-        }
-        if (!Objects.equals(this.playerTwo, other.playerTwo)) {
-            return false;
-        }
-        if (!Arrays.deepEquals(this.PlayerName, other.PlayerName)) {
-            return false;
-        }
-        return true;
-    }
+    }  
 
 }
