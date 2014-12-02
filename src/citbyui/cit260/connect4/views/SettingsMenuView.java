@@ -1,9 +1,9 @@
-package citbyu.cit260.connect4.views;
+package citbyui.cit260.connect4.views;
 
-import connect4.Connect4Error;
-import connect4.SettingsMenuControl;
+import citbyui.cit260.connect4.models.Connect4Error;
+import citbyui.cit260.connect4.control.SettingsMenuControl;
 import java.util.Scanner;
-import byui.cit260.connect4.enums.GameStatus;
+import citbyui.cit260.connect4.enums.GameStatus;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

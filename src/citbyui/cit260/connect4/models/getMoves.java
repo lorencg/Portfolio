@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package connect4;
+package citbyui.cit260.connect4.models;
 
 /**
  *
  * @author Faron
  */
+import citbyui.cit260.connect4.models.Connect4Error;
 import java.util.Scanner;
 import java.awt.Point;
 

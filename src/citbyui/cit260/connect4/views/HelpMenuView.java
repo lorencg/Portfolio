@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyu.cit260.connect4.views;
+package citbyui.cit260.connect4.views;
 
-import connect4.Connect4Error;
-import connect4.HelpMenuControl;
+import citbyui.cit260.connect4.models.Connect4Error;
+import citbyui.cit260.connect4.control.HelpMenuControl;
 import java.util.Scanner;
 
 

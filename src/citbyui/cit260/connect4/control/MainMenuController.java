@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package connect4;
+package citbyui.cit260.connect4.control;
 
-import citbyu.cit260.connect4.views.StatsMenuView;
-import citbyu.cit260.connect4.views.SettingsMenuView;
-import citbyu.cit260.connect4.views.HelpMenuView;
-import byui.cit260.connect4.enums.GameStatus;
+import citbyui.cit260.connect4.views.StatsMenuView;
+import citbyui.cit260.connect4.views.SettingsMenuView;
+import citbyui.cit260.connect4.views.HelpMenuView;
+import citbyui.cit260.connect4.enums.GameStatus;
+import citbyui.cit260.connect4.models.Board;
 
 /**
  *

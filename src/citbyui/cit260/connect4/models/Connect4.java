@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package connect4;
-import citbyu.cit260.connect4.views.MainMenuView;
+package citbyui.cit260.connect4.models;
+import citbyui.cit260.connect4.models.PlayerName;
+import citbyui.cit260.connect4.views.MainMenuView;
 import java.awt.Point;
 /*
  *
