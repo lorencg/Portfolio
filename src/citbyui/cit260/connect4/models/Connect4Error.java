@@ -6,7 +6,6 @@
 package citbyui.cit260.connect4.models;
 
 import citbyui.cit260.connect4.interfaces.DisplayError;
-import citbyui.cit260.connect4.interfaces.DisplayInfo;
 
 /**
  *
