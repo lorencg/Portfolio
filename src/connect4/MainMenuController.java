@@ -22,7 +22,7 @@ public class MainMenuController {
     
     public void displaySettingsMenu(){
         SettingsMenuView settings = new SettingsMenuView();
-        settings.getInput(GameStatus status);
+        settings.getInput(GameStatus.S);
     }
     
     public void displayStatsMenu(){
