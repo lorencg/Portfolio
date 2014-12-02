@@ -47,16 +47,16 @@ public class SettingsMenuView {
             
             switch (status) {
                 case T:
-                    this.SettingsMenuControl.displayTokenColor();
+                    GameStatus.T.display();
                     break;
                 case B:
-                    this.SettingsMenuControl.displayBackgroundColor();
+                    GameStatus.B.display();
                     break;
                 case G:
-                    this.SettingsMenuControl.displayGameBoardColor();
+                    GameStatus.G.display();
                     break;
                 case M:
-                    this.SettingsMenuControl.displayMainMenu();
+                    GameStatus.M.display();
                     break;    
                 default: 
                     new Connect4Error().displayError("Invalid Please type I,T,or Q");

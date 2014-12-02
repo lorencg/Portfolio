@@ -20,11 +20,15 @@ public enum GameStatus {
     A ("Statistics Menu"), 
     M ("Main Menu");
 
-String value;
+String message;
 GameStatus(String value) {
-    this.value = value;
+    this.message = message;
 }
 public String getValue() {
-    return value;
+    return message;
+}
+
+public void display() {
+     System.out.println(this.message);
 }
 }
