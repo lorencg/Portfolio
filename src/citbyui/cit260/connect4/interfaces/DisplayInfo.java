@@ -11,4 +11,7 @@ package citbyui.cit260.connect4.interfaces;
  */
 public interface DisplayInfo {
     void display();
+    
+    void displayError ();
+    
 }

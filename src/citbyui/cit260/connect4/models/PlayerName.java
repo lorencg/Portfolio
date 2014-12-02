@@ -18,6 +18,7 @@ public class PlayerName implements EnterInfo{
     private String playerTwo; 
     private String PlayerName[] = {playerOne, playerTwo};
         
+    @Override
     public void getNames(){
         Scanner inFile = new Scanner(System.in);
         System.out.println("Player one please enter your name: ");
