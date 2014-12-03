@@ -12,7 +12,7 @@ import citbyui.cit260.connect4.interfaces.EnterInfo;
  *
  * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian
  */
-public class PlayerName implements EnterInfo{
+public class PlayerName implements EnterInfo {
     
     @Override
     public void getNames(){
