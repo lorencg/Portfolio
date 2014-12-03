@@ -22,6 +22,7 @@ public class PlayerName implements EnterInfo {
         
     
         Scanner inFile = new Scanner(System.in);
+        
         System.out.println("Player one please enter your name: ");
         playerOne = inFile.nextLine();
         System.out.println("Player two please enter your name: ");
