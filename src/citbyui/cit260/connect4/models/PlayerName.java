@@ -19,14 +19,14 @@ public class PlayerName implements EnterInfo{
         
         String playerOne = "";
         String playerTwo = ""; 
-        String PlayerName[] = {playerOne, playerTwo};
     
         Scanner inFile = new Scanner(System.in);
+        
         System.out.println("Player one please enter your name: ");
         playerOne = inFile.nextLine();
         System.out.println("Player two please enter your name: ");
         playerTwo = inFile.nextLine();
-        
+        String PlayerName[] = {playerOne, playerTwo};
         if(PlayerName[0].length() == 0 && PlayerName[1].length() == 0){
                 System.out.println("Please enter a name");
         }
