@@ -1,28 +1,28 @@
-package citbyui.cit260.connect4.exceptions;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package citbyui.cit260.connect4.exceptions;
+
 /**
  *
  * @author kadosch2
  */
-public class PlayerNameException extends Exception {
+public class Connect4Exception extends Exception {
     
-    public PlayerNameException () {   
+    public Connect4Exception () {   
     }
     
-    public PlayerNameException(String message) { 
+    public Connect4Exception(String message) { 
         super(message);
     }  
     
-    public PlayerNameException(String message, Throwable cause) {   
+    public Connect4Exception(String message, Throwable cause) {   
         super(message, cause);
     }
     
-    public PlayerNameException(Throwable cause) {
+    public Connect4Exception(Throwable cause) {
         super(cause);
     }
 }

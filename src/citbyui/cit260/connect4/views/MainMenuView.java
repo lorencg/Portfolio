@@ -7,6 +7,7 @@ package citbyui.cit260.connect4.views;
 
 import citbyui.cit260.connect4.models.Connect4Error;
 import citbyui.cit260.connect4.control.MainMenuController;
+import citbyui.cit260.connect4.exceptions.MenuException;
 import java.util.Scanner;
 /**
  *
@@ -35,7 +36,7 @@ public class MainMenuView {
     System.out.println("\nWelcome to Connect 4!\n");
     }
     
-    public void getInput() {       
+    public void getInput ()  {       
         String command;
         Scanner inFile = new Scanner(System.in);
         
@@ -70,11 +71,9 @@ public class MainMenuView {
             }
         } while (!command.equals("Q"));
 
+   
        // return;
-    }
-    
-
-    
+    }   
     
    public final void display() {
         System.out.println("\n\t============================== Main Menu =================================");
@@ -85,5 +84,13 @@ public class MainMenuView {
         }
         System.out.println("\t===============================================================\n");
     }   
-    
+     private void checkInput(String command) throws MenuException {
+        try {
+            int selection = Integer.parseInt(command);
+                    
+        } catch (NumberFormatException e) {
+            throw new MenuException("Invalid entry. Please try again.");
+    }
+      
+}
 }
