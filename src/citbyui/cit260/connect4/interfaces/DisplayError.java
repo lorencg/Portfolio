@@ -7,7 +7,7 @@ package citbyui.cit260.connect4.interfaces;
 
 /**
  *
- * @author kadosch2
+ * @author Patti Jones
  */
 public interface DisplayError {
     void DisplayError ();

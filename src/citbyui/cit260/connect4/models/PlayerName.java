@@ -10,7 +10,7 @@ import java.util.Objects;
 import citbyui.cit260.connect4.interfaces.EnterInfo;
 /**
  *
- * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian
+ * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian, Patti Jones
  */
 public class PlayerName implements EnterInfo {
     
