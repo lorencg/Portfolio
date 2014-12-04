@@ -23,6 +23,8 @@ public class Connect4 {
           
         PlayerName name = new PlayerName();
         name.getNames();
+        getMoves moves = new getMoves();
+        moves.getMove();
         MainMenuView main = new MainMenuView();
         main.displayWelcome();
      
