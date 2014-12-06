@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.connect4.views;
 
+import citbyui.cit260.connect4.interfaces.DisplayError;
+
 /**
  *
  * @author Sarah Christian
@@ -18,7 +20,7 @@ public class HelpMenuViewError implements DisplayError {
         return null;
     }
 
-   @Override
+    @Override
    public void DisplayError() {
        
    }
