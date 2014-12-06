@@ -12,10 +12,29 @@ import citbyui.cit260.connect4.interfaces.EnterInfo;
  *
  * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian, Patti Jones
  */
-public class PlayerName implements EnterInfo {
+public class PlayerName{
     
-    @Override
-    public void getNames(){
+    
+    public String[] getName(){
+        String playerOne = "";
+        
+        Scanner inFile = new Scanner(System.in);
+        
+        System.out.println("Player one please enter your name: ");
+        playerOne = inFile.nextLine();
+        
+        String PlayerName[] = {playerOne};
+        
+        if(PlayerName[0].length() == 0){
+                System.out.println("Please enter a name");
+        }
+        for(int i=0; i<1; i++){
+                System.out.println("Player" + (i+1) + ": " + PlayerName[i]);
+            }
+        return PlayerName;
+    }
+    
+    public String[] getNames(){
         
         String playerOne = "";
         String playerTwo = ""; 
@@ -41,7 +60,10 @@ public class PlayerName implements EnterInfo {
                 System.out.println("Player" + (i+1) + ": " + PlayerName[i]);
             }
         }
-            
-    }  
-
+        return PlayerName;
+    }
 }
+            
+      
+
+

@@ -10,6 +10,7 @@ import citbyui.cit260.connect4.views.SettingsMenuView;
 import citbyui.cit260.connect4.views.HelpMenuView;
 import citbyui.cit260.connect4.enums.GameStatus;
 import citbyui.cit260.connect4.models.Board;
+import citbyui.cit260.connect4.models.Game;
 
 /**
  *
@@ -34,6 +35,14 @@ public class MainMenuController {
     public void displayBoard(){
         Board board = new Board();
         board.displayBoard();
+    }
+    public void startGameOne(){
+        Game gameOne = new Game();
+        gameOne.OnePlayerGame();
+    }
+    public void startGameTwo(){
+        Game gameTwo = new Game();
+        gameTwo.TwoPlayerGame();
     }
     
     

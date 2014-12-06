@@ -20,11 +20,7 @@ public class Connect4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          
-        PlayerName name = new PlayerName();
-        name.getNames();
-        getMoves moves = new getMoves();
-        moves.getMove();
+
         MainMenuView main = new MainMenuView();
         main.displayWelcome();
      
