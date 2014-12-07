@@ -7,7 +7,7 @@ package citbyui.cit260.connect4.exceptions;
 
 /**
  *
- * @author kadosch2
+ * @author Patti Jones
  */
 public class PlayerException extends Exception {
 
