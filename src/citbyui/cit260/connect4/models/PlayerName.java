@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package citbyui.cit260.connect4.models;
+import citbyui.cit260.connect4.exceptions.PlayerException;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Objects;
 import citbyui.cit260.connect4.interfaces.EnterInfo;
+import java.awt.Point;
 /**
  *
  * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian, Patti Jones
@@ -63,7 +65,12 @@ public class PlayerName{
         return PlayerName;
     }
     
-    }
+    // public void playerTakesTurn() throws PlayerException {
+
+      //  if (PlayerName ==  null) {
+        //    throw new PlayerException("Please enter your name");
+        //}
+     }
             
       
 
