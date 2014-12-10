@@ -5,6 +5,7 @@
  */
 package byui.cit210.connect4.frames;
 
+import citbyui.cit260.connect4.enums.GameType;
 import citbyui.cit260.connect4.models.Game;
 
 /**
@@ -12,17 +13,29 @@ import citbyui.cit260.connect4.models.Game;
  * @author Josh
  */
 public class PlayerNames1 extends javax.swing.JFrame {
+    private Game game = null;
 
+    public PlayerNames1(Game game) {
+        initComponents();
+        this.game = game;
+        setLocationRelativeTo(null);
+    }
+     
+    public void initializeForm ( ) {
+        if (this.game.getGameType() == GameType.ONE_PLAYER) {
+            this.jLabel1.setEnabled(false);
+            this.jtxfieldPlayer1.setEnabled(false);
+            this.jtxcomputer.setText("Computer");
+
+        }
+        
+    }
+    
+    
     /**
      * Creates new form EnterPlayerNames2Player
      */
-    public PlayerNames1() {
-        initComponents();
-    }
-
-    PlayerNames1(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,6 +51,7 @@ public class PlayerNames1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jtxcomputer = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +68,8 @@ public class PlayerNames1 extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 153, 0));
         jButton1.setText("Continue");
+
+        jtxcomputer.setText("computer");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -73,7 +89,10 @@ public class PlayerNames1 extends javax.swing.JFrame {
                         .addGap(56, 56, 56))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115))))
+                        .addGap(115, 115, 115))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jtxcomputer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,9 +103,11 @@ public class PlayerNames1 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtxfieldPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtxcomputer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,10 +140,9 @@ public class PlayerNames1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jtxcomputer;
     private javax.swing.JTextField jtxfieldPlayer1;
     // End of variables declaration//GEN-END:variables
 
-    void initializeForm() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 }

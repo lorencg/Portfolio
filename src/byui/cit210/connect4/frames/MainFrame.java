@@ -11,7 +11,7 @@ import citbyui.cit260.connect4.enums.GameType;
  */
 /**
  *
- * @author Josh
+ * @author Josh, Patti
  */
 public class MainFrame extends javax.swing.JFrame {
     private MainMenuControl mainMenuControl = new MainMenuControl();
@@ -23,6 +23,13 @@ public class MainFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
+    public MainMenuControl getMainMenuControl() {
+        return mainMenuControl;
+    }
+
+    public void setMainCommands(MainMenuControl mainCommands) {
+        this.mainMenuControl = mainCommands;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

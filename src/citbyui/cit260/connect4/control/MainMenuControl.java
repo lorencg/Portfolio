@@ -57,7 +57,7 @@ public class MainMenuControl {
     }
 
     public Game create(GameType gameType) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
     
 }
