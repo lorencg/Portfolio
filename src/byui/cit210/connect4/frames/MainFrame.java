@@ -1,7 +1,9 @@
 package byui.cit210.connect4.frames;
 
-
-
+import citbyui.cit260.connect4.control.MainMenuControl;
+import citbyui.cit260.connect4.models.Game;
+import citbyui.cit260.connect4.enums.GameStatus;
+import citbyui.cit260.connect4.enums.GameType;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,12 +14,13 @@ package byui.cit210.connect4.frames;
  * @author Josh
  */
 public class MainFrame extends javax.swing.JFrame {
-
-    /**
+    private MainMenuControl mainMenuControl = new MainMenuControl();
+/**
      * Creates new form MainFrame
      */
     public MainFrame() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -44,14 +47,14 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Connect 4");
 
-        jpBody.setBackground(new java.awt.Color(102, 255, 255));
-        jpBody.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpBody.setBackground(new java.awt.Color(51, 51, 51));
+        jpBody.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 0, 0)));
 
-        jpTitle.setBackground(new java.awt.Color(102, 255, 255));
+        jpTitle.setBackground(new java.awt.Color(0, 153, 153));
         jpTitle.setName(" jpTitle"); // NOI18N
 
         jlTitle.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
-        jlTitle.setForeground(new java.awt.Color(204, 51, 0));
+        jlTitle.setForeground(new java.awt.Color(255, 102, 0));
         jlTitle.setText("Connect 4");
 
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
@@ -61,7 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(jlTitle)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,11 +76,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jlTitle.getAccessibleContext().setAccessibleName(" jlTitle");
 
-        jpMenuItems.setBackground(new java.awt.Color(102, 255, 255));
-        jpMenuItems.setForeground(new java.awt.Color(102, 255, 255));
+        jpMenuItems.setBackground(new java.awt.Color(153, 204, 0));
+        jpMenuItems.setForeground(new java.awt.Color(102, 204, 0));
 
-        jbtnPlayer1.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnPlayer1.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnPlayer1.setBackground(new java.awt.Color(0, 153, 153));
+        jbtnPlayer1.setForeground(new java.awt.Color(0, 153, 153));
         jbtnPlayer1.setText("Player 1 Game");
         jbtnPlayer1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,16 +88,16 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jbtnPlayer2.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnPlayer2.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnPlayer2.setBackground(new java.awt.Color(0, 153, 153));
+        jbtnPlayer2.setForeground(new java.awt.Color(0, 153, 153));
         jbtnPlayer2.setLabel("Player 2 Game");
 
-        jbtnHelp.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnHelp.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnHelp.setBackground(new java.awt.Color(0, 153, 153));
+        jbtnHelp.setForeground(new java.awt.Color(0, 153, 153));
         jbtnHelp.setText("Help Menu");
 
-        jbtnStatistics.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnStatistics.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnStatistics.setBackground(new java.awt.Color(0, 153, 153));
+        jbtnStatistics.setForeground(new java.awt.Color(0, 153, 153));
         jbtnStatistics.setText("Statistics Menu");
         jbtnStatistics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,9 +105,14 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jbtnExit.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnExit.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnExit.setBackground(new java.awt.Color(0, 153, 153));
+        jbtnExit.setForeground(new java.awt.Color(0, 153, 153));
         jbtnExit.setText("Exit");
+        jbtnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
@@ -120,14 +128,14 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jbtnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbtnStatistics, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(35, 35, 35)
                         .addComponent(jbtnExit)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbtnPlayer1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtnPlayer2)
@@ -135,16 +143,17 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jbtnHelp)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtnStatistics)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtnExit)
-                .addGap(13, 13, 13))
+                .addGap(19, 19, 19))
         );
 
         jtWelcome.setEditable(false);
+        jtWelcome.setBackground(new java.awt.Color(51, 51, 51));
         jtWelcome.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jtWelcome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jtWelcome.setForeground(new java.awt.Color(255, 51, 0));
-        jtWelcome.setText("Welcome to Connect 4\nEach player is given either red or black tokens to play. The board consists of circular slots for these tokens; 7 columns wide and 6 rows high. The players take turns filling in the slots with their tokens; with each token placed settling into the lowest row of the column placed. The game is over when one player connects 4' tokens in an uninterrupted row. Have fun!");
+        jtWelcome.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jtWelcome.setForeground(new java.awt.Color(255, 255, 255));
+        jtWelcome.setText("Welcome to Connect 4\n\nEach player is given either red or black tokens to play. The board consists of circular slots for these tokens; 7 columns wide and 6 rows high. The players take turns filling in the slots with their tokens; with each token placed settling into the lowest row of the column placed. The game is over when one player connects 4' tokens in an uninterrupted row. \n\nHave fun!");
         jtWelcome.setMargin(new java.awt.Insets(5, 5, 5, 5));
         jtWelcome.setSelectedTextColor(new java.awt.Color(255, 102, 51));
         jScrollPane1.setViewportView(jtWelcome);
@@ -165,11 +174,11 @@ public class MainFrame extends javax.swing.JFrame {
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                    .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
 
         jpTitle.getAccessibleContext().setAccessibleName("jpBody");
@@ -196,12 +205,20 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlayer1ActionPerformed
-        // TODO add your handling code here:
+        Game game = this.mainMenuControl.create(GameType.ONE_PLAYER);
+        PlayerNames1 playerNames1 = new PlayerNames1(game);
+        playerNames1.initializeForm();
+        playerNames1.setVisible(true);
+// TODO add your handling code here:
     }//GEN-LAST:event_jbtnPlayer1ActionPerformed
 
     private void jbtnStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnStatisticsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnStatisticsActionPerformed
+
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+        this.dispose(); // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnExitActionPerformed
 
     /**
      * @param args the command line arguments

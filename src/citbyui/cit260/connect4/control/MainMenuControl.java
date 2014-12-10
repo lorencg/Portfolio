@@ -9,6 +9,7 @@ import citbyui.cit260.connect4.views.StatsMenuView;
 import citbyui.cit260.connect4.views.SettingsMenuView;
 import citbyui.cit260.connect4.views.HelpMenuView;
 import citbyui.cit260.connect4.enums.GameStatus;
+import citbyui.cit260.connect4.enums.GameType;
 import citbyui.cit260.connect4.models.Board;
 import citbyui.cit260.connect4.models.Game;
 
@@ -16,7 +17,7 @@ import citbyui.cit260.connect4.models.Game;
  *
  * @author Josh
  */
-public class MainMenuController {
+public class MainMenuControl {
     public void displayHelpMenu(){
         HelpMenuView help = new HelpMenuView();
         help.getInput();
@@ -47,12 +48,16 @@ public class MainMenuController {
     
     
     
-    public MainMenuController() {
+    public MainMenuControl() {
     }
 
     @Override
     public String toString() {
         return "MainMenuController{" + '}';
+    }
+
+    public Game create(GameType gameType) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
