@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package citbyui.cit260.connect4.models;
+import byui.cit210.connect4.frames.MainFrame;
 import citbyui.cit260.connect4.exceptions.Connect4Exception;
 import citbyui.cit260.connect4.models.PlayerName;
 import citbyui.cit260.connect4.views.MainMenuView;
@@ -20,18 +21,25 @@ public class Connect4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        MainFrame mainFrame = new MainFrame();
         MainMenuView main = new MainMenuView();
-        main.displayWelcome();
+        
      
-        Connect4 connect4 = new Connect4();
+        
         try {
-            main.getInput();
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new MainFrame().setVisible(true);
+            }
+        });
+                    
         } catch (Throwable ex) {
             System.out.println(ex.getMessage());
         }
         finally {
-            Connect4.inFile.close();
+            if (mainFrame != null)
+                mainFrame.dispose();
         }
     } 
        
