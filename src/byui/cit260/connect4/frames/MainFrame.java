@@ -1,7 +1,9 @@
-package byui.cit210.connect4.frames;
+package byui.cit260.connect4.frames;
 
-
-
+import citbyui.cit260.connect4.control.MainMenuController;
+import citbyui.cit260.connect4.models.Game;
+import citbyui.cit260.connect4.enums.GameType;
+import citbyui.cit260.connect4.models.Connect4;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,7 +14,7 @@ package byui.cit210.connect4.frames;
  * @author Josh
  */
 public class MainFrame extends javax.swing.JFrame {
-
+private MainMenuController mainmenucontrol = new MainMenuController();
     /**
      * Creates new form MainFrame
      */
@@ -88,6 +90,11 @@ public class MainFrame extends javax.swing.JFrame {
         jbtnPlayer2.setBackground(new java.awt.Color(255, 51, 0));
         jbtnPlayer2.setForeground(new java.awt.Color(255, 102, 102));
         jbtnPlayer2.setLabel("Player 2 Game");
+        jbtnPlayer2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnPlayer2ActionPerformed(evt);
+            }
+        });
 
         jbtnHelp.setBackground(new java.awt.Color(255, 51, 0));
         jbtnHelp.setForeground(new java.awt.Color(255, 102, 102));
@@ -105,6 +112,11 @@ public class MainFrame extends javax.swing.JFrame {
         jbtnExit.setBackground(new java.awt.Color(255, 51, 0));
         jbtnExit.setForeground(new java.awt.Color(255, 102, 102));
         jbtnExit.setText("Exit");
+        jbtnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
@@ -197,11 +209,27 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jbtnPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlayer1ActionPerformed
         // TODO add your handling code here:
+       EnterPlayerNames1Player p1 = new EnterPlayerNames1Player();
+        p1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbtnPlayer1ActionPerformed
 
     private void jbtnStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnStatisticsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnStatisticsActionPerformed
+
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jbtnExitActionPerformed
+
+    private void jbtnPlayer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlayer2ActionPerformed
+        // TODO add your handling code here:
+        EnterPlayerNames2Player p2 = new EnterPlayerNames2Player();
+        p2.setVisible(true);
+        this.dispose();
+       
+    }//GEN-LAST:event_jbtnPlayer2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -209,6 +209,9 @@
                 </Property>
                 <Property name="label" type="java.lang.String" value="Player 2 Game"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnPlayer2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbtnHelp">
               <Properties>
@@ -245,6 +248,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnExitActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
