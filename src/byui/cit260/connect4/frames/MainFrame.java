@@ -1,6 +1,6 @@
 package byui.cit260.connect4.frames;
 
-import citbyui.cit260.connect4.control.MainMenuController;
+import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.enums.GameType;
 import citbyui.cit260.connect4.models.Connect4;
@@ -14,7 +14,7 @@ import citbyui.cit260.connect4.models.Connect4;
  * @author Josh
  */
 public class MainFrame extends javax.swing.JFrame {
-private MainMenuController mainmenucontrol = new MainMenuController();
+private MainMenuControl mainmenucontrol = new MainMenuControl();
     /**
      * Creates new form MainFrame
      */
@@ -46,10 +46,10 @@ private MainMenuController mainmenucontrol = new MainMenuController();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Connect 4");
 
-        jpBody.setBackground(new java.awt.Color(102, 255, 255));
+        jpBody.setBackground(new java.awt.Color(0, 0, 0));
         jpBody.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jpTitle.setBackground(new java.awt.Color(102, 255, 255));
+        jpTitle.setBackground(new java.awt.Color(0, 153, 153));
         jpTitle.setName(" jpTitle"); // NOI18N
 
         jlTitle.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
@@ -75,11 +75,11 @@ private MainMenuController mainmenucontrol = new MainMenuController();
 
         jlTitle.getAccessibleContext().setAccessibleName(" jlTitle");
 
-        jpMenuItems.setBackground(new java.awt.Color(102, 255, 255));
+        jpMenuItems.setBackground(new java.awt.Color(0, 153, 153));
         jpMenuItems.setForeground(new java.awt.Color(102, 255, 255));
+        jpMenuItems.setToolTipText("");
 
-        jbtnPlayer1.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnPlayer1.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnPlayer1.setBackground(new java.awt.Color(204, 204, 204));
         jbtnPlayer1.setText("Player 1 Game");
         jbtnPlayer1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,8 +87,7 @@ private MainMenuController mainmenucontrol = new MainMenuController();
             }
         });
 
-        jbtnPlayer2.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnPlayer2.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnPlayer2.setBackground(new java.awt.Color(204, 204, 204));
         jbtnPlayer2.setLabel("Player 2 Game");
         jbtnPlayer2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,12 +95,10 @@ private MainMenuController mainmenucontrol = new MainMenuController();
             }
         });
 
-        jbtnHelp.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnHelp.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
         jbtnHelp.setText("Help Menu");
 
-        jbtnStatistics.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnStatistics.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnStatistics.setBackground(new java.awt.Color(204, 204, 204));
         jbtnStatistics.setText("Statistics Menu");
         jbtnStatistics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,8 +106,7 @@ private MainMenuController mainmenucontrol = new MainMenuController();
             }
         });
 
-        jbtnExit.setBackground(new java.awt.Color(255, 51, 0));
-        jbtnExit.setForeground(new java.awt.Color(255, 102, 102));
+        jbtnExit.setBackground(new java.awt.Color(204, 204, 204));
         jbtnExit.setText("Exit");
         jbtnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +128,7 @@ private MainMenuController mainmenucontrol = new MainMenuController();
                             .addComponent(jbtnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbtnStatistics, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(33, 33, 33)
                         .addComponent(jbtnExit)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -153,11 +149,13 @@ private MainMenuController mainmenucontrol = new MainMenuController();
         );
 
         jtWelcome.setEditable(false);
+        jtWelcome.setBackground(new java.awt.Color(0, 0, 0));
         jtWelcome.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jtWelcome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jtWelcome.setForeground(new java.awt.Color(255, 51, 0));
-        jtWelcome.setText("Welcome to Connect 4\nEach player is given either red or black tokens to play. The board consists of circular slots for these tokens; 7 columns wide and 6 rows high. The players take turns filling in the slots with their tokens; with each token placed settling into the lowest row of the column placed. The game is over when one player connects 4' tokens in an uninterrupted row. Have fun!");
+        jtWelcome.setForeground(new java.awt.Color(255, 255, 255));
+        jtWelcome.setText("Welcome to Connect 4\n\nEach player is given either red or black tokens to play. The board consists of circular slots for these tokens; 7 columns wide and 6 rows high. The players take turns filling in the slots with their tokens; with each token placed settling into the lowest row of the column placed. The game is over when one player connects 4' tokens in an uninterrupted row. \n\nHave fun!");
         jtWelcome.setMargin(new java.awt.Insets(5, 5, 5, 5));
+        jtWelcome.setRequestFocusEnabled(false);
         jtWelcome.setSelectedTextColor(new java.awt.Color(255, 102, 51));
         jScrollPane1.setViewportView(jtWelcome);
 
