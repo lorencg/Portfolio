@@ -2,7 +2,6 @@ package byui.cit210.connect4.frames;
 
 import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.models.Game;
-import citbyui.cit260.connect4.enums.GameStatus;
 import citbyui.cit260.connect4.enums.GameType;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -61,7 +60,7 @@ public class MainFrame extends javax.swing.JFrame {
         jpTitle.setName(" jpTitle"); // NOI18N
 
         jlTitle.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
-        jlTitle.setForeground(new java.awt.Color(255, 102, 0));
+        jlTitle.setForeground(new java.awt.Color(255, 102, 51));
         jlTitle.setText("Connect 4");
 
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
