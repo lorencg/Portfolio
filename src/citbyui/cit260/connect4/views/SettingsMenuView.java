@@ -23,7 +23,7 @@ public class SettingsMenuView {
        
     
     // Create instance of the SettingsMenuControl (action) class
-    private SettingsMenuControl SettingsMenuControl = new SettingsMenuControl();
+    public SettingsMenuControl SettingsMenuControl = new SettingsMenuControl();
     
     // default constructor
     public SettingsMenuView() {
@@ -75,7 +75,7 @@ public class SettingsMenuView {
         for (int i = 0; i < SettingsMenuView.menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
-        System.out.println("\t===============================================================\n");
+        System.out.println("\t==============================================================================\n");
     }
   
 }

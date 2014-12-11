@@ -71,7 +71,7 @@ public class StatsMenuView {
         for (int i = 0; i < StatsMenuView.menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
-        System.out.println("\t===============================================================\n");
+        System.out.println("\t================================================================================\n");
     }
 
     public StatsMenuControl getStatsMenuControl() {

@@ -1,6 +1,6 @@
 package byui.cit260.connect4.frames;
 
-import citbyui.cit260.connect4.control.MainMenuController;
+import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.enums.GameType;
 import citbyui.cit260.connect4.models.Connect4;
@@ -14,7 +14,7 @@ import citbyui.cit260.connect4.models.Connect4;
  * @author Josh
  */
 public class MainFrame extends javax.swing.JFrame {
-private MainMenuController mainmenucontrol = new MainMenuController();
+private MainMenuControl mainmenucontrol = new MainMenuControl();
     /**
      * Creates new form MainFrame
      */

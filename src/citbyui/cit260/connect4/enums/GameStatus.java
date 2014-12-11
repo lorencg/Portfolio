@@ -21,10 +21,10 @@ public enum GameStatus {
     M ("Main Menu");
 
 String message;
-GameStatus(String value) {
+private GameStatus(String message) {
     this.message = message;
 }
-public String getValue() {
+public String getMessage() {
     return message;
 }
 

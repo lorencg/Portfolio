@@ -14,7 +14,7 @@ public class HelpMenuControl {
 
 public void displayInstructionHelp(){
     
-    String instructions = "Each player is given either red or black \n"
+    String instructions = "\nEach player is given either red or black \n"
                 + "tokens to play. The board consists of circular slots for \n"
                 + "these tokens; 7 columns wide and 6 rows high. The players \n"
                 + "take turns filling in the slots with their tokens; with \n"
