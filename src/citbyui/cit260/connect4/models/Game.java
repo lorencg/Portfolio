@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.connect4.models;
 
+import citbyui.cit260.connect4.enums.GameType;
+
 /**
  *
  * @author Loren
@@ -24,6 +26,10 @@ public class Game {
     public void TwoPlayerGame(){
         PlayerName name = new PlayerName();
         Players = name.getNames();
+    }
+
+    public GameType getGameType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

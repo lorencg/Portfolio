@@ -6,7 +6,7 @@ package citbyui.cit260.connect4.views;
 
 
 import citbyui.cit260.connect4.models.Connect4Error;
-import citbyui.cit260.connect4.control.MainMenuController;
+import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.exceptions.MenuException;
 import java.util.Scanner;
 /**
@@ -27,7 +27,7 @@ public class MainMenuView {
         {"Q", "Quit Game"}
     }; 
   
-    MainMenuController mainMenuControl = new MainMenuController();
+    MainMenuControl mainMenuControl = new MainMenuControl();
     
     public MainMenuView() {
 
