@@ -11,10 +11,10 @@ package citbyui.cit260.connect4.control;
 public class HelpMenuControl {
     
 // public void display{
-
+String instructions;
 public void displayInstructionHelp(){
     
-    String instructions = "\nEach player is given either red or black \n"
+     instructions = "\nEach player is given either red or black \n"
                 + "tokens to play. The board consists of circular slots for \n"
                 + "these tokens; 7 columns wide and 6 rows high. The players \n"
                 + "take turns filling in the slots with their tokens; with \n"
@@ -25,9 +25,26 @@ public void displayInstructionHelp(){
     System.out.println(instructions);
         
 }
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+
+    public String getTips() {
+        return tips;
+    }
+
+    public void setTips(String tips) {
+        this.tips = tips;
+    }
+String tips = "Its connect 4 duh.";
 public void displayTipsHelp(){
     
-    String tips = "Its connect 4 duh.";
+    
     
     System.out.println(tips);
         
