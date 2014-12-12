@@ -97,6 +97,11 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
 
         jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
         jbtnHelp.setText("Help Menu");
+        jbtnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnHelpActionPerformed(evt);
+            }
+        });
 
         jbtnStatistics.setBackground(new java.awt.Color(204, 204, 204));
         jbtnStatistics.setText("Statistics Menu");
@@ -228,6 +233,13 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         this.dispose();
        
     }//GEN-LAST:event_jbtnPlayer2ActionPerformed
+
+    private void jbtnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHelpActionPerformed
+        // TODO add your handling code here:
+        HelpMenu menu = new HelpMenu();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtnHelpActionPerformed
 
     /**
      * @param args the command line arguments
