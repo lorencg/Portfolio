@@ -1,4 +1,4 @@
-package byui.cit260.connect4.frames;
+package citbyui.cit260.connect4.frames;
 
 import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.models.Game;

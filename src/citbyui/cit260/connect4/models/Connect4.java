@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package citbyui.cit260.connect4.models;
-import byui.cit260.connect4.frames.MainFrame;
+import citbyui.cit260.connect4.frames.MainFrame;
 import citbyui.cit260.connect4.exceptions.Connect4Exception;
 import citbyui.cit260.connect4.models.PlayerName;
 import citbyui.cit260.connect4.views.MainMenuView;
