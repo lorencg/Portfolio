@@ -49,7 +49,7 @@ public class StatsMenuView {
                 case "2":
                     this.statsMenuControl.displayTwoStats();
                     break;
-                case "H":
+                case "S":
                     this.statsMenuControl.displayHelp();
                     break;                  
                 case "Q":

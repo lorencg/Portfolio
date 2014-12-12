@@ -21,9 +21,8 @@ public class MainMenuView {
     private static final String[][] menuItems = {
         {"1", "One player game"},
         {"2", "Two player game"},
-        {"S", "Settings"},
         {"H", "Help"},
-        {"A", "Statistics"},
+        {"S", "Statistics"},
         {"Q", "Quit Game"}
     }; 
   
@@ -54,13 +53,10 @@ public class MainMenuView {
                 case "2":
                     this.mainMenuControl.startGameTwo();
                     break;
-                case "S":
-                    this.mainMenuControl.displaySettingsMenu();
-                    break;
                 case "H":
                     this.mainMenuControl.displayHelpMenu();                      
                     break;
-                case "A":
+                case "S":
                     this.mainMenuControl.displayStatsMenu();
                     break;
                 case "Q":

@@ -27,16 +27,21 @@ public class StatisticsMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jbtnExit = new javax.swing.JButton();
         jpBody = new javax.swing.JPanel();
         jpTitle = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
         jpMenuItems = new javax.swing.JPanel();
         jbtnHelp = new javax.swing.JButton();
-        jbtnStatistics = new javax.swing.JButton();
         jbtnMain = new javax.swing.JButton();
+        jbtnExit1 = new javax.swing.JButton();
         winsLabel = new javax.swing.JLabel();
         gamesPlayedLabel = new javax.swing.JLabel();
         highScoreLabel = new javax.swing.JLabel();
+
+        jbtnExit.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnExit.setText("Exit");
+        jbtnExit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +49,7 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jpBody.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jpTitle.setBackground(new java.awt.Color(0, 153, 153));
+        jpTitle.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpTitle.setName(" jpTitle"); // NOI18N
 
         jlTitle.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
@@ -70,27 +76,32 @@ public class StatisticsMenu extends javax.swing.JFrame {
         );
 
         jpMenuItems.setBackground(new java.awt.Color(0, 153, 153));
+        jpMenuItems.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpMenuItems.setForeground(new java.awt.Color(102, 255, 255));
         jpMenuItems.setToolTipText("");
 
         jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnHelp.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnHelp.setForeground(new java.awt.Color(204, 51, 0));
         jbtnHelp.setText("Help Menu");
-
-        jbtnStatistics.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnStatistics.setText("Statistics Menu");
-        jbtnStatistics.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnStatisticsActionPerformed(evt);
-            }
-        });
+        jbtnHelp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jbtnMain.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnMain.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnMain.setForeground(new java.awt.Color(204, 51, 0));
         jbtnMain.setText("Main Menu");
+        jbtnMain.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnMain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnMainActionPerformed(evt);
             }
         });
+
+        jbtnExit1.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnExit1.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnExit1.setForeground(new java.awt.Color(204, 51, 0));
+        jbtnExit1.setText("Exit");
+        jbtnExit1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
@@ -101,37 +112,39 @@ public class StatisticsMenu extends javax.swing.JFrame {
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpMenuItemsLayout.createSequentialGroup()
                         .addComponent(jbtnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 1, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbtnHelp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtnStatistics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jbtnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(jpMenuItemsLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jbtnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jbtnMain)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jbtnHelp)
                 .addGap(27, 27, 27)
-                .addComponent(jbtnStatistics)
-                .addGap(19, 19, 19))
+                .addComponent(jbtnHelp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jbtnExit1)
+                .addContainerGap())
         );
 
-        winsLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        winsLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         winsLabel.setForeground(new java.awt.Color(255, 255, 255));
         winsLabel.setText("Wins:");
         winsLabel.setToolTipText("");
 
-        gamesPlayedLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        gamesPlayedLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         gamesPlayedLabel.setForeground(new java.awt.Color(255, 255, 255));
         gamesPlayedLabel.setText("Games Played:");
         gamesPlayedLabel.setToolTipText("");
 
-        highScoreLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        highScoreLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         highScoreLabel.setForeground(new java.awt.Color(255, 255, 255));
         highScoreLabel.setText("High Score:");
         highScoreLabel.setToolTipText("");
@@ -142,9 +155,8 @@ public class StatisticsMenu extends javax.swing.JFrame {
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpBodyLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(winsLabel)
                     .addComponent(gamesPlayedLabel)
@@ -186,10 +198,6 @@ public class StatisticsMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jbtnStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnStatisticsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnStatisticsActionPerformed
 
     private void jbtnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMainActionPerformed
         // TODO add your handling code here:
@@ -234,9 +242,10 @@ public class StatisticsMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel gamesPlayedLabel;
     private javax.swing.JLabel highScoreLabel;
+    private javax.swing.JButton jbtnExit;
+    private javax.swing.JButton jbtnExit1;
     private javax.swing.JButton jbtnHelp;
     private javax.swing.JButton jbtnMain;
-    private javax.swing.JButton jbtnStatistics;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpMenuItems;
