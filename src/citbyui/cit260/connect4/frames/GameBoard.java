@@ -9,12 +9,12 @@ package citbyui.cit260.connect4.frames;
  *
  * @author Owner
  */
-public class GameMenu extends javax.swing.JFrame {
+public class GameBoard extends javax.swing.JFrame {
 
     /**
      * Creates new form GameMenu
      */
-    public GameMenu() {
+    public GameBoard() {
         initComponents();
     }
 
@@ -47,7 +47,7 @@ public class GameMenu extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Game Board");
@@ -71,7 +71,7 @@ public class GameMenu extends javax.swing.JFrame {
         jpgameboard.setBackground(new java.awt.Color(0, 153, 153));
         jpgameboard.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jbplaygame.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbplaygame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbplaygame.setText("Play");
         jbplaygame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbplaygame.addActionListener(new java.awt.event.ActionListener() {
@@ -80,15 +80,15 @@ public class GameMenu extends javax.swing.JFrame {
             }
         });
 
-        jbhelpgame.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbhelpgame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbhelpgame.setText("Help");
         jbhelpgame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jbquitegame.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbquitegame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbquitegame.setText("Quit");
         jbquitegame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jbstatsgame.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbstatsgame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbstatsgame.setText("Statistics");
         jbstatsgame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -214,20 +214,21 @@ public class GameMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GameMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GameMenu().setVisible(true);
+                new GameBoard().setVisible(true);
             }
         });
     }

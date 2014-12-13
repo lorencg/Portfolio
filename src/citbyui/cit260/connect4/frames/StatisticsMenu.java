@@ -38,6 +38,12 @@ public class StatisticsMenu extends javax.swing.JFrame {
         winsLabel = new javax.swing.JLabel();
         gamesPlayedLabel = new javax.swing.JLabel();
         highScoreLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane2 = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextPane3 = new javax.swing.JTextPane();
 
         jbtnExit.setBackground(new java.awt.Color(204, 204, 204));
         jbtnExit.setText("Exit");
@@ -52,7 +58,7 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jpTitle.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpTitle.setName(" jpTitle"); // NOI18N
 
-        jlTitle.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
+        jlTitle.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jlTitle.setForeground(new java.awt.Color(255, 255, 255));
         jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTitle.setText("Statistics Menu");
@@ -81,7 +87,7 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jpMenuItems.setToolTipText("");
 
         jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnHelp.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnHelp.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnHelp.setText("Help Menu");
         jbtnHelp.setToolTipText("help");
         jbtnHelp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -92,7 +98,7 @@ public class StatisticsMenu extends javax.swing.JFrame {
         });
 
         jbtnMain.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnMain.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnMain.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnMain.setText("Main Menu");
         jbtnMain.setToolTipText("main");
         jbtnMain.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -103,7 +109,7 @@ public class StatisticsMenu extends javax.swing.JFrame {
         });
 
         jbtnExit1.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnExit1.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnExit1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnExit1.setText("Exit");
         jbtnExit1.setToolTipText("exit");
         jbtnExit1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -118,18 +124,11 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jbtnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jbtnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jbtnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbtnMain, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                    .addComponent(jbtnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                    .addComponent(jbtnExit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuItemsLayout.setVerticalGroup(
@@ -137,27 +136,33 @@ public class StatisticsMenu extends javax.swing.JFrame {
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jbtnMain)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(jbtnHelp)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jbtnExit1)
                 .addGap(23, 23, 23))
         );
 
-        winsLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        winsLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         winsLabel.setForeground(new java.awt.Color(255, 255, 255));
         winsLabel.setText("Wins:");
         winsLabel.setToolTipText("wins");
 
-        gamesPlayedLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        gamesPlayedLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         gamesPlayedLabel.setForeground(new java.awt.Color(255, 255, 255));
         gamesPlayedLabel.setText("Games Played:");
         gamesPlayedLabel.setToolTipText("played");
 
-        highScoreLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        highScoreLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         highScoreLabel.setForeground(new java.awt.Color(255, 255, 255));
         highScoreLabel.setText("High Score:");
         highScoreLabel.setToolTipText("score");
+
+        jScrollPane1.setViewportView(jTextPane1);
+
+        jScrollPane2.setViewportView(jTextPane2);
+
+        jScrollPane3.setViewportView(jTextPane3);
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
@@ -168,10 +173,15 @@ public class StatisticsMenu extends javax.swing.JFrame {
                 .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(winsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gamesPlayedLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(highScoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(gamesPlayedLabel)
+                    .addComponent(winsLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(highScoreLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,11 +191,17 @@ public class StatisticsMenu extends javax.swing.JFrame {
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jpBodyLayout.createSequentialGroup()
-                        .addComponent(winsLabel)
+                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(winsLabel)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(gamesPlayedLabel)
+                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(gamesPlayedLabel)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(48, 48, 48)
-                        .addComponent(highScoreLabel)))
+                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(highScoreLabel)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
 
@@ -263,6 +279,12 @@ public class StatisticsMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel gamesPlayedLabel;
     private javax.swing.JLabel highScoreLabel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPane3;
     private javax.swing.JButton jbtnExit;
     private javax.swing.JButton jbtnExit1;
     private javax.swing.JButton jbtnHelp;

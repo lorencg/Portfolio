@@ -53,7 +53,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpTitle.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpTitle.setName(" jpTitle"); // NOI18N
 
-        jlTitle.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
+        jlTitle.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jlTitle.setForeground(new java.awt.Color(255, 255, 255));
         jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTitle.setText("Connect 4");
@@ -64,7 +64,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                .addComponent(jlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpTitleLayout.setVerticalGroup(
@@ -83,7 +83,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpMenuItems.setToolTipText("");
 
         jbtnPlayer1.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnPlayer1.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnPlayer1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnPlayer1.setText("Player 1 Game");
         jbtnPlayer1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnPlayer1.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +93,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnPlayer2.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnPlayer2.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnPlayer2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnPlayer2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnPlayer2.setLabel("Player 2 Game");
         jbtnPlayer2.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +103,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnHelp.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnHelp.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnHelp.setText("Help Menu");
         jbtnHelp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnStatistics.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnStatistics.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnStatistics.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnStatistics.setText("Statistics Menu");
         jbtnStatistics.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnStatistics.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +123,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnExit.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnExit.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
+        jbtnExit.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnExit.setText("Exit");
         jbtnExit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -136,33 +136,30 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpMenuItems.setLayout(jpMenuItemsLayout);
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
+            .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtnStatistics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                     .addComponent(jbtnHelp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtnPlayer2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtnPlayer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbtnPlayer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jbtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jbtnPlayer1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnPlayer2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnHelp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnStatistics)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(jbtnExit)
-                .addGap(18, 18, 18))
+                .addContainerGap())
         );
 
         jtWelcome.setEditable(false);
