@@ -169,7 +169,7 @@ public class HelpMenu extends javax.swing.JFrame {
         jpTitle2.setName(" jpTitle"); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 51, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Help Menu");
         jLabel1.setToolTipText("help");
@@ -313,9 +313,7 @@ public class HelpMenu extends javax.swing.JFrame {
     private javax.swing.JButton jbtnHelp;
     private javax.swing.JButton jbtnHelp1;
     private javax.swing.JButton jbtnHelp2;
-    private javax.swing.JLabel jlTitle;
     private javax.swing.JLabel jlTitle1;
-    private javax.swing.JPanel jpTitle;
     private javax.swing.JPanel jpTitle1;
     private javax.swing.JPanel jpTitle2;
     // End of variables declaration//GEN-END:variables

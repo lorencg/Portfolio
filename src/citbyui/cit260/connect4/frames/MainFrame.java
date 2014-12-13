@@ -54,7 +54,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpTitle.setName(" jpTitle"); // NOI18N
 
         jlTitle.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
-        jlTitle.setForeground(new java.awt.Color(204, 51, 0));
+        jlTitle.setForeground(new java.awt.Color(255, 255, 255));
         jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTitle.setText("Connect 4");
 
