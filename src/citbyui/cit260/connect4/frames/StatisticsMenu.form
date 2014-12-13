@@ -76,11 +76,11 @@
                   <Component id="jpMenuItems" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="winsLabel" min="-2" max="-2" attributes="0"/>
-                      <Component id="gamesPlayedLabel" min="-2" max="-2" attributes="0"/>
-                      <Component id="highScoreLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="winsLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="gamesPlayedLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="highScoreLabel" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -221,12 +221,16 @@
                   <Color blue="0" green="33" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Help Menu"/>
+                <Property name="toolTipText" type="java.lang.String" value="help"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                     <BevelBorder/>
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnHelpActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbtnMain">
               <Properties>
@@ -240,6 +244,7 @@
                   <Color blue="0" green="33" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Main Menu"/>
+                <Property name="toolTipText" type="java.lang.String" value="main"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                     <BevelBorder/>
@@ -262,12 +267,16 @@
                   <Color blue="0" green="33" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
+                <Property name="toolTipText" type="java.lang.String" value="exit"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                     <BevelBorder/>
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnExit1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -280,7 +289,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Wins:"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="wins"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="gamesPlayedLabel">
@@ -292,7 +301,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Games Played:"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="played"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="highScoreLabel">
@@ -304,7 +313,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="High Score:"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="score"/>
           </Properties>
         </Component>
       </SubComponents>

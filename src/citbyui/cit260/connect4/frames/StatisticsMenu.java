@@ -84,12 +84,19 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jbtnHelp.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnHelp.setForeground(new java.awt.Color(204, 51, 0));
         jbtnHelp.setText("Help Menu");
+        jbtnHelp.setToolTipText("help");
         jbtnHelp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnHelpActionPerformed(evt);
+            }
+        });
 
         jbtnMain.setBackground(new java.awt.Color(204, 204, 204));
         jbtnMain.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnMain.setForeground(new java.awt.Color(204, 51, 0));
         jbtnMain.setText("Main Menu");
+        jbtnMain.setToolTipText("main");
         jbtnMain.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnMain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +108,13 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jbtnExit1.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnExit1.setForeground(new java.awt.Color(204, 51, 0));
         jbtnExit1.setText("Exit");
+        jbtnExit1.setToolTipText("exit");
         jbtnExit1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnExit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnExit1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
@@ -137,17 +150,17 @@ public class StatisticsMenu extends javax.swing.JFrame {
         winsLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         winsLabel.setForeground(new java.awt.Color(255, 255, 255));
         winsLabel.setText("Wins:");
-        winsLabel.setToolTipText("");
+        winsLabel.setToolTipText("wins");
 
         gamesPlayedLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         gamesPlayedLabel.setForeground(new java.awt.Color(255, 255, 255));
         gamesPlayedLabel.setText("Games Played:");
-        gamesPlayedLabel.setToolTipText("");
+        gamesPlayedLabel.setToolTipText("played");
 
         highScoreLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         highScoreLabel.setForeground(new java.awt.Color(255, 255, 255));
         highScoreLabel.setText("High Score:");
-        highScoreLabel.setToolTipText("");
+        highScoreLabel.setToolTipText("score");
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
@@ -158,10 +171,10 @@ public class StatisticsMenu extends javax.swing.JFrame {
                 .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(winsLabel)
-                    .addComponent(gamesPlayedLabel)
-                    .addComponent(highScoreLabel))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(winsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gamesPlayedLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(highScoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,9 +213,20 @@ public class StatisticsMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMainActionPerformed
-        // TODO add your handling code here:
+        MainFrame main = new MainFrame();
+        main.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtnMainActionPerformed
+
+    private void jbtnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHelpActionPerformed
+        HelpMenu help = new HelpMenu();
+        help.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtnHelpActionPerformed
+
+    private void jbtnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExit1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jbtnExit1ActionPerformed
 
     /**
      * @param args the command line arguments

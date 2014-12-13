@@ -103,6 +103,11 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
         jbtnHelp.setText("Help Menu");
         jbtnHelp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnHelpActionPerformed(evt);
+            }
+        });
 
         jbtnStatistics.setBackground(new java.awt.Color(204, 204, 204));
         jbtnStatistics.setText("Statistics Menu");
@@ -219,7 +224,9 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
     }//GEN-LAST:event_jbtnPlayer1ActionPerformed
 
     private void jbtnStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnStatisticsActionPerformed
-        // TODO add your handling code here:
+        StatisticsMenu stats = new StatisticsMenu();
+        stats.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbtnStatisticsActionPerformed
 
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
@@ -234,6 +241,12 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         this.dispose();
        
     }//GEN-LAST:event_jbtnPlayer2ActionPerformed
+
+    private void jbtnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHelpActionPerformed
+        HelpMenu help = new HelpMenu();
+        help.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtnHelpActionPerformed
 
     /**
      * @param args the command line arguments
