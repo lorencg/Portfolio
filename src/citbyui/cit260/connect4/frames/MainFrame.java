@@ -83,6 +83,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpMenuItems.setToolTipText("");
 
         jbtnPlayer1.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnPlayer1.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnPlayer1.setText("Player 1 Game");
         jbtnPlayer1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnPlayer1.addActionListener(new java.awt.event.ActionListener() {
@@ -92,6 +93,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnPlayer2.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnPlayer2.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnPlayer2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnPlayer2.setLabel("Player 2 Game");
         jbtnPlayer2.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +103,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnHelp.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnHelp.setText("Help Menu");
         jbtnHelp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +113,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnStatistics.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnStatistics.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnStatistics.setText("Statistics Menu");
         jbtnStatistics.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnStatistics.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +123,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         });
 
         jbtnExit.setBackground(new java.awt.Color(204, 204, 204));
+        jbtnExit.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
         jbtnExit.setText("Exit");
         jbtnExit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnExit.addActionListener(new java.awt.event.ActionListener() {

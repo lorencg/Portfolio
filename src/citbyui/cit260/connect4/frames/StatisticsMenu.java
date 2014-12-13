@@ -82,7 +82,6 @@ public class StatisticsMenu extends javax.swing.JFrame {
 
         jbtnHelp.setBackground(new java.awt.Color(204, 204, 204));
         jbtnHelp.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
-        jbtnHelp.setForeground(new java.awt.Color(204, 51, 0));
         jbtnHelp.setText("Help Menu");
         jbtnHelp.setToolTipText("help");
         jbtnHelp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -94,7 +93,6 @@ public class StatisticsMenu extends javax.swing.JFrame {
 
         jbtnMain.setBackground(new java.awt.Color(204, 204, 204));
         jbtnMain.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
-        jbtnMain.setForeground(new java.awt.Color(204, 51, 0));
         jbtnMain.setText("Main Menu");
         jbtnMain.setToolTipText("main");
         jbtnMain.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -106,7 +104,6 @@ public class StatisticsMenu extends javax.swing.JFrame {
 
         jbtnExit1.setBackground(new java.awt.Color(204, 204, 204));
         jbtnExit1.setFont(new java.awt.Font("Rockwell", 1, 11)); // NOI18N
-        jbtnExit1.setForeground(new java.awt.Color(204, 51, 0));
         jbtnExit1.setText("Exit");
         jbtnExit1.setToolTipText("exit");
         jbtnExit1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -121,9 +118,9 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpMenuItemsLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jbtnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
@@ -131,7 +128,7 @@ public class StatisticsMenu extends javax.swing.JFrame {
                         .addComponent(jbtnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(35, 35, 35)
                 .addComponent(jbtnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -140,11 +137,11 @@ public class StatisticsMenu extends javax.swing.JFrame {
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jbtnMain)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jbtnHelp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnExit1)
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
 
         winsLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
