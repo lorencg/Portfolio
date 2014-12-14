@@ -143,7 +143,7 @@
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jbstatsgame" min="-2" pref="91" max="-2" attributes="0"/>
-                          <Component id="jbquitegame" min="-2" pref="91" max="-2" attributes="0"/>
+                          <Component id="jbquitgame" min="-2" pref="91" max="-2" attributes="0"/>
                           <Component id="jbhelpgame" min="-2" pref="91" max="-2" attributes="0"/>
                           <Component id="jbplaygame" min="-2" pref="91" max="-2" attributes="0"/>
                       </Group>
@@ -161,7 +161,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jbstatsgame" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="jbquitegame" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbquitgame" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -196,8 +196,11 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbhelpgameActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jbquitegame">
+            <Component class="javax.swing.JButton" name="jbquitgame">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="11" style="0"/>
@@ -209,6 +212,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbquitgameActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbstatsgame">
               <Properties>
@@ -222,6 +228,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbstatsgameActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

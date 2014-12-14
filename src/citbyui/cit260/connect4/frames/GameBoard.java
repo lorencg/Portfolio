@@ -33,7 +33,7 @@ public class GameBoard extends javax.swing.JFrame {
         jpgameboard = new javax.swing.JPanel();
         jbplaygame = new javax.swing.JButton();
         jbhelpgame = new javax.swing.JButton();
-        jbquitegame = new javax.swing.JButton();
+        jbquitgame = new javax.swing.JButton();
         jbstatsgame = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtboard = new javax.swing.JTable();
@@ -82,14 +82,29 @@ public class GameBoard extends javax.swing.JFrame {
         jbhelpgame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbhelpgame.setText("Help");
         jbhelpgame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbhelpgame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbhelpgameActionPerformed(evt);
+            }
+        });
 
-        jbquitegame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jbquitegame.setText("Quit");
-        jbquitegame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbquitgame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jbquitgame.setText("Quit");
+        jbquitgame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbquitgame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbquitgameActionPerformed(evt);
+            }
+        });
 
         jbstatsgame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbstatsgame.setText("Statistics");
         jbstatsgame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbstatsgame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbstatsgameActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpgameboardLayout = new javax.swing.GroupLayout(jpgameboard);
         jpgameboard.setLayout(jpgameboardLayout);
@@ -99,7 +114,7 @@ public class GameBoard extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jpgameboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jbstatsgame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbquitegame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbquitgame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbhelpgame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbplaygame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -114,7 +129,7 @@ public class GameBoard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jbstatsgame)
                 .addGap(22, 22, 22)
-                .addComponent(jbquitegame)
+                .addComponent(jbquitgame)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -182,6 +197,24 @@ public class GameBoard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbplaygameActionPerformed
 
+    private void jbquitgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbquitgameActionPerformed
+        MainFrame main = new MainFrame();
+        main.setVisible(true);
+        this.dispose();      // TODO add your handling code here:
+    }//GEN-LAST:event_jbquitgameActionPerformed
+
+    private void jbstatsgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbstatsgameActionPerformed
+        StatisticsMenu stats = new StatisticsMenu();
+        stats.setVisible(true);
+        this.dispose();       // TODO add your handling code here:
+    }//GEN-LAST:event_jbstatsgameActionPerformed
+
+    private void jbhelpgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbhelpgameActionPerformed
+        HelpMenu help = new HelpMenu();
+        help.setVisible(true);
+        this.dispose();     // TODO add your handling code here:
+    }//GEN-LAST:event_jbhelpgameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,7 +258,7 @@ public class GameBoard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbhelpgame;
     private javax.swing.JButton jbplaygame;
-    private javax.swing.JButton jbquitegame;
+    private javax.swing.JButton jbquitgame;
     private javax.swing.JButton jbstatsgame;
     private javax.swing.JPanel jpgameboard;
     private javax.swing.JTable jtboard;
