@@ -34,7 +34,6 @@ public class StatisticsMenu extends javax.swing.JFrame {
         jpMenuItems = new javax.swing.JPanel();
         jbtnHelp = new javax.swing.JButton();
         jbtnMain = new javax.swing.JButton();
-        jbtnExit1 = new javax.swing.JButton();
         winsLabel = new javax.swing.JLabel();
         gamesPlayedLabel = new javax.swing.JLabel();
         highScoreLabel = new javax.swing.JLabel();
@@ -108,39 +107,25 @@ public class StatisticsMenu extends javax.swing.JFrame {
             }
         });
 
-        jbtnExit1.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnExit1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jbtnExit1.setText("Exit");
-        jbtnExit1.setToolTipText("exit");
-        jbtnExit1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jbtnExit1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnExit1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtnMain, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                    .addComponent(jbtnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                    .addComponent(jbtnExit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbtnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(38, 38, 38)
                 .addComponent(jbtnMain)
-                .addGap(26, 26, 26)
+                .addGap(38, 38, 38)
                 .addComponent(jbtnHelp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jbtnExit1)
-                .addGap(23, 23, 23))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         winsLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -191,7 +176,7 @@ public class StatisticsMenu extends javax.swing.JFrame {
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jpBodyLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 31, Short.MAX_VALUE)
                         .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(winsLabel, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -239,12 +224,6 @@ public class StatisticsMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jbtnHelpActionPerformed
 
-    private void jbtnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExit1ActionPerformed
-        MainFrame main = new MainFrame();
-        main.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtnExit1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -290,7 +269,6 @@ public class StatisticsMenu extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JButton jbtnExit;
-    private javax.swing.JButton jbtnExit1;
     private javax.swing.JButton jbtnHelp;
     private javax.swing.JButton jbtnMain;
     private javax.swing.JLabel jlTitle;
