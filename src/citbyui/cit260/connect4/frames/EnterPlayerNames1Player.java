@@ -55,6 +55,11 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
         onePlayer.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         onePlayer.setText("Continue");
         onePlayer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        onePlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onePlayerActionPerformed(evt);
+            }
+        });
 
         jbtnP1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnP1.setText("Back");
@@ -127,6 +132,12 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jbtnP1ActionPerformed
+
+    private void onePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerActionPerformed
+        GameBoard game = new GameBoard();
+        game.setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_onePlayerActionPerformed
 
     /**
      * @param args the command line arguments
