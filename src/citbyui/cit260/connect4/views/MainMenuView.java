@@ -22,7 +22,6 @@ public class MainMenuView {
         {"1", "One player game"},
         {"2", "Two player game"},
         {"H", "Help"},
-        {"S", "Statistics"},
         {"Q", "Quit Game"}
     }; 
   
@@ -55,9 +54,6 @@ public class MainMenuView {
                     break;
                 case "H":
                     this.mainMenuControl.displayHelpMenu();                      
-                    break;
-                case "S":
-                    this.mainMenuControl.displayStatsMenu();
                     break;
                 case "Q":
                     break;

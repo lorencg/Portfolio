@@ -5,7 +5,6 @@
  */
 package citbyui.cit260.connect4.control;
 
-import citbyui.cit260.connect4.views.StatsMenuView;
 import citbyui.cit260.connect4.views.HelpMenuView;
 import citbyui.cit260.connect4.enums.GameStatus;
 import citbyui.cit260.connect4.enums.GameType;
@@ -21,11 +20,6 @@ public class MainMenuControl {
         HelpMenuView help = new HelpMenuView();
         help.getInput();
     }
-    public void displayStatsMenu(){
-        StatsMenuView stats = new StatsMenuView();
-        stats.getInput();
-    }
-
     public void displayBoard(){
         Board board = new Board();
         board.displayBoard();
