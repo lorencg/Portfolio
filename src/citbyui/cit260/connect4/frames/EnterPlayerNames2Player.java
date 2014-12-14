@@ -32,7 +32,7 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jBContinue = new javax.swing.JButton();
         jbtnBackP2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -59,9 +59,14 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Please Enter your name in the fields below.");
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jButton1.setText("Continue");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jBContinue.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jBContinue.setText("Continue");
+        jBContinue.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jBContinue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBContinueActionPerformed(evt);
+            }
+        });
 
         jbtnBackP2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnBackP2.setText("Back");
@@ -84,7 +89,7 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jbtnBackP2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(jBContinue, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -115,7 +120,7 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
                     .addComponent(jtxfieldPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(43, 43, 43)
-                .addComponent(jButton1)
+                .addComponent(jBContinue)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbtnBackP2)
                 .addContainerGap())
@@ -146,6 +151,12 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jbtnBackP2ActionPerformed
 
+    private void jBContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBContinueActionPerformed
+        GameBoard game = new GameBoard();
+        game.setVisible(true);
+        this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jBContinueActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -160,7 +171,7 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBContinue;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
