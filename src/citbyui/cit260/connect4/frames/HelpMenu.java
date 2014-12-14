@@ -247,7 +247,8 @@ public class HelpMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnHelpActionPerformed
 
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
-        // TODO add your handling code here:
+        MainFrame main = new MainFrame();
+        main.setVisible(true);// TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jbtnExitActionPerformed
 
