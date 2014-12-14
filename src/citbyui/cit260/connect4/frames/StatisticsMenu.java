@@ -240,6 +240,8 @@ public class StatisticsMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnHelpActionPerformed
 
     private void jbtnExit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExit1ActionPerformed
+        MainFrame main = new MainFrame();
+        main.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtnExit1ActionPerformed
 
