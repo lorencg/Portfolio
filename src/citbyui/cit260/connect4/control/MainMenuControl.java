@@ -32,11 +32,11 @@ public class MainMenuControl {
     }
     public void startGameOne(){
         Game gameOne = new Game();
-        gameOne.OnePlayerGame();
+        gameOne.OnePlayerGame(null);
     }
     public void startGameTwo(){
         Game gameTwo = new Game();
-        gameTwo.TwoPlayerGame();
+        gameTwo.TwoPlayerGame(null, null);
     }
     
     

@@ -16,16 +16,36 @@ public class Game {
     String Player[];
     String Players[];
     
-    public void OnePlayerGame(){
+    public void OnePlayerGame(String p1name){
         PlayerName name = new PlayerName();
-        Player = name.getName();
+        String p1=p1name;
+        Player = name.getName(p1);
         
         
     }
+
+    public String[] getPlayer() {
+        return Player;
+    }
+
+    public void setPlayer(String[] Player) {
+        this.Player = Player;
+    }
+
+    public String[] getPlayers() {
+        return Players;
+    }
+
+    public void setPlayers(String[] Players) {
+        this.Players = Players;
+    }
     
-    public void TwoPlayerGame(){
+    public void TwoPlayerGame(String p1Name,String p2Name){
         PlayerName name = new PlayerName();
-        Players = name.getNames();
+        String p1 = p1Name;
+        String p2 = p2Name;
+        
+        Players = name.getNames(p1,p2);
     }
 
     public GameType getGameType() {

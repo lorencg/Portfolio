@@ -6,6 +6,9 @@
 package citbyui.cit260.connect4.frames;
 
 import citbyui.cit260.connect4.models.Game;
+import citbyui.cit260.connect4.models.PlayerName;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,8 +40,8 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
         jtxfieldPlayer1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        onePlayer = new javax.swing.JButton();
-        jbtnP1 = new javax.swing.JButton();
+        onePlayerCont = new javax.swing.JButton();
+        jbtnP1Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,21 +55,21 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Please Enter your name in the fields below.");
 
-        onePlayer.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        onePlayer.setText("Continue");
-        onePlayer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        onePlayer.addActionListener(new java.awt.event.ActionListener() {
+        onePlayerCont.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        onePlayerCont.setText("Continue");
+        onePlayerCont.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        onePlayerCont.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onePlayerActionPerformed(evt);
+                onePlayerContActionPerformed(evt);
             }
         });
 
-        jbtnP1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jbtnP1.setText("Back");
-        jbtnP1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jbtnP1.addActionListener(new java.awt.event.ActionListener() {
+        jbtnP1Back.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jbtnP1Back.setText("Back");
+        jbtnP1Back.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnP1Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnP1ActionPerformed(evt);
+                jbtnP1BackActionPerformed(evt);
             }
         });
 
@@ -88,8 +91,8 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
                                 .addGap(185, 185, 185))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbtnP1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(onePlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jbtnP1Back, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(onePlayerCont, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(90, 90, 90)))))
                 .addContainerGap())
         );
@@ -105,9 +108,9 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addComponent(jtxfieldPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(onePlayer)
+                .addComponent(onePlayerCont)
                 .addGap(18, 18, 18)
-                .addComponent(jbtnP1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtnP1Back, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
         );
 
@@ -125,19 +128,22 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnP1ActionPerformed
+    private void jbtnP1BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnP1BackActionPerformed
         // TODO add your handling code here:
         MainFrame player1 = new MainFrame(); 
         player1.setVisible(true);
         this.dispose();
         
-    }//GEN-LAST:event_jbtnP1ActionPerformed
+    }//GEN-LAST:event_jbtnP1BackActionPerformed
 
-    private void onePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerActionPerformed
+    private void onePlayerContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerContActionPerformed
+        PlayerName p1Name = new PlayerName();
+        String text = jtxfieldPlayer1.getText();
+          JOptionPane.showMessageDialog(null,"Welcome" + Arrays.toString(p1Name.getName(text))+" to Connect 4.");
         GameBoard game = new GameBoard();
         game.setVisible(true);
         this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_onePlayerActionPerformed
+    }//GEN-LAST:event_onePlayerContActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,8 +154,8 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbtnP1;
+    private javax.swing.JButton jbtnP1Back;
     private javax.swing.JTextField jtxfieldPlayer1;
-    private javax.swing.JButton onePlayer;
+    private javax.swing.JButton onePlayerCont;
     // End of variables declaration//GEN-END:variables
 }

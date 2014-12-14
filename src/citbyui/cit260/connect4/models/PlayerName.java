@@ -17,37 +17,25 @@ import java.awt.Point;
 public class PlayerName{
     
     
-    public String[] getName(){
-        String playerOne = "";
-        
-        Scanner inFile = new Scanner(System.in);
-        
-        System.out.println("Player one please enter your name: ");
-        playerOne = inFile.nextLine();
-        
+    public String[] getName(String p1){
+        String playerOne = p1;
+                        
         String PlayerName[] = {playerOne};
         
         if(PlayerName[0].length() == 0){
                 System.out.println("Please enter a name");
         }
-        for(int i=0; i<1; i++){
+            for(int i=0; i<1; i++){
                 System.out.println("Player" + (i+1) + ": " + PlayerName[i]);
-            }
+                }
         return PlayerName;
     }
     
-    public String[] getNames(){
+    public String[] getNames(String p1,String p2){
         
-        String playerOne = "";
-        String playerTwo = ""; 
-        
-    
-        Scanner inFile = new Scanner(System.in);
-        
-        System.out.println("Player one please enter your name: ");
-        playerOne = inFile.nextLine();
-        System.out.println("Player two please enter your name: ");
-        playerTwo = inFile.nextLine();
+        String playerOne = p1;
+        String playerTwo = p2; 
+               
         String PlayerName[] = {playerOne, playerTwo};
         if(PlayerName[0].length() == 0 && PlayerName[1].length() == 0){
                 System.out.println("Please enter a name");
