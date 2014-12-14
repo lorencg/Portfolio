@@ -38,7 +38,6 @@ public class HelpMenu extends javax.swing.JFrame {
         javax.swing.JTextPane jTextPane1 = new javax.swing.JTextPane();
         jPanel2 = new javax.swing.JPanel();
         jbtnHelp1 = new javax.swing.JButton();
-        jbtnHelp2 = new javax.swing.JButton();
         jpTitle2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -101,26 +100,13 @@ public class HelpMenu extends javax.swing.JFrame {
             }
         });
 
-        jbtnHelp2.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnHelp2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jbtnHelp2.setText("Statistics Menu");
-        jbtnHelp2.setToolTipText("");
-        jbtnHelp2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jbtnHelp2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnStats2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtnHelp1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                    .addComponent(jbtnHelp2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                .addComponent(jbtnHelp1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -128,8 +114,6 @@ public class HelpMenu extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jbtnHelp1)
-                .addGap(27, 27, 27)
-                .addComponent(jbtnHelp2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -211,12 +195,6 @@ public class HelpMenu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbtnHelpActionPerformed
 
-    private void jbtnStats2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnStats2ActionPerformed
-        StatisticsMenu stats = new StatisticsMenu();
-        stats.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtnStats2ActionPerformed
-
     private void jbtnMain1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMain1ActionPerformed
         MainFrame main = new MainFrame();
         main.setVisible(true);
@@ -265,7 +243,6 @@ public class HelpMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtnHelp;
     private javax.swing.JButton jbtnHelp1;
-    private javax.swing.JButton jbtnHelp2;
     private javax.swing.JLabel jlTitle1;
     private javax.swing.JPanel jpTitle1;
     private javax.swing.JPanel jpTitle2;

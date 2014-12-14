@@ -38,7 +38,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jbtnPlayer1 = new javax.swing.JButton();
         jbtnPlayer2 = new javax.swing.JButton();
         jbtnHelp = new javax.swing.JButton();
-        jbtnStatistics = new javax.swing.JButton();
         jbtnExit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtWelcome = new javax.swing.JTextPane();
@@ -112,16 +111,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
             }
         });
 
-        jbtnStatistics.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnStatistics.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jbtnStatistics.setText("Statistics Menu");
-        jbtnStatistics.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jbtnStatistics.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnStatisticsActionPerformed(evt);
-            }
-        });
-
         jbtnExit.setBackground(new java.awt.Color(204, 204, 204));
         jbtnExit.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnExit.setText("Exit");
@@ -139,9 +128,8 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtnStatistics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                     .addComponent(jbtnHelp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtnPlayer2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnPlayer2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                     .addComponent(jbtnPlayer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -151,13 +139,11 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jbtnPlayer1)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(jbtnPlayer2)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(jbtnHelp)
-                .addGap(18, 18, 18)
-                .addComponent(jbtnStatistics)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbtnExit)
                 .addContainerGap())
         );
@@ -191,7 +177,7 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -225,12 +211,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         this.dispose();
     }//GEN-LAST:event_jbtnPlayer1ActionPerformed
 
-    private void jbtnStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnStatisticsActionPerformed
-        StatisticsMenu stats = new StatisticsMenu();
-        stats.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtnStatisticsActionPerformed
-
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -260,7 +240,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
     private javax.swing.JButton jbtnHelp;
     private javax.swing.JButton jbtnPlayer1;
     private javax.swing.JButton jbtnPlayer2;
-    private javax.swing.JButton jbtnStatistics;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpMenuItems;
