@@ -7,7 +7,7 @@ package citbyui.cit260.connect4.frames;
 
 /**
  *
- * @author Owner
+ * @author Sarah & Patti
  */
 public class GameBoard extends javax.swing.JFrame {
 

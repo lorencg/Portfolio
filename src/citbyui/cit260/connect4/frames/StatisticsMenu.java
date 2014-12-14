@@ -7,7 +7,7 @@ package citbyui.cit260.connect4.frames;
 
 /**
  *
- * @author SexyMama
+ * @author Kayla
  */
 public class StatisticsMenu extends javax.swing.JFrame {
 
