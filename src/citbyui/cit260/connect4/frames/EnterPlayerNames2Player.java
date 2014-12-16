@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.views;
+package citbyui.cit260.connect4.frames;
 
 import citbyui.cit260.connect4.models.PlayerName;
 import java.util.Arrays;
@@ -153,9 +153,11 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnBackP2ActionPerformed
 
     private void jBContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBContinueActionPerformed
-        String player1Name = this.jtxfieldPlayer1.getText();
-        String player2Name = this.jtxfieldPlayer2.getText();
-        JOptionPane.showMessageDialog(null,"Welcome " + player1Name + " and " + player2Name + " to Connect 4!");
+         PlayerName p2Name = new PlayerName();
+       String text = jtxfieldPlayer1.getText();
+       String textP2 = jtxfieldPlayer2.getText();
+        p2Name.getNames(text,textP2);
+        JOptionPane.showMessageDialog(null,"Welcome" + Arrays.toString(p2Name.getName(text))+"and"+Arrays.toString(p2Name.getName(textP2))+" to Connect 4.");
         GameBoard game = new GameBoard();
         game.setVisible(true);
         this.dispose();// TODO add your handling code here:

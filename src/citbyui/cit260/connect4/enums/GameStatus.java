@@ -10,22 +10,25 @@ package citbyui.cit260.connect4.enums;
  * @author SexyMama
  */
 public enum GameStatus {
-    CONTINUE ("CONTINUE"),
-    NEW_GAME ("NEW_GAME"),
-    PLAYING ("PLAYING"), 
-    WINNER ("WINNER"), 
-    TIE ("TIE"), 
-    QUIT ("QUIT"), 
-    ERROR ("ERROR"),
-    EXIT ("EXIT");
-    
-    String value;
-    
-    GameStatus(String value) {
-        this.value = value;   
-    }
-    
-    public String getValue() {
-        return value;
-    }
+    S ("Settings Menu"),
+    T ("Tips"),
+    B ("Background Color"), 
+    G ("Game Color"), 
+    H ("Help Menu"),
+    I ("Instructions"), 
+    Q ("Quit"),
+    A ("Statistics Menu"), 
+    M ("Main Menu");
+
+String message;
+private GameStatus(String message) {
+    this.message = message;
+}
+public String getMessage() {
+    return message;
+}
+
+public void display() {
+     System.out.println(this.message);
+}
 }

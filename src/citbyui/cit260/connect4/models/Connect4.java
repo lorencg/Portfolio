@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.control;
-import citbyui.cit260.connect4.views.MainFrame;
+package citbyui.cit260.connect4.models;
+import citbyui.cit260.connect4.frames.MainFrame;
 import citbyui.cit260.connect4.exceptions.Connect4Exception;
 import citbyui.cit260.connect4.models.PlayerName;
+import citbyui.cit260.connect4.views.MainMenuView;
 import java.awt.Point;
 import java.util.Scanner;
 /*
@@ -21,6 +22,7 @@ public class Connect4 {
      */
     public static void main(String[] args) {
         MainFrame mainFrame = new MainFrame();
+        MainMenuView main = new MainMenuView();
         
      
         

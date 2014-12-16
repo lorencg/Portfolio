@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.views;
+package citbyui.cit260.connect4.frames;
 
-import citbyui.cit260.connect4.control.PlayerNameMenuControl;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.models.PlayerName;
 import java.util.Arrays;
@@ -16,6 +15,7 @@ import javax.swing.JOptionPane;
  * @author Josh
  */
 public class EnterPlayerNames1Player extends javax.swing.JFrame {
+
     /**
      * Creates new form EnterPlayerNames2Player
      */
@@ -137,8 +137,9 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnP1BackActionPerformed
 
     private void onePlayerContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerContActionPerformed
-        String player1Name = this.jtxfieldPlayer1.getText();
-          JOptionPane.showMessageDialog(null,"Welcome " + player1Name +" to Connect 4!");
+        PlayerName p1Name = new PlayerName();
+        String text = jtxfieldPlayer1.getText();
+          JOptionPane.showMessageDialog(null,"Welcome" + Arrays.toString(p1Name.getName(text))+" to Connect 4.");
         GameBoard game = new GameBoard();
         game.setVisible(true);
         this.dispose();        // TODO add your handling code here:

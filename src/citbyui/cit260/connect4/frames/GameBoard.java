@@ -3,24 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.views;
+package citbyui.cit260.connect4.frames;
 
-import citbyui.cit260.connect4.views.EnterPlayerNames1Player;
 import citbyui.cit260.connect4.models.Game;
-import citbyui.cit260.connect4.models.PlayerName;
-import citbyui.cit260.connect4.control.GameMenuControl;
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableColumnModel;
 /**
  *
  * @author Sarah & Patti
  */
 public class GameBoard extends javax.swing.JFrame {
-    private String currentMarker = null;
     private Game game = null;
-    private GameMenuControl gameCommands = null;
     /**
      * Creates new form GameMenu
      */
@@ -31,9 +22,7 @@ public class GameBoard extends javax.swing.JFrame {
     public GameBoard(Game game) {
         this();
         this.game = game;
-        this.gameCommands = new GameMenuControl(game);
     }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,13 +36,13 @@ public class GameBoard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jpgameboard = new javax.swing.JPanel();
-        playGame = new javax.swing.JButton();
-        helpGame = new javax.swing.JButton();
-        quitGame = new javax.swing.JButton();
+        jbplaygame = new javax.swing.JButton();
+        jbhelpgame = new javax.swing.JButton();
+        jbquitgame = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        connectFourTable = new javax.swing.JTable();
+        jtboard = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        messageOutput = new javax.swing.JTextArea();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +62,8 @@ public class GameBoard extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(139, 139, 139)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -87,33 +76,30 @@ public class GameBoard extends javax.swing.JFrame {
         jpgameboard.setBackground(new java.awt.Color(0, 153, 153));
         jpgameboard.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        playGame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        playGame.setText("Play");
-        playGame.setToolTipText("play");
-        playGame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        playGame.addActionListener(new java.awt.event.ActionListener() {
+        jbplaygame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jbplaygame.setText("Play");
+        jbplaygame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbplaygame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playGameActionPerformed(evt);
+                jbplaygameActionPerformed(evt);
             }
         });
 
-        helpGame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        helpGame.setText("Help");
-        helpGame.setToolTipText("help");
-        helpGame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        helpGame.addActionListener(new java.awt.event.ActionListener() {
+        jbhelpgame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jbhelpgame.setText("Help");
+        jbhelpgame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbhelpgame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                helpGameActionPerformed(evt);
+                jbhelpgameActionPerformed(evt);
             }
         });
 
-        quitGame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        quitGame.setText("Quit");
-        quitGame.setToolTipText("quit");
-        quitGame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        quitGame.addActionListener(new java.awt.event.ActionListener() {
+        jbquitgame.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jbquitgame.setText("Quit");
+        jbquitgame.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbquitgame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quitGameActionPerformed(evt);
+                jbquitgameActionPerformed(evt);
             }
         });
 
@@ -124,27 +110,27 @@ public class GameBoard extends javax.swing.JFrame {
             .addGroup(jpgameboardLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jpgameboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(quitGame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(helpGame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(playGame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbquitgame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbhelpgame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbplaygame, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jpgameboardLayout.setVerticalGroup(
             jpgameboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpgameboardLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(playGame)
+                .addComponent(jbplaygame)
                 .addGap(39, 39, 39)
-                .addComponent(helpGame)
+                .addComponent(jbhelpgame)
                 .addGap(40, 40, 40)
-                .addComponent(quitGame)
+                .addComponent(jbquitgame)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        connectFourTable.setAutoCreateRowSorter(true);
-        connectFourTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 5));
-        connectFourTable.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        connectFourTable.setModel(new javax.swing.table.DefaultTableModel(
+        jtboard.setAutoCreateRowSorter(true);
+        jtboard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 5));
+        jtboard.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jtboard.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -157,18 +143,13 @@ public class GameBoard extends javax.swing.JFrame {
                 "Column 1", "Column 2", "Column 3", "Column 4", "Column 5", "Column 6", "Column 7"
             }
         ));
-        connectFourTable.setGridColor(new java.awt.Color(0, 0, 0));
-        connectFourTable.setRowHeight(60);
-        connectFourTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                connectFourTableMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(connectFourTable);
+        jtboard.setGridColor(new java.awt.Color(0, 0, 0));
+        jtboard.setRowHeight(60);
+        jScrollPane2.setViewportView(jtboard);
 
-        messageOutput.setColumns(20);
-        messageOutput.setRows(5);
-        jScrollPane1.setViewportView(messageOutput);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -214,26 +195,21 @@ public class GameBoard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void playGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playGameActionPerformed
+    private void jbplaygameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbplaygameActionPerformed
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jbplaygameActionPerformed
 
-    }//GEN-LAST:event_playGameActionPerformed
-
-    private void quitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitGameActionPerformed
+    private void jbquitgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbquitgameActionPerformed
         MainFrame main = new MainFrame();
         main.setVisible(true);
         this.dispose();      // TODO add your handling code here:
-    }//GEN-LAST:event_quitGameActionPerformed
+    }//GEN-LAST:event_jbquitgameActionPerformed
 
-    private void helpGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpGameActionPerformed
+    private void jbhelpgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbhelpgameActionPerformed
         HelpMenu help = new HelpMenu();
         help.setVisible(true);
         this.dispose();     // TODO add your handling code here:
-    }//GEN-LAST:event_helpGameActionPerformed
-
-    private void connectFourTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_connectFourTableMouseClicked
-        
-    }//GEN-LAST:event_connectFourTableMouseClicked
-
+    }//GEN-LAST:event_jbhelpgameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,16 +248,16 @@ public class GameBoard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable connectFourTable;
-    private javax.swing.JButton helpGame;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jbhelpgame;
+    private javax.swing.JButton jbplaygame;
+    private javax.swing.JButton jbquitgame;
     private javax.swing.JPanel jpgameboard;
-    private javax.swing.JTextArea messageOutput;
-    private javax.swing.JButton playGame;
-    private javax.swing.JButton quitGame;
+    private javax.swing.JTable jtboard;
     // End of variables declaration//GEN-END:variables
 }
