@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package citbyui.cit260.connect4.models;
+import citbyui.cit260.connect4.enums.PlayerType;
 import citbyui.cit260.connect4.exceptions.PlayerException;
 import java.util.Scanner;
 import java.util.Arrays;
@@ -15,50 +16,72 @@ import java.awt.Point;
  * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian, Patti Jones
  */
 public class PlayerName{
-    
-    
-    public String[] getName(String p1){
-        String playerOne = p1;
-                        
-        String PlayerName[] = {playerOne};
-        
-        if(PlayerName[0].length() == 0){
-                System.out.println("Please enter a name");
-        }
-            for(int i=0; i<1; i++){
-                System.out.println("Player" + (i+1) + ": " + PlayerName[i]);
-                }
-        return PlayerName;
-    }
-    
-    public String[] getNames(String p1,String p2){
-        
-        String playerOne = p1;
-        String playerTwo = p2; 
-               
-        String PlayerName[] = {playerOne, playerTwo};
-        if(PlayerName[0].length() == 0 && PlayerName[1].length() == 0){
-                System.out.println("Please enter a name");
-        }
-        for(int j=1; j<2; j++){
-                if(PlayerName[j-1].length() > PlayerName[j].length()){
-                String t = PlayerName[j-1];
-                PlayerName[j-1] = PlayerName[j];
-                PlayerName[j] = t;
-            }
-            for(int i=0; i<2; i++){
-                System.out.println("Player" + (i+1) + ": " + PlayerName[i]);
-            }
-        }
-        return PlayerName;
-    }
-    
-    // public void playerTakesTurn() throws PlayerException {
 
-      //  if (PlayerName ==  null) {
-        //    throw new PlayerException("Please enter your name");
-        //}
-     }
+    private String name;
+    private PlayerType playerType;
+    private long wins = 0;
+    private long losses = 0;
+    private long ties = 0;
+    private String marker;
+    
+
+    public PlayerName() {
+    }
+
+    public PlayerName(PlayerType playerType, String marker) {
+        this.playerType = playerType;
+        this.marker = marker;
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public PlayerType getPlayerType() {
+        return playerType;
+    }
+
+    public void setPlayerType(PlayerType playerType) {
+        this.playerType = playerType;
+    }
+
+    public long getWins() {
+        return wins;
+    }
+
+    public void setWins(long wins) {
+        this.wins = wins;
+    }
+
+    public long getLosses() {
+        return losses;
+    }
+
+    public void setLosses(long losses) {
+        this.losses = losses;
+    }
+
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public long getTies() {
+        return ties;
+    }
+
+    public void setTies(long ties) {
+        this.ties = ties;
+    }
+     
+}
             
       
 

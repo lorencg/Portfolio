@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.interfaces;
+package citbyui.cit260.connect4.enums;
 
-import citbyui.cit260.connect4.exceptions.Connect4Exception;
 /**
  *
  * @author SexyMama
  */
-public interface EnterInfo {
-    Object getInput(Object object )  throws Connect4Exception;
+public enum PlayerType {
+    REGULAR_PLAYER,
+            COMPUTER_PLAYER;
 }
