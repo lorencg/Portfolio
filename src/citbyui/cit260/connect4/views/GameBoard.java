@@ -3,15 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.frames;
+package citbyui.cit260.connect4.views;
 
+import citbyui.cit260.connect4.control.GameMenuControl;
+import citbyui.cit260.connect4.enums.GameStatus;
+import citbyui.cit260.connect4.enums.GameType;
+import citbyui.cit260.connect4.enums.PlayerType;
 import citbyui.cit260.connect4.models.Game;
+import citbyui.cit260.connect4.models.PlayerName;
+import java.awt.Point;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableCellRenderer;
 /**
  *
  * @author Sarah & Patti
  */
 public class GameBoard extends javax.swing.JFrame {
+    private String currentMarker = null;
     private Game game = null;
+    private GameMenuControl gameCommands = null;
     /**
      * Creates new form GameMenu
      */
@@ -40,9 +51,9 @@ public class GameBoard extends javax.swing.JFrame {
         jbhelpgame = new javax.swing.JButton();
         jbquitgame = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jtboard = new javax.swing.JTable();
+        connectFourTable = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        messageOutput = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,10 +138,10 @@ public class GameBoard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jtboard.setAutoCreateRowSorter(true);
-        jtboard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 5));
-        jtboard.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
-        jtboard.setModel(new javax.swing.table.DefaultTableModel(
+        connectFourTable.setAutoCreateRowSorter(true);
+        connectFourTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 5));
+        connectFourTable.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        connectFourTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -143,13 +154,13 @@ public class GameBoard extends javax.swing.JFrame {
                 "Column 1", "Column 2", "Column 3", "Column 4", "Column 5", "Column 6", "Column 7"
             }
         ));
-        jtboard.setGridColor(new java.awt.Color(0, 0, 0));
-        jtboard.setRowHeight(60);
-        jScrollPane2.setViewportView(jtboard);
+        connectFourTable.setGridColor(new java.awt.Color(0, 0, 0));
+        connectFourTable.setRowHeight(60);
+        jScrollPane2.setViewportView(connectFourTable);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        messageOutput.setColumns(20);
+        messageOutput.setRows(5);
+        jScrollPane1.setViewportView(messageOutput);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -248,16 +259,17 @@ public class GameBoard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable connectFourTable;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbhelpgame;
     private javax.swing.JButton jbplaygame;
     private javax.swing.JButton jbquitgame;
     private javax.swing.JPanel jpgameboard;
-    private javax.swing.JTable jtboard;
+    private javax.swing.JTextArea messageOutput;
     // End of variables declaration//GEN-END:variables
+
 }

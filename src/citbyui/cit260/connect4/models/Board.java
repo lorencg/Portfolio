@@ -5,349 +5,146 @@
  */
 package citbyui.cit260.connect4.models;
 
+import java.awt.Point;
 import java.util.Objects;
 import java.util.Scanner;
-
+import javax.swing.table.AbstractTableModel;
+import citbyui.cit260.connect4.exceptions.GameException;
+import citbyui.cit260.connect4.enums.ErrorType;
 /**
  *
  * @author SexyMama
  */
-public class Board {
-    private int printRow = 0;
-    private int printColumns =0;
-    private int rows = 6;
-    private int columns = 7;
-    private String move = "";
-    private int A=0,B=0,C=0,D=0,E=0,F=0,G=0; //variables to represent columns on board
-    private final String emptyString=" ";
-     private final String board [][]= new String [6][7]; 
-        
-    
-    
-public void displayBoard() {
-    System.out.println("A | B | C | D | E | F | G |");
-    for(printRow=0 ;printRow < 6; ++printRow){
-       for(printColumns = 0;printColumns < 7; ++printColumns){
-           board[printRow][printColumns]=emptyString;
-           System.out.print(board[printRow][printColumns] + " | ");
-   } 
-        System.out.println();
+public class Board extends AbstractTableModel {
+    int rowCount = 6;
+    int columnCount = 7;
+    private String name;
+    private Point boardDimensions = new Point();
+    private PlayerName[][] boardLocations;
+
+    public Board() {
     }
-}
-    
 
-
-
-
-private class Tokens {
-           private String color = "red or black";
-    private int size = 5;
-    Scanner in = new Scanner(System.in);
-       private int x;
-       
-       boolean red = false;
-       boolean black = false; 
-       String input = in.next();
-       public void displayToken(){
-        System.out.println(this.color + " with the size of: " + this.size);
+    public Board(int noRows, int noColumns) {
+        this.boardDimensions.setLocation(noRows, noRows);
+        this.boardLocations = new PlayerName[noRows][noColumns];
     }
- 
-       
-// Author Faron, Josh, Sarah
-    public void tokenColor() {
-        // This function when called will take input and will check if R is input then if it is return true to red, Same to black.
-        for (x=0  ; x<2 ;  x++ ) {
-            if ("R".equals(input) ){
-                red = true;
-                 return;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Point getBoardDimensions() {
+        return boardDimensions;
+    }
+
+    public void setBoardDimensions(Point boardDimensions) {
+        this.boardDimensions = boardDimensions;
+    }
+
+    public PlayerName[][] getBoardLocations() {
+        return boardLocations;
+    }
+
+    public void setBoardLocations(PlayerName[][] boardLocations) {
+        this.boardLocations = boardLocations;
+    }
+
+       @Override
+    public int getRowCount() {
+        return (int) this.boardDimensions.getX();
+    }
+
+    @Override
+    public int getColumnCount() {
+        return (int) this.boardDimensions.getY();
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        return boardLocations[rowIndex][columnIndex];
+    } 
+   
+
+    public PlayerName getPlayerAt(int row, int column) {
+        return this.boardLocations[row][column];
+    }
+
+
+    public void clearTheBoard() {
+        for (int i = 0; i < this.boardLocations.length; i++) {
+            PlayerName[] rowlocations = this.boardLocations[i];
+            for (int j = 0; j < rowlocations.length; j++) {
+                PlayerName location = rowlocations[j];
+                location = null;
             }
-            
-            else if("B".equals(input)) {
-                    black = true;
-                     return;  
-            }
-            else
-                System.out.println("Error...Please choose R for Red or B for Black." );
-                return;
-                
-                
-                                      
-            }
-        
         }
-
-    public String getColor() {
-        return color;
     }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public Scanner getIn() {
-        return in;
-    }
-
-    public void setIn(Scanner in) {
-        this.in = in;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public boolean isRed() {
-        return red;
-    }
-
-    public void setRed(boolean red) {
-        this.red = red;
-    }
-
-    public boolean isBlack() {
-        return black;
-    }
-
-    public void setBlack(boolean black) {
-        this.black = black;
-    }
-
-    public String getInput() {
-        return input;
-    }
-
-    public void setInput(String input) {
-        this.input = input;
-    }
-
-    @Override
-    public String toString() {
-        return "Tokens{" + "color=" + color + ", size=" + size + ", in=" + in + ", x=" + x + ", red=" + red + ", black=" + black + ", input=" + input + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Tokens other = (Tokens) obj;
-        if (!Objects.equals(this.color, other.color)) {
-            return false;
-        }
-        if (this.size != other.size) {
-            return false;
-        }
-        if (!Objects.equals(this.in, other.in)) {
-            return false;
-        }
-        if (this.x != other.x) {
-            return false;
-        }
-        if (this.red != other.red) {
-            return false;
-        }
-        if (this.black != other.black) {
-            return false;
-        }
-        if (!Objects.equals(this.input, other.input)) {
-            return false;
-        }
-        return true;
-    }
-           
-           
-           
-       } 
-
-public void enterNextMove() {  //Faron Young - Prompt and Evaluate move for Column Increments
-    Scanner input = new Scanner(System.in);
-    System.out.println("Enter your move by selecting play column (A-G)");
-    this.move = input.next();
-    System.out.println("You entered column " + this.move + ".");  
-    this.move = move.toUpperCase();
-    switch(move){
-        case "A":
-            A++;printColumnValues();break;
-        case "B":
-            B++;printColumnValues();break;
-        case "C":
-            C++;printColumnValues();break;
-        case "D":
-            D++;printColumnValues();break;
-        case "E":
-            E++;printColumnValues();break;
-        case "F":
-            F++;printColumnValues();break;
-        case "G":
-            G++;printColumnValues();break;
-        default:
-            System.out.println("\tInvalid move, Please enter columen letter A through E");
-            enterNextMove();
-    }     
-}
-public void printColumnValues(){  //Faron Young - Check stored column Values after user moves
-    System.out.println("\"A\"="+A);
-    System.out.println("\"B\"="+B);
-    System.out.println("\"C=\""+C);
-    System.out.println("\"D\"="+D);
-    System.out.println("\"E\"="+E);
-    System.out.println("\"F\"="+F);
-    System.out.println("\"G\"="+G);
     
-}   
 
-    public int getRows() {
-        return rows;
-    }
+    public void occupyLocation(PlayerName player, int row, int column) throws GameException {  
+        PlayerName playerAtLocation = this.boardLocations[row][column];
 
-    public void setRows(int rows) {
-        this.rows = rows;
-    }
-
-    public int getColumns() {
-        return columns;
-    }
-
-    public void setColumns(int columns) {
-        this.columns = columns;
-    }
-
-    public String getMove() {
-        return move;
-    }
-
-    public void setMove(String move) {
-        this.move = move;
-    }
-
-    public int getA() {
-        return A;
-    }
-
-    public void setA(int A) {
-        this.A = A;
-    }
-
-    public int getB() {
-        return B;
-    }
-
-    public void setB(int B) {
-        this.B = B;
-    }
-
-    public int getC() {
-        return C;
-    }
-
-    public void setC(int C) {
-        this.C = C;
-    }
-
-    public int getD() {
-        return D;
-    }
-
-    public void setD(int D) {
-        this.D = D;
-    }
-
-    public int getE() {
-        return E;
-    }
-
-    public void setE(int E) {
-        this.E = E;
-    }
-
-    public int getF() {
-        return F;
-    }
-
-    public void setF(int F) {
-        this.F = F;
-    }
-
-    public int getG() {
-        return G;
-    }
-
-    public void setG(int G) {
-        this.G = G;
-    }
-
-    @Override
-    public String toString() {
-        return "Board{" + "rows=" + rows + ", columns=" + columns + ", move=" + move + ", A=" + A + ", B=" + B + ", C=" + C + ", D=" + D + ", E=" + E + ", F=" + F + ", G=" + G + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
+        if (playerAtLocation != null) { // location already occupied
+            throw new GameException(ErrorType.ERROR203.getMessage());
         }
-        if (getClass() != obj.getClass()) {
-            return false;
+        this.boardLocations[row][column] = player;
+    }
+
+    public class Location {
+
+        private int row;
+        private int column;
+        private String value;
+        private PlayerName player;
+
+        Location() {
         }
-        final Board other = (Board) obj;
-        if (this.rows != other.rows) {
-            return false;
+
+        int getRow() {
+            return row;
         }
-        if (this.columns != other.columns) {
-            return false;
+
+        void setRow(int row) {
+            this.row = row;
         }
-        if (!Objects.equals(this.move, other.move)) {
-            return false;
+
+        int getColumn() {
+            return column;
         }
-        if (this.A != other.A) {
-            return false;
+
+        void setColumn(int column) {
+            this.column = column;
         }
-        if (this.B != other.B) {
-            return false;
+
+        String getValue() {
+            return value;
         }
-        if (this.C != other.C) {
-            return false;
+
+        void setValue(String value) {
+            this.value = value;
         }
-        if (this.D != other.D) {
-            return false;
+
+        PlayerName getPlayer() {
+            return player;
         }
-        if (this.E != other.E) {
-            return false;
+
+        public void setPlayer(PlayerName player) {
+            this.player = player;
         }
-        if (this.F != other.F) {
-            return false;
+
+        String[] getCoordinates() {
+            String[] coordinates = new String[2];
+            Integer intRow = this.getRow() + 1;
+            Integer intColumn = this.getColumn() + 1;
+            coordinates[0] = intRow.toString();
+            coordinates[1] = intColumn.toString();
+            return coordinates;
         }
-        if (this.G != other.G) {
-            return false;
-        }
-        return true;
     }
 
 }
