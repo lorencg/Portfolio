@@ -12,5 +12,5 @@ import citbyui.cit260.connect4.exceptions.Connect4Exception;
  * @author SexyMama
  */
 public interface EnterInfo {
-    Object getInput(Object object )  throws Connect4Exception; 
+    void getNames();
 }
