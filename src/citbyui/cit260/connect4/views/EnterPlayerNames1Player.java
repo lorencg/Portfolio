@@ -6,6 +6,7 @@
 package citbyui.cit260.connect4.views;
 
 import citbyui.cit260.connect4.control.PlayerNameMenuControl;
+import citbyui.cit260.connect4.enums.GameType;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.models.PlayerName;
 import java.util.Arrays;
@@ -23,10 +24,6 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
         initComponents();
         this.game = game;
         setLocationRelativeTo(null);
-    }
-
-    EnterPlayerNames1Player(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

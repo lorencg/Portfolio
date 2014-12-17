@@ -117,7 +117,7 @@ public class GameBoard extends javax.swing.JFrame {
 
         jpBody = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jpgameboard = new javax.swing.JPanel();
         jbplaygame = new javax.swing.JButton();
         jbhelpgame = new javax.swing.JButton();
@@ -136,10 +136,10 @@ public class GameBoard extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Game Board");
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Game Board");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -147,14 +147,14 @@ public class GameBoard extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2))
+                .addComponent(jLabel4))
         );
 
         jpgameboard.setBackground(new java.awt.Color(0, 153, 153));
@@ -235,6 +235,11 @@ public class GameBoard extends javax.swing.JFrame {
         ));
         connectFourTable.setGridColor(new java.awt.Color(0, 0, 0));
         connectFourTable.setRowHeight(60);
+        connectFourTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cellClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(connectFourTable);
 
         javax.swing.GroupLayout jpMainPanelLayout = new javax.swing.GroupLayout(jpMainPanel);
@@ -322,6 +327,12 @@ public class GameBoard extends javax.swing.JFrame {
         help.setVisible(true);
         this.dispose();     // TODO add your handling code here:
     }//GEN-LAST:event_jbhelpgameActionPerformed
+
+    private void cellClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellClicked
+        JTable jTable = (JTable) evt.getComponent();
+        this.messageOutput.setForeground(Color.black);
+        this.takeTurn(jTable);
+    }//GEN-LAST:event_cellClicked
 private void clearMarkers() {
         TableModel model = this.connectFourTable.getModel();
         int rowCount = this.connectFourTable.getRowCount();
@@ -396,7 +407,7 @@ private void clearMarkers() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable connectFourTable;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
