@@ -1,5 +1,8 @@
-package citbyui.cit260.connect4.views;
+package citbyui.cit260.connect4.frames;
 
+import citbyui.cit260.connect4.frames.HelpMenu;
+import citbyui.cit260.connect4.frames.EnterPlayerNames2Player;
+import citbyui.cit260.connect4.frames.EnterPlayerNames1Player;
 import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.enums.GameType;

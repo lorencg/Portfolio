@@ -1,4 +1,4 @@
-package citbyui.cit260.connect4.views;
+package citbyui.cit260.connect4.frames;
 
 import citbyui.cit260.connect4.models.Game;
 /**

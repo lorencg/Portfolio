@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.views;
+package citbyui.cit260.connect4.frames;
 
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.models.PlayerName;
-import citbyui.cit260.connect4.views.GameBoard;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
