@@ -24,8 +24,8 @@ public class Game {
     private GameStatus status;
     private Board board;
     private GameBoard gameFrame;
-    private static final String PLAYER_A_DEFAULT_MARKER = "1";
-    private static final String PLAYER_B_DEFAULT_MARKER = "2";
+    private static final String PLAYER_A_DEFAULT_MARKER = "X";
+    private static final String PLAYER_B_DEFAULT_MARKER = "O";
     
 
     public Game() {
