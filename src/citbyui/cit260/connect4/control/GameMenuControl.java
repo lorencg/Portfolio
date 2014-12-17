@@ -223,7 +223,7 @@ public class GameMenuControl {
         for (int row = 0; row < locations.length; row++) {
             PlayerName[] rowLocations = locations[row];
             for (int col = 0; col < rowLocations.length; col++) {
-                if (threeInARow(row, col, locations)) {
+                if (fourInARow(row, col, locations)) {
                     return true;
                 }
             }
@@ -232,7 +232,7 @@ public class GameMenuControl {
         return false;
     }
 
-    private boolean threeInARow(int row, int col, PlayerName[][] boardLocations) {
+    private boolean fourInARow(int row, int col, PlayerName[][] boardLocations) {
         boolean winner = false;
 
         int columnLength = boardLocations[row].length;

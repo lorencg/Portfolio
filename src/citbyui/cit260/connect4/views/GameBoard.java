@@ -9,12 +9,20 @@ import citbyui.cit260.connect4.control.GameMenuControl;
 import citbyui.cit260.connect4.enums.GameStatus;
 import citbyui.cit260.connect4.enums.GameType;
 import citbyui.cit260.connect4.enums.PlayerType;
+import citbyui.cit260.connect4.exceptions.Connect4Exception;
+import citbyui.cit260.connect4.exceptions.GameException;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.models.PlayerName;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Point;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
 /**
  *
  * @author Sarah & Patti
@@ -27,12 +35,76 @@ public class GameBoard extends javax.swing.JFrame {
      * Creates new form GameMenu
      */
     public GameBoard() {
-        initComponents();
+        this.initComponents();
+        this.initializeFrame();
+        setLocationRelativeTo(null);
     }
     
     public GameBoard(Game game) {
         this();
         this.game = game;
+        this.gameCommands = new GameMenuControl(game);
+    }
+    
+    
+    
+    public void initializeFrame() {
+        /* Create and display the form */
+        
+
+        connectFourTable.getTableHeader().setVisible(false);
+        connectFourTable.getTableHeader().setPreferredSize(new Dimension(0, 0));
+        connectFourTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        Color backgroundColor = connectFourTable.getBackground();
+        connectFourTable.setSelectionBackground(backgroundColor);
+
+        CellRenderer cellRenderer = new CellRenderer();
+        cellRenderer.setHorizontalAlignment(JLabel.CENTER);
+        TableColumnModel columnTableModel = connectFourTable.getColumnModel();
+        for (int i = 0; i < connectFourTable.getColumnCount(); i++) {
+            columnTableModel.getColumn(i).setCellRenderer(cellRenderer);
+        }
+        
+    }
+    
+    public String getCurrentMarker() {
+        return currentMarker;
+    }
+
+    public void setCurrentMarker(String currentMarker) {
+        this.currentMarker = currentMarker;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public JTable getTicTacToeTable() {
+        return connectFourTable;
+    }
+
+    public void setTicTacToeTable(JTable ticTacToeTable) {
+        this.connectFourTable = ticTacToeTable;
+    }
+
+    public JPanel getJpMainPanel() {
+        return jpMainPanel;
+    }
+
+    public void setJpMainPanel(JPanel jpMainPanel) {
+        this.jpMainPanel = jpMainPanel;
+    }
+
+    public JPanel getJpBody() {
+        return jpBody;
+    }
+
+    public void setJpBody(JPanel jpBody) {
+        this.jpBody = jpBody;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,22 +115,23 @@ public class GameBoard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jpBody = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jpgameboard = new javax.swing.JPanel();
         jbplaygame = new javax.swing.JButton();
         jbhelpgame = new javax.swing.JButton();
         jbquitgame = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        connectFourTable = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         messageOutput = new javax.swing.JTextArea();
+        jpMainPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        connectFourTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpBody.setBackground(new java.awt.Color(0, 0, 0));
+        jpBody.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -73,7 +146,7 @@ public class GameBoard extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
+                .addGap(118, 118, 118)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -138,6 +211,12 @@ public class GameBoard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        messageOutput.setColumns(20);
+        messageOutput.setRows(5);
+        jScrollPane1.setViewportView(messageOutput);
+
+        jpMainPanel.setBackground(new java.awt.Color(0, 0, 0));
+
         connectFourTable.setAutoCreateRowSorter(true);
         connectFourTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 5));
         connectFourTable.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
@@ -158,56 +237,78 @@ public class GameBoard extends javax.swing.JFrame {
         connectFourTable.setRowHeight(60);
         jScrollPane2.setViewportView(connectFourTable);
 
-        messageOutput.setColumns(20);
-        messageOutput.setRows(5);
-        jScrollPane1.setViewportView(messageOutput);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpMainPanelLayout = new javax.swing.GroupLayout(jpMainPanel);
+        jpMainPanel.setLayout(jpMainPanelLayout);
+        jpMainPanelLayout.setHorizontalGroup(
+            jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpMainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jpgameboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+                .addGap(25, 25, 25))
+        );
+        jpMainPanelLayout.setVerticalGroup(
+            jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMainPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+
+        javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
+        jpBody.setLayout(jpBodyLayout);
+        jpBodyLayout.setHorizontalGroup(
+            jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBodyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jpBodyLayout.createSequentialGroup()
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jpMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jpgameboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpBodyLayout.setVerticalGroup(
+            jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBodyLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpgameboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGap(11, 11, 11)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpgameboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbplaygameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbplaygameActionPerformed
-            // TODO add your handling code here:
+        this.gameCommands.startNewGame(this.game);
+        clearMarkers();
+        takeFirstTurn();
+        String nextPlayersMessage = this.game.getCurrentPlayer().getName()
+        + " it is your turn.";
+        this.messageOutput.setText(nextPlayersMessage);
     }//GEN-LAST:event_jbplaygameActionPerformed
 
     private void jbquitgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbquitgameActionPerformed
@@ -221,7 +322,42 @@ public class GameBoard extends javax.swing.JFrame {
         help.setVisible(true);
         this.dispose();     // TODO add your handling code here:
     }//GEN-LAST:event_jbhelpgameActionPerformed
+private void clearMarkers() {
+        TableModel model = this.connectFourTable.getModel();
+        int rowCount = this.connectFourTable.getRowCount();
+        int colCount = this.connectFourTable.getColumnCount();
+        for (int row = 0; row < rowCount; row++) {
+            for (int col = 0; col < colCount; col++) {
+                model.setValueAt("", row, col);
+            }
+        }   
+    }
+    
+    
+    private String getNextPlayerMessage(PlayerName player) {
+        if (this.game.getGameType() == GameType.ONE_PLAYER) {
+            return "The computer took it's turn. It is now your turn "
+                    + player.getName();
+        } else {
+            return "It is now your turn "
+                    + player.getName();
+        }
+    }
 
+    
+    
+    
+    private boolean gameOver() {
+        if (this.game.getStatus() == GameStatus.TIE) { // a tie?
+            this.messageOutput.setText(this.game.getTiedMessage());
+            return true;
+        } else if (this.game.getStatus() == GameStatus.WINNER) { // a win?
+            this.messageOutput.setText(this.game.getWinningMessage());
+            return true;
+        }
+
+        return false;
+    }
     /**
      * @param args the command line arguments
      */
@@ -261,15 +397,122 @@ public class GameBoard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable connectFourTable;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbhelpgame;
     private javax.swing.JButton jbplaygame;
     private javax.swing.JButton jbquitgame;
+    private javax.swing.JPanel jpBody;
+    private javax.swing.JPanel jpMainPanel;
+    private javax.swing.JPanel jpMainPanel1;
     private javax.swing.JPanel jpgameboard;
     private javax.swing.JTextArea messageOutput;
+    private javax.swing.JTable ticTacToeTable1;
     // End of variables declaration//GEN-END:variables
 
+    private void takeFirstTurn() {
+        PlayerName currentPlayer = this.game.getCurrentPlayer();
+        
+        if (this.game.getStatus() == GameStatus.NEW_GAME
+                && this.game.getGameType() == GameType.ONE_PLAYER
+                && currentPlayer.getPlayerType() == PlayerType.COMPUTER_PLAYER) {
+            try {
+                Point locationMarkerPlaced = this.gameCommands.playerTakesTurn(currentPlayer, null);
+
+                String playersMarker = game.getCurrentPlayer().getMarker();
+                this.connectFourTable.getModel().setValueAt(playersMarker, locationMarkerPlaced.x, locationMarkerPlaced.y);
+                
+            } catch (Exception ex) {
+                this.messageOutput.setText(ex.getMessage());
+                ex.printStackTrace();
+                this.dispose();
+            }
+        }
+        
+        String promptNextPlayer = getNextPlayerMessage(currentPlayer);
+        this.messageOutput.setText(promptNextPlayer);
+        this.game.setStatus(GameStatus.PLAYING);
+    }
+
+    private void takeTurn(JTable table) {
+        String playersMarker;
+        int selectedRow = table.getSelectedRow();
+        int selectedColumn = table.getSelectedColumn();
+        Point selectedLocation = new Point(selectedRow, selectedColumn);
+
+        PlayerName currentPlayer = this.game.getCurrentPlayer();
+        PlayerName otherPlayer = this.game.getOtherPlayer();
+
+        try {
+
+            if (this.game.getGameType() == GameType.ONE_PLAYER) {
+                // regular players turn
+                Point locationMarkerPlaced = 
+                        this.gameCommands.playerTakesTurn(currentPlayer, selectedLocation);
+                playersMarker = currentPlayer.getMarker();
+                table.getModel().setValueAt(playersMarker, locationMarkerPlaced.x, locationMarkerPlaced.y);
+                if (this.gameOver()) { // game won or tied?
+                    return;
+                }
+              
+                table.setCellSelectionEnabled(false);
+                ListSelectionModel selectionModel = table.getSelectionModel();
+                selectionModel.clearSelection();
+                
+
+                // computers turn
+                locationMarkerPlaced = this.gameCommands.playerTakesTurn(otherPlayer, null);
+                playersMarker = otherPlayer.getMarker();
+                table.getModel().setValueAt(playersMarker, locationMarkerPlaced.x, locationMarkerPlaced.y);
+
+                if (this.gameOver()) { // game won or tied?
+                    return;
+                }
+                
+                
+
+
+            } else { // two player game
+                // regular players turn                
+                Point locationMarkerPlaced = this.gameCommands.playerTakesTurn(this.game.getCurrentPlayer(), selectedLocation);
+                playersMarker = currentPlayer.getMarker();
+                table.getModel().setValueAt(playersMarker, locationMarkerPlaced.x, selectedColumn);
+                if (this.gameOver()) { // game won or tied?
+                    return;
+                }
+                
+                table.setCellSelectionEnabled(false);
+                ListSelectionModel selectionModel = table.getSelectionModel();
+                selectionModel.clearSelection();
+            }
+
+            if (this.gameOver()) { // game won or tied?
+                return;
+            }
+
+            String promptNextPlayer = getNextPlayerMessage(this.game.getCurrentPlayer());
+            this.messageOutput.setText(promptNextPlayer);
+
+        } catch (GameException | Connect4Exception gex) {
+            this.messageOutput.setText(gex.getMessage());
+            ListSelectionModel selectionModel = table.getSelectionModel();
+            selectionModel.clearSelection();
+        } catch (Exception ex) {
+            this.messageOutput.setText(ex.getMessage());
+            ex.printStackTrace();
+            this.dispose();
+        }
+    }
+
+    private class CellRenderer extends DefaultTableCellRenderer {
+
+        public CellRenderer() {
+            super();
+        }
+
+        public void setValue(PlayerName player) {
+            setText((player == null) ? "" : player.getMarker());
+        }
+    }
 }

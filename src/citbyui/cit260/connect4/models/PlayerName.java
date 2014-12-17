@@ -81,30 +81,6 @@ public class PlayerName {
         this.ties = ties;
     }
 
-
-    private long getWinningPercentage() {
-
-        double totalScore = this.getWins() + this.getLosses() + this.getTies();
-        if (totalScore == 0) {
-            return 0;
-        }
-        
-        double winLossRatio = this.getWins() / totalScore;
-        long percentage = Math.round(winLossRatio * 100);
-        return percentage;
-    }
-
- 
-    public String getPlayerStastics() {
-        String playerStatistics = 
-                this.getName() + " has won "
-                + this.getWinningPercentage() + "% of the games."
-                + "\n\t" + this.getWins() + " wins, "
-                + this.getLosses() + " losses and "
-                + this.getTies() + " ties.";
-        
-        return playerStatistics;
-    }
  
     
 }

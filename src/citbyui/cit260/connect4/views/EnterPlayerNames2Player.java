@@ -159,7 +159,7 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
 
     private void jBContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBContinueActionPerformed
         String playerAName = this.jtxfieldPlayer1.getText();
-        String playerBName = this.jtxfieldPlayer1.getText();
+        String playerBName = this.jtxfieldPlayer2.getText();
         //PlayerNameMenuControl.savePlayersNames(game, playerAName, playerBName);
         JOptionPane.showMessageDialog(null,"Welcome " + playerAName + " and " + playerBName + " to Connect 4!");
         GameBoard game = new GameBoard();
