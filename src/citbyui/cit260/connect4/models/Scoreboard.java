@@ -144,6 +144,24 @@ public void displayScoreboard() {
     System.out.println("Each space unused when connect4 is reached will award " + this.bonus + " bonus points.");
 }
 
+
+
+// Start checking for 4 in a row
+
+
+// Horizontal Win
+    
+
+// Vertical Win
+
+
+// Diagnol Right
+
+
+// Diagnol Left
+
+
+
 private void isDraw() {
     if (this.totalMoves == 42 && gameWon != true){
         System.out.println("\tIt\'s a draw!");

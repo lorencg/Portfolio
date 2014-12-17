@@ -147,11 +147,6 @@ public class GameBoard extends javax.swing.JFrame {
         ));
         connectFourTable.setGridColor(new java.awt.Color(0, 0, 0));
         connectFourTable.setRowHeight(60);
-        connectFourTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cellClicked(evt);
-            }
-        });
         jScrollPane2.setViewportView(connectFourTable);
 
         javax.swing.GroupLayout jpMainPanelLayout = new javax.swing.GroupLayout(jpMainPanel);
@@ -176,20 +171,22 @@ public class GameBoard extends javax.swing.JFrame {
         jpBodyLayout.setHorizontalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBodyLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jpBodyLayout.createSequentialGroup()
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBodyLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jpMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jpgameboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpBodyLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpBodyLayout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(jpMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jpgameboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpBodyLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,10 +231,6 @@ public class GameBoard extends javax.swing.JFrame {
         help.setVisible(true);
         this.dispose();     // TODO add your handling code here:
     }//GEN-LAST:event_jbhelpgameActionPerformed
-
-    private void cellClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellClicked
-        
-    }//GEN-LAST:event_cellClicked
 
     /**
      * @param args the command line arguments
@@ -286,10 +279,8 @@ public class GameBoard extends javax.swing.JFrame {
     private javax.swing.JButton jbquitgame;
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpMainPanel;
-    private javax.swing.JPanel jpMainPanel1;
     private javax.swing.JPanel jpgameboard;
     private javax.swing.JTextArea messageOutput;
-    private javax.swing.JTable ticTacToeTable1;
     // End of variables declaration//GEN-END:variables
 
 }
