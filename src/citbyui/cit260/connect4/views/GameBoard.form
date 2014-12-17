@@ -308,9 +308,6 @@
                     </Property>
                     <Property name="rowHeight" type="int" value="60"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cellClicked"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>

@@ -5,9 +5,9 @@
  */
 package citbyui.cit260.connect4.views;
 
-import citbyui.cit260.connect4.control.PlayerNameMenuControl;
-import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.models.PlayerName;
+import citbyui.cit260.connect4.views.GameBoard;
+import citbyui.cit260.connect4.views.MainFrame;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
@@ -16,14 +16,12 @@ import javax.swing.JOptionPane;
  * @author Josh
  */
 public class EnterPlayerNames2Player extends javax.swing.JFrame {
-    private Game game = null;
+
     /**
      * Creates new form EnterPlayerNames2Player
      */
     public EnterPlayerNames2Player() {
         initComponents();
-        this.game = game;
-        setLocationRelativeTo(null);
     }
     
     
@@ -158,13 +156,14 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnBackP2ActionPerformed
 
     private void jBContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBContinueActionPerformed
-        String playerAName = this.jtxfieldPlayer1.getText();
-        String playerBName = this.jtxfieldPlayer2.getText();
-        PlayerNameMenuControl.savePlayersNames(game, playerAName, playerBName);
-        //JOptionPane.showMessageDialog(null,"Welcome " + playerAName + " and " + playerBName + " to Connect 4!");
+        PlayerName p2Name = new PlayerName();
+        String text = jtxfieldPlayer1.getText();
+        String textP2 = jtxfieldPlayer2.getText();
+        p2Name.getNames(text,textP2);
+        JOptionPane.showMessageDialog(null,"Welcome " + Arrays.toString(p2Name.getName(text))+" and "+Arrays.toString(p2Name.getName(textP2))+" to Connect 4.");
         GameBoard game = new GameBoard();
         game.setVisible(true);
-        this.dispose();// TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jBContinueActionPerformed
 
     /**

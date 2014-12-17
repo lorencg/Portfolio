@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.enums;
+package citbyui.cit260.connect4.interfaces;
 
 /**
  *
- * @author Josh
+ * @author Patti Jones
  */
- public enum GameType { ONE_PLAYER,
-                       TWO_PLAYER;
+public interface DisplayError {
+    void DisplayError ();
 }
