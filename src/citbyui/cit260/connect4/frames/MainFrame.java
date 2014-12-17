@@ -1,5 +1,8 @@
-package citbyui.cit260.connect4.views;
+package citbyui.cit260.connect4.frames;
 
+import citbyui.cit260.connect4.frames.HelpMenu;
+import citbyui.cit260.connect4.frames.EnterPlayerNames2Player;
+import citbyui.cit260.connect4.frames.EnterPlayerNames1Player;
 import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.enums.GameType;
@@ -137,15 +140,15 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addComponent(jbtnPlayer1)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnPlayer2)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnHelp)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnExit)
-                .addContainerGap())
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jtWelcome.setEditable(false);
@@ -175,10 +178,10 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jScrollPane1))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jpTitle.getAccessibleContext().setAccessibleName("jpBody");
