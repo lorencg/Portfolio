@@ -3,28 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.connect4.frames;
+package citbyui.cit260.connect4.views;
 
+import citbyui.cit260.connect4.control.PlayerNameMenuControl;
+import citbyui.cit260.connect4.enums.GameType;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.models.PlayerName;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author Josh
  */
 public class EnterPlayerNames1Player extends javax.swing.JFrame {
-
+    private Game game = null;
     /**
      * Creates new form EnterPlayerNames2Player
      */
     public EnterPlayerNames1Player() {
         initComponents();
-    }
-
-    EnterPlayerNames1Player(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.game = game;
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -137,9 +136,9 @@ public class EnterPlayerNames1Player extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnP1BackActionPerformed
 
     private void onePlayerContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerContActionPerformed
-        PlayerName p1Name = new PlayerName();
-        String text = jtxfieldPlayer1.getText();
-          JOptionPane.showMessageDialog(null,"Welcome" + Arrays.toString(p1Name.getName(text))+" to Connect 4.");
+        String playerAName = this.jtxfieldPlayer1.getText();
+          JOptionPane.showMessageDialog(null,"Welcome " + playerAName + " to Connect 4!");
+          //PlayerNameMenuControl.savePlayersName(game, playerAName);
         GameBoard game = new GameBoard();
         game.setVisible(true);
         this.dispose();        // TODO add your handling code here:

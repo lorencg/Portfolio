@@ -1,9 +1,9 @@
-package citbyui.cit260.connect4.frames;
+package citbyui.cit260.connect4.views;
 
 import citbyui.cit260.connect4.control.MainMenuControl;
 import citbyui.cit260.connect4.models.Game;
 import citbyui.cit260.connect4.enums.GameType;
-import citbyui.cit260.connect4.models.Connect4;
+import citbyui.cit260.connect4.control.Connect4;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

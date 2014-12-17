@@ -5,46 +5,47 @@
  */
 package citbyui.cit260.connect4.control;
 
-import citbyui.cit260.connect4.views.HelpMenuView;
 import citbyui.cit260.connect4.enums.GameStatus;
 import citbyui.cit260.connect4.enums.GameType;
+import citbyui.cit260.connect4.enums.PlayerType;
 import citbyui.cit260.connect4.models.Board;
 import citbyui.cit260.connect4.models.Game;
+import citbyui.cit260.connect4.models.PlayerName;
 
 /**
  *
  * @author Josh
  */
 public class MainMenuControl {
-    public void displayHelpMenu(){
-        HelpMenuView help = new HelpMenuView();
-        help.getInput();
-    }
-    public void displayBoard(){
-        Board board = new Board();
-        board.displayBoard();
-    }
-    public void startGameOne(){
-        Game gameOne = new Game();
-        gameOne.OnePlayerGame(null);
-    }
-    public void startGameTwo(){
-        Game gameTwo = new Game();
-        gameTwo.TwoPlayerGame(null, null);
-    }
     
+    private static final String PLAYER_A_DEFAULT_MARKER = "1";
+    private static final String PLAYER_B_DEFAULT_MARKER = "2";
     
-    
-    public MainMenuControl() {
-    }
-
-    @Override
-    public String toString() {
-        return "MainMenuController{" + '}';
-    }
-
     public Game create(GameType gameType) {
-        return null;
-    }
+        Game game = null;
+        PlayerName playerA = null;
+        PlayerName playerB = null;
+        
+        if (gameType == null) {
+            throw new IllegalArgumentException ("MainCommands - create: gameType is null");
+        }
+        
+        if (gameType == GameType.ONE_PLAYER) {
+            game = new Game(GameType.ONE_PLAYER);
+            playerA = new PlayerName(PlayerType.REGULAR_PLAYER, PLAYER_A_DEFAULT_MARKER);
+            playerB = new PlayerName(PlayerType.COMPUTER_PLAYER, PLAYER_B_DEFAULT_MARKER);
+        }
+        else if (gameType == GameType.TWO_PLAYER) {
+            game = new Game(GameType.TWO_PLAYER);
+            playerA = new PlayerName(PlayerType.REGULAR_PLAYER, PLAYER_A_DEFAULT_MARKER);
+            playerB = new PlayerName(PlayerType.REGULAR_PLAYER, PLAYER_B_DEFAULT_MARKER);
+
+        }
+         
+        game.setPlayerA(playerA);
+        game.setPlayerB(playerB);
+        
+        return game;
+    } 
     
 }
