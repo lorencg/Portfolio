@@ -18,6 +18,30 @@ public class Board {
     private int printColumns;
     private final int columns = 7;
     private final char board [][]= new char [6][7];
+
+    public Scanner getIn() {
+        return in;
+    }
+
+    public void setIn(Scanner in) {
+        this.in = in;
+    }
+
+    public int getPrintRow() {
+        return printRow;
+    }
+
+    public void setPrintRow(int printRow) {
+        this.printRow = printRow;
+    }
+
+    public int getPrintColumns() {
+        return printColumns;
+    }
+
+    public void setPrintColumns(int printColumns) {
+        this.printColumns = printColumns;
+    }
     
         
     
@@ -26,8 +50,7 @@ public void displayBoard() {
     System.out.println("1 | 2 | 3 | 4 | 5 | 6 | 7 |");
     for(printRow=0 ;printRow < 6; ++printRow){
        for(printColumns = 0;printColumns < 7; ++printColumns){
-           
-           System.out.print(board[printRow][printColumns] + " | ");
+          System.out.print(board[printRow][printColumns] + " | ");
    } 
         System.out.println();
     }
@@ -79,6 +102,7 @@ public void Game() {
             else{
                 System.out.println("invalid move");
             }
+            
             displayBoard();
             
         }
