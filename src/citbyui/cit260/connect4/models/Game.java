@@ -19,7 +19,7 @@ public class Game {
     public void OnePlayerGame(String p1name){
         PlayerName name = new PlayerName();
         String p1=p1name;
-        Player = name.getName(p1);
+        
         
         
     }

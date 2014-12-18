@@ -1,5 +1,6 @@
 package citbyui.cit260.connect4.frames;
 
+import citbyui.cit260.connect4.models.Board;
 import citbyui.cit260.connect4.models.Game;
 /**
  *
@@ -12,8 +13,8 @@ public class GameBoard extends javax.swing.JFrame {
      */
     public GameBoard() {
         initComponents();
+       
     }
-    
     public GameBoard(Game game) {
         this();
         this.game = game;
@@ -215,7 +216,7 @@ public class GameBoard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbplaygameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbplaygameActionPerformed
-        
+       
     }//GEN-LAST:event_jbplaygameActionPerformed
 
     private void jbquitgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbquitgameActionPerformed

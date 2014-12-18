@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.connect4.frames;
 
+import citbyui.cit260.connect4.models.Board;
 import citbyui.cit260.connect4.models.PlayerName;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
@@ -20,6 +21,7 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
      */
     public EnterPlayerNames2Player() {
         initComponents();
+        
     }
     
     
@@ -156,11 +158,13 @@ public class EnterPlayerNames2Player extends javax.swing.JFrame {
         PlayerName p2Name = new PlayerName();
         String text = jtxfieldPlayer1.getText();
         String textP2 = jtxfieldPlayer2.getText();
-        p2Name.getNames(text,textP2);
-        JOptionPane.showMessageDialog(null,"Welcome " + Arrays.toString(p2Name.getName(text))+" and "+Arrays.toString(p2Name.getName(textP2))+" to Connect 4.");
-        GameBoard game = new GameBoard();
-        game.setVisible(true);
-        this.dispose();
+        p2Name.setPlayerOne(text);
+        p2Name.setPlayerTwo(textP2);
+        JOptionPane.showMessageDialog(null,"Welcome " + p2Name.getPlayerOne()+" and "+ p2Name.getPlayerTwo()+" to Connect 4.");
+         this.dispose();
+        Board game = new Board();
+        game.Game();
+       
     }//GEN-LAST:event_jBContinueActionPerformed
 
     /**

@@ -38,7 +38,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpTitle = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
         jpMenuItems = new javax.swing.JPanel();
-        jbtnPlayer1 = new javax.swing.JButton();
         jbtnPlayer2 = new javax.swing.JButton();
         jbtnHelp = new javax.swing.JButton();
         jbtnExit = new javax.swing.JButton();
@@ -84,16 +83,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         jpMenuItems.setForeground(new java.awt.Color(102, 255, 255));
         jpMenuItems.setToolTipText("");
 
-        jbtnPlayer1.setBackground(new java.awt.Color(204, 204, 204));
-        jbtnPlayer1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jbtnPlayer1.setText("Player 1 Game");
-        jbtnPlayer1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jbtnPlayer1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnPlayer1ActionPerformed(evt);
-            }
-        });
-
         jbtnPlayer2.setBackground(new java.awt.Color(204, 204, 204));
         jbtnPlayer2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jbtnPlayer2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -133,20 +122,17 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtnHelp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtnPlayer2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                    .addComponent(jbtnPlayer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jbtnPlayer1)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(jbtnPlayer2)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(jbtnHelp)
-                .addGap(18, 18, 18)
+                .addGap(37, 37, 37)
                 .addComponent(jbtnExit)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
@@ -207,13 +193,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlayer1ActionPerformed
-        // TODO add your handling code here:
-       EnterPlayerNames1Player p1 = new EnterPlayerNames1Player();
-        p1.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtnPlayer1ActionPerformed
-
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -241,7 +220,6 @@ private MainMenuControl mainmenucontrol = new MainMenuControl();
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtnExit;
     private javax.swing.JButton jbtnHelp;
-    private javax.swing.JButton jbtnPlayer1;
     private javax.swing.JButton jbtnPlayer2;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpBody;

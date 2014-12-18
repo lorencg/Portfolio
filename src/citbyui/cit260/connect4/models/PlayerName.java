@@ -15,28 +15,16 @@ import java.awt.Point;
  * @author Kayla Lindstrom,Faron Young, Loren Glenn, Joshua Siqueiros, Sarah Christian, Patti Jones
  */
 public class PlayerName{
-    
-    
-    public String[] getName(String p1){
-        String playerOne = p1;
-                        
-        String PlayerName[] = {playerOne};
-        
-        if(PlayerName[0].length() == 0){
-                System.out.println("Please enter a name");
-        }
-            for(int i=0; i<1; i++){
-                System.out.println("Player" + (i+1) + ": " + PlayerName[i]);
-                }
-        return PlayerName;
-    }
-    
+    String playerOne;
+    String playerTwo;
+    String PlayerName[]={playerOne,playerTwo};
+            
     public String[] getNames(String p1,String p2){
         
-        String playerOne = p1;
-        String playerTwo = p2; 
+        playerOne = p1;
+        playerTwo = p2; 
                
-        String PlayerName[] = {playerOne, playerTwo};
+       
         if(PlayerName[0].length() == 0 && PlayerName[1].length() == 0){
                 System.out.println("Please enter a name");
         }
@@ -58,4 +46,28 @@ public class PlayerName{
       //  if (PlayerName ==  null) {
         //    throw new PlayerException("Please enter your name");
         //}
+
+    public String getPlayerOne() {
+        return playerOne;
+    }
+
+    public void setPlayerOne(String playerOne) {
+        this.playerOne = playerOne;
+    }
+
+    public String getPlayerTwo() {
+        return playerTwo;
+    }
+
+    public void setPlayerTwo(String playerTwo) {
+        this.playerTwo = playerTwo;
+    }
+
+    public String[] getPlayerName() {
+        return PlayerName;
+    }
+
+    public void setPlayerName(String[] PlayerName) {
+        this.PlayerName = PlayerName;
+    }
      }
