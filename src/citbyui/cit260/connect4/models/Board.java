@@ -104,13 +104,12 @@ public class Board {
                 
 
             }
-            //winner();
         }
     }
 
     //start 4 in a row check
 
-    public boolean winner()  {
+    public boolean checkWinner()  {
 
         int checkWin = 0;       //Checks which char to search for
         boolean saveWin = false;
