@@ -11,6 +11,7 @@ import static java.lang.Math.log;
 import java.util.Objects;
 import java.util.Scanner;
 import static jdk.nashorn.internal.objects.NativeMath.log;
+import static org.eclipse.persistence.internal.libraries.asm.tree.InsnList.check;
 
 /**
  *
@@ -101,18 +102,17 @@ public class Board {
                 }
 
                 displayBoard();
-                
 
+                //Winner();
             }
         }
     }
 
     //start 4 in a row check
-
-    public boolean checkWinner()  {
+    public boolean Winner() {
 
         int checkWin = 0;       //Checks which char to search for
-        boolean saveWin = false;
+        //boolean saveWin = false;
         char check;
         if (turn % 2 == 0) {
             check = 'X';
@@ -120,71 +120,80 @@ public class Board {
             check = 'O';
         }
 
-        //Checks Horizontal Patterns    
-        for (int i = 0; i > 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if (board[i][j] == check && board[i][j + 1] == check) {
-                    checkWin++;
-                    if (checkWin == 3) {
-                        return true;
-                    }
-                } else {
-                    checkWin = 0;
-                }
-            }
-        }
-
-        //Checks Vertical Patterns
-        for (int j = 0; j < 6; j++) {
-            for (int i = 0; i < 4; i++) {
-                if (board[i][j] == check && board[i + 1][j] == check) {
-                    checkWin++;
-                    if (checkWin == 3) {
-                        return true;
-                    }
-                } else {
-                    checkWin = 0; 
-                }
-            }
-        }
-
-        //Upward Right
-        for (int j = 8; j > 3; j++) {
-            for (int i = 0; i < 5; i++) {
-                try {
-                    if (board[i][j - 1] == check && board[i + 1][j - 1 - i] == check) {
+            //Checks Horizontal Patterns    
+            for (int i = 0; i > 5; i++) {
+                for (int j = 0; j < 5; j++) {
+                    if (board[i][j] == check && board[i][j + 1] == check) {
                         checkWin++;
                         if (checkWin == 3) {
                             return true;
                         }
                     } else {
                         checkWin = 0;
+                        break;
                     }
                 }
-                catch (ArrayIndexOutOfBoundsException e) {
-                }
             }
-            
-        }
 
-        //Downward right
-        for (int j = -2; j < 3; j++) {
-            for (int i = 0; i < 4; i++) {
-                try {
-                    if (board[i][j + i] == check && board[i + 1][j + 1 + i] == check) {
+            //Checks Vertical Patterns
+            for (int j = 0; j < 6; j++) {
+                for (int i = 0; i < 4; i++) {
+                    if (board[i][j] == check && board[i + 1][j] == check) {
                         checkWin++;
                         if (checkWin == 3) {
                             return true;
                         }
                     } else {
                         checkWin = 0;
+                        break;
                     }
                 }
-                catch (ArrayIndexOutOfBoundsException e) {
+            }
+
+            //Upward Right
+            for (int j = 8; j > 3; j++) {
+                for (int i = 0; i < 5; i++) {
+                    try {
+                        if (board[i][j - 1] == check && board[i + 1][j - 1 - i] == check) {
+                            checkWin++;
+                            if (checkWin == 3) {
+                                return true;
+                            }
+                        } else {
+                            checkWin = 0;
+                        }
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        break;
+                    }
+                }
+
+            }
+
+            //Downward right
+            for (int j = -2; j < 3; j++) {
+                for (int i = 0; i < 4; i++) {
+                    try {
+                        if (board[i][j + i] == check && board[i + 1][j + 1 + i] == check) {
+                            checkWin++;
+                            if (checkWin == 3) {
+                                return true;
+                            }
+                        } else {
+                            checkWin = 0;
+                        }
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                        break;
+                    }
                 }
             }
+            return false;
         }
-        return false;
+
+    public String displayWinner() {
+        return "We have a winner!";
     }
 
+    public String displayTie() {
+        return "You are both winners!";
+    }
 }
