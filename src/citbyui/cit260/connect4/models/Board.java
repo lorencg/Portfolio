@@ -25,6 +25,25 @@ public class Board {
     private final int columns = 7;
     private final char board[][] = new char[6][7];
     private int turn = 1;
+    
+    private Board winner;
+    private Board[][] boardLocations;
+
+    public Board getWinner() {
+        return winner;
+    }
+
+    public void setWinner(Board winner) {
+        this.winner = winner;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
 
     public Scanner getIn() {
         return in;
@@ -32,6 +51,14 @@ public class Board {
 
     public void setIn(Scanner in) {
         this.in = in;
+    }
+
+    public Board[][] getBoardLocations() {
+        return boardLocations;
+    }
+
+    public void setBoardLocations(Board[][] boardLocations) {
+        this.boardLocations = boardLocations;
     }
 
     public int getPrintRow() {
@@ -70,7 +97,6 @@ public class Board {
         displayBoard();
         //clear board
         while (!gameOver) {
-
             //get move
             System.out.println("Please enter a column '1-7' or 0 to quit: ");
             moveColumn = in.nextInt() - 1;
@@ -101,99 +127,104 @@ public class Board {
                     System.out.println("invalid move");
                 }
 
-                displayBoard();
-
-                //Winner();
+                displayBoard(); 
             }
+            
+              gameOver = checkWinner();  
         }
+    System.out.println("-----------------------"
+            + "someone just won this poopy game and it wasn't me/n"
+            + "-----------------------");
     }
-
     //start 4 in a row check
-    public boolean Winner() {
-
+    public boolean checkWinner() {
+        
         int checkWin = 0;       //Checks which char to search for
-        //boolean saveWin = false;
+        int counter = 0;
         char check;
+        boolean winner = false;
         if (turn % 2 == 0) {
-            check = 'X';
-        } else {
             check = 'O';
+        } else {
+            check = 'X';
+        }
+        if (check == check) {
+            System.out.println("--------" + check + "--------");
         }
 
-            //Checks Horizontal Patterns    
-            for (int i = 0; i > 5; i++) {
-                for (int j = 0; j < 5; j++) {
-                    if (board[i][j] == check && board[i][j + 1] == check) {
-                        checkWin++;
-                        if (checkWin == 3) {
-                            return true;
-                        }
-                    } else {
-                        checkWin = 0;
-                        break;
-                    }
-                }
-            }
-
-            //Checks Vertical Patterns
+        //Checks Horizontal Patterns    
+        for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
-                for (int i = 0; i < 4; i++) {
-                    if (board[i][j] == check && board[i + 1][j] == check) {
+                if (board[i][j] == check && board[i][j + 1] == check) {
+                    checkWin++;
+                    if (checkWin == 3) {
+                        return true;
+                    }
+                } else {
+                    counter ++;
+                    checkWin = 0;
+                   
+                }
+            }
+        }
+
+//                Checks Vertical Patterns
+        for (int j = 0; j < 7; j++) {
+            for (int i = 0; i < 5; i++) {
+                System.out.println(board[i][j] + " " + board[i+1][j]);
+                if (board[i][j] == check && board[i + 1][j] == check) {
+                    checkWin++;
+                    if (checkWin == 3) {
+                        return true;
+                    }
+                } else {
+                    counter ++;
+                    checkWin = 0;
+                }
+            }
+        }
+
+        //Upward Right
+        for (int j = 8; j > 2; j--) {
+            for (int i = 0; i < 6; i++) {
+                
+                try {
+                    System.out.println(board[i][j-i] + " " + board[i + 1][j - 1 - i]);
+                    System.out.println(i + " and  " + j);
+                    if (board[i][j - i] == check && board[i + 1][j - 1 - i] == check) {
+                        checkWin++;
+                        if (checkWin == 3) {
+                            return true;
+                        }
+                    } else {
+                        counter ++;
+                        checkWin = 0;
+                    }
+                } catch (ArrayIndexOutOfBoundsException e) {
+                }
+            }
+
+        }
+        System.out.println(counter);
+
+        //Downward right
+        for (int j = -2; j < 4; j++) {
+            for (int i = 0; i < 5; i++) {
+                try {
+                    if (board[i][j + i] == check && board[i + 1][j + 1 + i] == check) {
                         checkWin++;
                         if (checkWin == 3) {
                             return true;
                         }
                     } else {
                         checkWin = 0;
-                        break;
                     }
+                } catch (ArrayIndexOutOfBoundsException e) {
                 }
             }
-
-            //Upward Right
-            for (int j = 8; j > 3; j++) {
-                for (int i = 0; i < 5; i++) {
-                    try {
-                        if (board[i][j - 1] == check && board[i + 1][j - 1 - i] == check) {
-                            checkWin++;
-                            if (checkWin == 3) {
-                                return true;
-                            }
-                        } else {
-                            checkWin = 0;
-                        }
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        break;
-                    }
-                }
-
-            }
-
-            //Downward right
-            for (int j = -2; j < 3; j++) {
-                for (int i = 0; i < 4; i++) {
-                    try {
-                        if (board[i][j + i] == check && board[i + 1][j + 1 + i] == check) {
-                            checkWin++;
-                            if (checkWin == 3) {
-                                return true;
-                            }
-                        } else {
-                            checkWin = 0;
-                        }
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        break;
-                    }
-                }
-            }
-            return false;
         }
-
-    public String displayWinner() {
-        return "We have a winner!";
+    
+    return false;
     }
 
-    public String displayTie() {
-        return "You are both winners!";
-    }
 }
