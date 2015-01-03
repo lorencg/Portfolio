@@ -10,7 +10,6 @@ import citbyui.cit260.connect4.exceptions.MenuException;
 import static java.lang.Math.log;
 import java.util.Objects;
 import java.util.Scanner;
-import static jdk.nashorn.internal.objects.NativeMath.log;
 import static org.eclipse.persistence.internal.libraries.asm.tree.InsnList.check;
 
 /**
