@@ -1,4 +1,2 @@
-Connect4
-========
-
-Group Project
+# Portfolio
+My projects, mostly works in progress, from my undergraduate studies
