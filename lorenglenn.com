@@ -9,83 +9,127 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<style>
-			.navbar{
-				background: #000;
+			body {
+				padding-top: 40px;
 			}
 			
-			.vertical-center {
-				min-height: 100%;
-				min-height: 100vh;
-				display: flex;
-				align-items: center;
-			}
 			
 			.glyphicon-envelope{
+				padding-top: 30px;
 				font-size: 2.2em;
 			}
-		
 			
 		</style>
 	
     </head>
     <body>
-        <header>
 		
 			<!-- Nav bar -->
-			<div class="navbar navbar-default navbar-fixed-top">
-				<div class="container-fluid">
+			<div class="navbar navbar-inverse navbar-fixed-top" id="main-navbar">
+				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#port">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="" class="navbar-brand">Lorenglenn.com</a>
+						<a href="" class="navbar-brand navbar-left">Lorenglenn.com</a>
 					</div>
-					<div class="collapse navbar-collapse" id="example">
+					<div class="collapse navbar-collapse" id="port">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="">Home</a></li>
-							<li><a href="">About Me</a></li>
-							<li><a href="">Contact</a></li>
+							<li><a href="#home">Home</a></li>
+							<li><a href="#about-me">About Me</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a href="#quotes">Quotes</a></li>
 							<li>
-								<button class="btn navbar-btn btn-primary dropdown-toggle" data-toggle="dropdown"">Resume/Skills<span class="caret"></span></button>
+								<button class="btn navbar-btn btn-primary dropdown-toggle navbar-right" data-toggle="dropdown">Resume/Skills<span class="caret"></span></button>
 								<ul class="dropdown-menu">
-									<li><a href="">Sample Sites</a></li>
-									<li><a href="">Sample Programs</a></li>
-									<li><a href="">Resume</a></li>
-									<li><a href="">Languages</a></li>
+									<li><a href="#sample-sites">Sample Sites</a></li>
+									<li><a href="#sample-program">Sample Programs</a></li>
+									<li><a href="#resume">Resume</a></li>
+									<li><a href="#languages">Languages</a></li>
 								</ul>
 							</li>
 						</ul>
-						<form action="" class="navbar-form navbar-right" role="search">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="search">
-							</div>
-							<button type="submit" class="navbar-button glyphicon glyphicon-search btn btn-primary"></button>
-						</form>
 					</div>
 				</div>
 			</div>
 			
 			<!-- Main title -->
-			<div class="jumbotron vertical-center">
-				<div class="container">
+			<div class="jumbotron" id="home">
+				<hr>
+				<div class="container text-center">
 					<h1>Welcome to Loren Glenn's Portfolio!</h1>
-					<p>Come in, look around and feel free to 
-						<button class="btn btn-info btn-sm" role="button" data-toggle="collapse" data-target="#contact_links">contact me!</button>
+					<p>Come in, look around and feel free to: </p>
+					<button class="btn btn-info btn-sm" role="button" data-toggle="collapse" data-target="#contact_links">Contact me!</button>
 						<div id="contact_links" class="collapse">
 							<a href="" class="glyphicon glyphicon-envelope"></a>
 							
 						</div>
-					</p>
-				</div>	
+				</div>
+				<hr>				
 			</div>
-        </header>
-		
-		<body>
+			
+			<!-- Quotes -->
+			<div class="container">
+				<section>
+					<div class="page-header" id="quotes">
+						<h2>My Favorite Quotes - <small>That I try to live by: </small><h2>
+					</div>
+					
+					<div class="row">
+						<div class="col-lg-4">
+							<blockquote>
+								<p>"On occasion we need to make a second effort - and a third effort, and a fourth effort, and as many degrees of effort as may be required to accomplish what we strive to achieve."</p>
+								<footer>Thomas S. Monson</footer>
+							</blockquote>
+						</div>
+						<div class="col-lg-4">
+							<blockquote>
+								<p>"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."</p>
+								<footer>Steve Jobs</footer>
+							</blockquote>
+						</div>
+						<div class="col-lg-4">
+							<blockquote>
+								<p>"Treat those who are good with goodness, and also treat those who are not good with goodness. Thus goodness is attained. Be honest to those who are honest, and be also honest to those who are not honest. Thus honesty is attained."</p>
+								<footer>Lao Tzu</footer>
+							</blockquote>
+						</div>
+					</div>
+				</section>
+			</div>
+			
+			<!-- Subscribe -->
+			<section>
+				<div class="well">
+					<div class="container text-center">
+						<h3>Subscribe to my newsletter to hear about my new projects!</h3>
+						<p>Enter your name and email</P>
+						
+						<form action="" class="form-inline">
+							<div class="form-group">
+								<label for="subscription">Subscribe</label>
+								<input type="text" class="form-control" id="subscription" placeholder="Your name">
+							</div>
+							<div class="form-group">
+								<label for="email">Email address</label>
+								<input type="text" class="form-control" id="email" placeholder="Your email">
+							</div>
+							<button type="submit" class="btn btn-warning">Submit</button>
+						</form>
+						<hr>
+					</div>
+				</div>
+			</section>
+				
 			<!-- About Me -->
-			<div class="jumbotron vertical-center">
-				<div class="container">
+			<div class="container">
+				<section>
+					<div class="page-header" id="about-me">
+						<h2>About Me. <small> A small gallery of me and my hobbies:</small></h2>
+					</div>
+				</section>
 					<div class="carousel slide" id="about-me-images" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#about-me-images" data-slide-to="0" class="active"></li>
@@ -112,15 +156,8 @@
 								</div>
 							</div>
 						</div>
-							<a href="#about-me-images" class="left carousel-control" data-slide="prev">
-								<span class="glyphicon glyphicon-menu-left"></span>
-							</a>
-							<a href="#about-me-images" class="left carousel-control" data-slide="next">
-								<span class="glyphicon glyphicon-menu-right"></span>
-							</a>
 					</div>	
 				</div>
-			</div>
 				
 		</body>
 
